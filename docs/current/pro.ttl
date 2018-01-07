@@ -58,7 +58,7 @@ PRO forms part of SPAR, a suite of Semantic Publishing and Referencing Ontologie
         "This ontology is available at http://purl.org/spar/pro, and uses the namespace prefix pro."@en ;
     owl:imports <http://purl.org/swan/2.0/foaf-essential/>,
         <http://www.essepuntato.it/2012/04/tvc> ;
-    owl:priorVersion <https://svn.code.sf.net/p/sempublishing/code/PRO/2017-09-04-pro-1_5_4.owl> ;
+    owl:priorVersion <https://svn.code.sf.net/p/sempublishing/code/PRO/2013-12-18-pro-1_5_3.owl> ;
     owl:versionIRI <http://purl.org/spar/pro/2017-09-04> ;
     owl:versionInfo "1.5.4"^^xsd:string .
 
@@ -371,11 +371,17 @@ foaf:Agent a owl:Class ;
 - one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. (At least one contextual entity should be specified for a particular role)."""@en ;
     rdfs:comment "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty :relatesToEntity ;
-            owl:someValuesFrom owl:Thing ],
-        [ a owl:Restriction ;
             owl:onProperty tvc:atTime ;
             owl:someValuesFrom ti:TimeInterval ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( ti:TimeInterval [ a owl:Restriction ;
+                                owl:allValuesFrom xsd:dateTime ;
+                                owl:onProperty ti:hasIntervalDate ] ) ] ;
+            owl:onProperty tvc:atTime ],
+        [ a owl:Restriction ;
+            owl:onProperty :relatesToEntity ;
+            owl:someValuesFrom owl:Thing ],
         [ a owl:Restriction ;
             owl:onClass foaf:Agent ;
             owl:onProperty :isHeldBy ;
@@ -383,12 +389,6 @@ foaf:Agent a owl:Class ;
         [ a owl:Restriction ;
             owl:onProperty :withRole ;
             owl:someValuesFrom :Role ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a owl:Class ;
-                    owl:intersectionOf ( ti:TimeInterval [ a owl:Restriction ;
-                                owl:allValuesFrom xsd:dateTime ;
-                                owl:onProperty ti:hasIntervalDate ] ) ] ;
-            owl:onProperty tvc:atTime ],
         tvc:ValueInTime .
 
 :PublishingRole a owl:Class ;
