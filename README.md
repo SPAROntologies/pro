@@ -8,7 +8,7 @@ The Publishing Roles Ontology (PRO) is an ontology for the characterisation of t
 
 **License:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)
 
-**Website:** http://www.sparontologies.net/ontologies/fabio
+**Website:** http://www.sparontologies.net/ontologies/pro
 
 **Cite as:** Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and the Linked Data: describing roles, statuses, temporal and contextual extents. In Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012): 9-16. DOI: https://doi.org/10.1145/2362499.2362502. Open Access at: http://speroni.web.cs.unibo.it/publications/peroni-2012-scholarly-publishing-linked.pdf
 
