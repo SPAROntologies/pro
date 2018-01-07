@@ -65,6 +65,22 @@
     ]
   },
   {
+    "@id": "_:Nd2f23d8b4ee1410e913491762c473d9e",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate"
+      }
+    ]
+  },
+  {
     "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -151,8 +167,8 @@
   {
     "@id": "http://purl.org/spar/pro/guest-editor",
     "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -193,8 +209,8 @@
   {
     "@id": "http://purl.org/spar/pro/journalist",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/spar/pro/PublishingRole"
+      "http://purl.org/spar/pro/PublishingRole",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -206,6 +222,58 @@
       {
         "@language": "en",
         "@value": "journalist"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/isDocumentContextFor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A property relating a document to the role for which that document provides the context (e.g. relating a document to the role of author or peer-reviewer of that document)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Document"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is document context for"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/spar/pro/isRelatedToRoleInTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/spar/pro/relatesToDocument"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/managing-editor",
+    "@type": [
+      "http://purl.org/spar/pro/PublishingRole",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The role of an editor who has management responsibility for the production of particular publication, usually acting under the authority of the Executive Editor and the Editor-in-Chief."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "managing editor"
       }
     ]
   },
@@ -235,22 +303,6 @@
     ]
   },
   {
-    "@id": "_:N191619bc8c864c8eb96b7b02ff28e03e",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/spar/pro/withRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://purl.org/spar/pro/Role"
-      }
-    ]
-  },
-  {
     "@id": "http://purl.org/spar/pro/reader",
     "@type": [
       "http://purl.org/spar/pro/PublishingRole",
@@ -270,22 +322,9 @@
     ]
   },
   {
-    "@id": "http://purl.org/spar/pro/illustrator",
+    "@id": "http://www.essepuntato.it/2012/04/tvc/hasValue",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/spar/pro/PublishingRole"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The role of an agent that illustrates a document."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "illustrator"
-      }
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
   },
   {
@@ -295,48 +334,16 @@
     ]
   },
   {
-    "@id": "http://purl.org/spar/pro/holdsRoleInTime",
+    "@id": "http://www.essepuntato.it/2012/04/tvc/withValue",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A property relating an agent to a role that the agent holds.  This is done via the indirection: foaf:Agent pro:holdsRoleInTime [ a pro:RoleInTime ; pro:withRole pro:Role ] .  The ontology permits one to specify the time period over which a role is held, and the other contextual entities to which that agent's role relates."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Agent"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "holds role in time"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://purl.org/spar/pro/RoleInTime"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/hasValue"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://purl.org/spar/pro/isHeldBy"
-      }
     ]
   },
   {
     "@id": "http://purl.org/spar/pro/deputy-editor",
     "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -349,12 +356,6 @@
         "@language": "en",
         "@value": "deputy editor"
       }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2000/01/rdf-schema#label",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
@@ -399,6 +400,22 @@
     "http://www.w3.org/2002/07/owl#inverseOf": [
       {
         "@id": "http://purl.org/spar/pro/relatesToEntity"
+      }
+    ]
+  },
+  {
+    "@id": "_:N438c7a71634b4c0abe107a14aca2164d",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/pro/relatesToEntity"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
       }
     ]
   },
@@ -450,15 +467,15 @@
     ],
     "http://purl.org/dc/elements/1.1/description": [
       {
-        "@language": "en",
-        "@value": "Since roles have contexts and times that are important to take into account (for example, a person can be author of one paper and reviewer of another, while another person will be editor of a journal only for a defined period, not for ever), the PRO ontology permit these contexts to be specified, using an ontological design pattern called the time-indexed value in context (TVC) (http://www.essepuntato.it/2012/04/tvc/) which is imported into PRO. \n \nThis ontology design pattern permits one to construct the following RDF statements:\n       foaf:Agent pro:holdsRoleInTime [ a pro:RoleInTime pro:withRole pro:editor ] .\n\nThus the domain of pro:withRole is not foaf:Agent, but rather an anonymous member of the class pro:RoleInTime, which itself is the range of the property pro:holdsRoleInTime, for which the domain is foaf:Agent. \n\nThe range of pro:withRole is the class pro:Role, whose members permit specific roles to be specified.  \n   \nThis single step of indirection permits other contextual and temporal attributes (not shown here) to be specified for this member of the class pro:RoleInTime, putting that role into context.\n\nExemplar usage: \n\n foaf:Agent pro:holdsRoleInTime [ a pro:RoleInTime pro:withRole pro:editor ] ."
+        "@id": "http://purl.org/spar/pro/pro.png"
       },
       {
         "@language": "en",
         "@value": "PRO, the Publishing Roles Ontology, is an ontology written in OWL 2 DL for the characterization of the roles of agents (people, corporate bodies and computational agents) in the publication process.  It permits one to specify how an agent has a role relating to a contextual entity, and the period of time during which that role is held.\n\nIt is based on the Time-indexed Value in Context (TVC) ontology pattern (http://www.essepuntato.it/2012/04/tvc).\n\nIt is easy to extend the set of specified roles, simply by adding new individuals to the class pro:PublishingRole.\n\nThis ontology is imported into SCoRO, the Scholarly Contribution and Roles Ontology (http://purl.org/spar/scoro/), where it is used similarly to enable the description of a wider range of contributions and roles relating to other scholarly activities and entities, including academic administration, funded projects, research investigations, data and authorship, and to define their temporal extents and contexts, as for publishing roles in PRO."
       },
       {
-        "@id": "http://sempublishing.svn.sourceforge.net/svnroot/sempublishing/PRO/pro.png"
+        "@language": "en",
+        "@value": "Since roles have contexts and times that are important to take into account (for example, a person can be author of one paper and reviewer of another, while another person will be editor of a journal only for a defined period, not for ever), the PRO ontology permit these contexts to be specified, using an ontological design pattern called the time-indexed value in context (TVC) (http://www.essepuntato.it/2012/04/tvc/) which is imported into PRO. \n \nThis ontology design pattern permits one to construct the following RDF statements:\n       foaf:Agent pro:holdsRoleInTime [ a pro:RoleInTime pro:withRole pro:editor ] .\n\nThus the domain of pro:withRole is not foaf:Agent, but rather an anonymous member of the class pro:RoleInTime, which itself is the range of the property pro:holdsRoleInTime, for which the domain is foaf:Agent. \n\nThe range of pro:withRole is the class pro:Role, whose members permit specific roles to be specified.  \n   \nThis single step of indirection permits other contextual and temporal attributes (not shown here) to be specified for this member of the class pro:RoleInTime, putting that role into context.\n\nExemplar usage: \n\n foaf:Agent pro:holdsRoleInTime [ a pro:RoleInTime pro:withRole pro:editor ] ."
       }
     ],
     "http://purl.org/dc/elements/1.1/rights": [
@@ -510,8 +527,8 @@
   {
     "@id": "http://purl.org/spar/pro/reviewer",
     "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -527,9 +544,22 @@
     ]
   },
   {
-    "@id": "http://www.essepuntato.it/2012/04/tvc/withValue",
+    "@id": "http://purl.org/spar/pro/printer",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The role of an agent involved in printing documents, either a company providing printing services or an individual engaged in the process of printing documents."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "printer"
+      }
     ]
   },
   {
@@ -552,10 +582,26 @@
     ]
   },
   {
+    "@id": "_:Ndbe76e301753463cb39a3744bffaf3ab",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/pro/withRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://purl.org/spar/pro/Role"
+      }
+    ]
+  },
+  {
     "@id": "http://purl.org/spar/pro/executive-editor",
     "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -571,7 +617,7 @@
     ]
   },
   {
-    "@id": "http://purl.org/spar/pro/editor",
+    "@id": "http://purl.org/spar/pro/compiler",
     "@type": [
       "http://purl.org/spar/pro/PublishingRole",
       "http://www.w3.org/2002/07/owl#NamedIndividual"
@@ -579,57 +625,13 @@
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The role of a person who selects and prepares for publication material created and submitted by authors, having oversight of its content, format and presentation."
+        "@value": "The role an agent has of compiling a number of items into a compilation or collection."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "editor"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/spar/pro/biographer",
-    "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The role of an author who writes biographies."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "biographer"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/elements/1.1/date",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/spar/pro/proof-reader",
-    "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The role of a person who reads the proofs of documents to detect any errors prior to final publication."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "proof reader"
+        "@value": "compiler"
       }
     ]
   },
@@ -653,9 +655,75 @@
     ]
   },
   {
-    "@id": "http://www.essepuntato.it/2012/04/tvc/hasValue",
+    "@id": "http://purl.org/dc/elements/1.1/date",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/proof-reader",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The role of a person who reads the proofs of documents to detect any errors prior to final publication."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "proof reader"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/relatesToPerson",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A property relating a time-indexed situation to a person who represents the context for that situation (e.g. relating the role of an supervisor with respect to the graduate student being supervised)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "relates to person"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Person"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/spar/pro/relatesToEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/illustrator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The role of an agent that illustrates a document."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "illustrator"
+      }
     ]
   },
   {
@@ -709,8 +777,8 @@
   {
     "@id": "http://purl.org/spar/pro/contributor",
     "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -792,103 +860,7 @@
     ]
   },
   {
-    "@id": "http://purl.org/spar/pro/relatesToPerson",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A property relating a time-indexed situation to a person who represents the context for that situation (e.g. relating the role of an supervisor with respect to the graduate student being supervised)."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "relates to person"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Person"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://purl.org/spar/pro/relatesToEntity"
-      }
-    ]
-  },
-  {
-    "@id": "_:N9088aaae12b84035817262c4d39c108a",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/spar/pro/compiler",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/spar/pro/PublishingRole"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The role an agent has of compiling a number of items into a compilation or collection."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "compiler"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/spar/pro/isDocumentContextFor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A property relating a document to the role for which that document provides the context (e.g. relating a document to the role of author or peer-reviewer of that document)."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Document"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is document context for"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://purl.org/spar/pro/isRelatedToRoleInTime"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://purl.org/spar/pro/relatesToDocument"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/spar/pro/ghost-writer",
+    "@id": "http://purl.org/spar/pro/editor",
     "@type": [
       "http://purl.org/spar/pro/PublishingRole",
       "http://www.w3.org/2002/07/owl#NamedIndividual"
@@ -896,13 +868,75 @@
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The role of a professional writer who assists an aspiring author lacking authorship skills to write a book or article for publication, for example by helping the author to create grammatically correct and lucid prose, or who writes the book on behalf of the named author, without himself/herself claiming authorship."
+        "@value": "The role of a person who selects and prepares for publication material created and submitted by authors, having oversight of its content, format and presentation."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "ghost writer"
+        "@value": "editor"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/RoleInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "A role in time describes always:\n- a particular role R\n- a particular agent A holding R\n- a particular time interval T in which A holds R (optional)\n- one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. (At least one contextual entity should be specified for a particular role)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "role in time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:N4b1748f5adca49208ff333b977dd0203"
+      },
+      {
+        "@id": "_:Na6d1f2341d7647e9a088e441492c43d6"
+      },
+      {
+        "@id": "_:N438c7a71634b4c0abe107a14aca2164d"
+      },
+      {
+        "@id": "_:Nde4c39d2e56b4701a36d9962b24e7d27"
+      },
+      {
+        "@id": "_:Ndbe76e301753463cb39a3744bffaf3ab"
+      },
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ndbffe076eb614d0fa223cdf6ff95a8c0",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
+          },
+          {
+            "@id": "_:Nd2f23d8b4ee1410e913491762c473d9e"
+          }
+        ]
       }
     ]
   },
@@ -949,6 +983,25 @@
     ]
   },
   {
+    "@id": "http://purl.org/spar/pro/biographer",
+    "@type": [
+      "http://purl.org/spar/pro/PublishingRole",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The role of an author who writes biographies."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "biographer"
+      }
+    ]
+  },
+  {
     "@id": "http://purl.org/dc/elements/1.1/creator",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
@@ -982,8 +1035,8 @@
   {
     "@id": "http://purl.org/spar/pro/blogger",
     "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -1029,62 +1082,24 @@
     ]
   },
   {
-    "@id": "_:Nbbe2f8aad39e4723a24c11aad8576cb0",
+    "@id": "_:Na6d1f2341d7647e9a088e441492c43d6",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Agent"
+      }
+    ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://purl.org/spar/pro/relatesToEntity"
+        "@id": "http://purl.org/spar/pro/isHeldBy"
       }
     ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
       {
-        "@id": "http://www.w3.org/2002/07/owl#Thing"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/spar/pro/RoleInTime",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/elements/1.1/description": [
-      {
-        "@language": "en",
-        "@value": "A role in time describes always:\n- a particular role R\n- a particular agent A holding R\n- a particular time interval T in which A holds R (optional)\n- one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. (At least one contextual entity should be specified for a particular role)."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "role in time"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
-      },
-      {
-        "@id": "_:N191619bc8c864c8eb96b7b02ff28e03e"
-      },
-      {
-        "@id": "_:N5b90117ebc734384be8a96abe66239e2"
-      },
-      {
-        "@id": "_:N9088aaae12b84035817262c4d39c108a"
-      },
-      {
-        "@id": "_:Na772ccde153142e2949b7fe7b635a36b"
-      },
-      {
-        "@id": "_:Nbbe2f8aad39e4723a24c11aad8576cb0"
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
       }
     ]
   },
@@ -1107,71 +1122,26 @@
     ]
   },
   {
-    "@id": "http://purl.org/spar/pro/PublishingRole",
+    "@id": "_:N4b1748f5adca49208ff333b977dd0203",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@language": "en",
-        "@value": "A role an agent may have with respect to the publishing process.  Individual members of this class are used to specify particular roles."
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@language": "en",
-        "@value": "publishing role"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.org/spar/pro/Role"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/spar/pro/isRoleIn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The property relating the definition of a specific role to the situation of an agent holding that role."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://purl.org/spar/pro/Role"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is role in"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://purl.org/spar/pro/RoleInTime"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://purl.org/spar/pro/withRole"
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
       }
     ]
   },
   {
     "@id": "http://purl.org/spar/pro/commissioning-editor",
     "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -1224,18 +1194,21 @@
     ]
   },
   {
-    "@id": "_:N5b90117ebc734384be8a96abe66239e2",
+    "@id": "http://purl.org/spar/pro/copyright-owner",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
     ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "_:N16c312e9090848a68154613a0dc625bc"
+        "@language": "en",
+        "@value": "The role of owning the copyright to a publication, usually held by the author or by the publishing house that publishes the author's work."
       }
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+        "@language": "en",
+        "@value": "copyright owner"
       }
     ]
   },
@@ -1279,6 +1252,101 @@
     ]
   },
   {
+    "@id": "http://purl.org/spar/pro/holdsRoleInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A property relating an agent to a role that the agent holds.  This is done via the indirection: foaf:Agent pro:holdsRoleInTime [ a pro:RoleInTime ; pro:withRole pro:Role ] .  The ontology permits one to specify the time period over which a role is held, and the other contextual entities to which that agent's role relates."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Agent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "holds role in time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/spar/pro/RoleInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/hasValue"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/spar/pro/isHeldBy"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/ghost-writer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/spar/pro/PublishingRole"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The role of a professional writer who assists an aspiring author lacking authorship skills to write a book or article for publication, for example by helping the author to create grammatically correct and lucid prose, or who writes the book on behalf of the named author, without himself/herself claiming authorship."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "ghost writer"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/isRoleIn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The property relating the definition of a specific role to the situation of an agent holding that role."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/pro/Role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is role in"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/spar/pro/RoleInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/spar/pro/withRole"
+      }
+    ]
+  },
+  {
     "@id": "http://purl.org/spar/pro/isHeldBy",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -1312,78 +1380,15 @@
     ]
   },
   {
-    "@id": "http://purl.org/spar/pro/printer",
-    "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The role of an agent involved in printing documents, either a company providing printing services or an individual engaged in the process of printing documents."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "printer"
-      }
-    ]
-  },
-  {
-    "@id": "_:N16c312e9090848a68154613a0dc625bc",
+    "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#intersectionOf": [
-      {
-        "@list": [
-          {
-            "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
-          },
-          {
-            "@id": "_:N3db2bc8006fd41b0a97ea450a1265dd5"
-          }
-        ]
-      }
     ]
   },
   {
-    "@id": "http://purl.org/spar/pro/managing-editor",
+    "@id": "http://www.w3.org/2000/01/rdf-schema#label",
     "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The role of an editor who has management responsibility for the production of particular publication, usually acting under the authority of the Executive Editor and the Editor-in-Chief."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "managing editor"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/spar/pro/copyright-owner",
-    "@type": [
-      "http://purl.org/spar/pro/PublishingRole",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The role of owning the copyright to a publication, usually held by the author or by the publishing house that publishes the author's work."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "copyright owner"
-      }
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
@@ -1425,38 +1430,33 @@
     ]
   },
   {
-    "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime",
+    "@id": "http://purl.org/spar/pro/PublishingRole",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "_:Na772ccde153142e2949b7fe7b635a36b",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2002/07/owl#onClass": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "http://xmlns.com/foaf/0.1/Agent"
+        "@language": "en",
+        "@value": "A role an agent may have with respect to the publishing process.  Individual members of this class are used to specify particular roles."
       }
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "http://purl.org/spar/pro/isHeldBy"
+        "@language": "en",
+        "@value": "publishing role"
       }
     ],
-    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
+        "@id": "http://purl.org/spar/pro/Role"
       }
     ]
   },
   {
     "@id": "http://purl.org/spar/pro/librarian",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/spar/pro/PublishingRole"
+      "http://purl.org/spar/pro/PublishingRole",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -1478,18 +1478,18 @@
     ]
   },
   {
-    "@id": "_:N3db2bc8006fd41b0a97ea450a1265dd5",
+    "@id": "_:Nde4c39d2e56b4701a36d9962b24e7d27",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+        "@id": "_:Ndbffe076eb614d0fa223cdf6ff95a8c0"
       }
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate"
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
       }
     ]
   }
