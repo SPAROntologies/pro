@@ -16,8 +16,8 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/spar/pro/">
-        <owl:imports rdf:resource="http://purl.org/swan/2.0/foaf-essential/"/>
-        <owl:imports rdf:resource="http://www.essepuntato.it/2012/04/tvc"/>
+        <owl:imports rdf:resource="http://purl.org/spar/foaf"/>
+        <owl:imports rdf:resource="http://purl.org/spar/tvc"/>
         <owl:versionIRI rdf:resource="http://purl.org/spar/pro/2017-09-04"/>
         <owl:priorVersion rdf:resource="https://svn.code.sf.net/p/sempublishing/code/PRO/2013-12-18-pro-1_5_3.owl"/>
         <rdfs:comment xml:lang="en">This ontology is available at http://purl.org/spar/pro, and uses the namespace prefix pro.</rdfs:comment>
@@ -25,7 +25,7 @@
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Shotton</dc:creator>
         <dc:description xml:lang="en">PRO, the Publishing Roles Ontology, is an ontology written in OWL 2 DL for the characterization of the roles of agents (people, corporate bodies and computational agents) in the publication process.  It permits one to specify how an agent has a role relating to a contextual entity, and the period of time during which that role is held.
 
-It is based on the Time-indexed Value in Context (TVC) ontology pattern (http://www.essepuntato.it/2012/04/tvc).
+It is based on the Time-indexed Value in Context (TVC) ontology pattern (http://purl.org/spar/tvc).
 
 It is easy to extend the set of specified roles, simply by adding new individuals to the class pro:PublishingRole.
 
