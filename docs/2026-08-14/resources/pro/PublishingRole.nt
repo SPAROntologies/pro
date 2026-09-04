@@ -1,0 +1,8 @@
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#label> "publishing role"@en .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#comment> "A role an agent may have with respect to the publishing process."@en .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/pro/Role> .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2004/02/skos/core#note> "Individual members of this class are used to specify particular roles."@en .
+<http://purl.org/spar/pro/PublishingRole> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    pro:archivist a pro:PublishingRole .\n    " .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

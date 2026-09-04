@@ -1,0 +1,25 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+pro:archivist a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "archivist"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+    """ ;
+    rdfs:comment "The role of a person who manages, undertakes and supervises the work of an archive."@en ;
+    rdfs:isDefinedBy pro: ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+This term is typically used with respect to a document archive, whereas the term data curator is used with respect to a data archive.    
+    """@en .
+

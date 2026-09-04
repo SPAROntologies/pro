@@ -1,0 +1,25 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+pro:PublishingRole a owl:Class ;
+    rdfs:label "publishing role"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+
+    pro:archivist a pro:PublishingRole .
+    """ ;
+    rdfs:comment "A role an agent may have with respect to the publishing process."@en ;
+    rdfs:isDefinedBy pro: ;
+    rdfs:subClassOf pro:Role ;
+    vs:term_status reg:statusStable ;
+    skos:note "Individual members of this class are used to specify particular roles."@en .
+
