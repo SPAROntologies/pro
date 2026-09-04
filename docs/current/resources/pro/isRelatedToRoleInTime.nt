@@ -1,0 +1,9 @@
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#label> "is related to role in time"@en .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/pro/RoleInTime> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    :my-entity\n        pro:isRelatedToRoleInTime :my-person-role .\n    " .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an entity and the role for which that entity provides the context."@en .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/relatesToEntity> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .

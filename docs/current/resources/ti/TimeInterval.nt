@@ -1,0 +1,6 @@
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#label> "time interval"@en .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#comment> "Two (starting and ending) points in time that define a particular period of time."@en .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

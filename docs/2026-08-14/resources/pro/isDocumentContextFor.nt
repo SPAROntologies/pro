@@ -1,0 +1,9 @@
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/isRelatedToRoleInTime> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a document and the role for which that document provides the context (e.g. relating a document to the role of author or peer-reviewer of that document)."@en .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/relatesToDocument> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Document> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    :my-document a foaf:Document ;\n        pro:isDocumentContextFor :my-person-role .\n    " .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#label> "is document context for"@en .

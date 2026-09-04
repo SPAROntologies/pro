@@ -1,0 +1,181 @@
+[
+  {
+    "@id": "http://purl.org/spar/pro/RoleInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "role in time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
+      },
+      {
+        "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb2"
+      },
+      {
+        "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb9"
+      },
+      {
+        "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb7"
+      },
+      {
+        "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb1"
+      },
+      {
+        "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb8"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A role in time describes always:\n- a particular role R\n- a particular agent A holding R\n- a particular time interval T in which A holds R (optional)\n- one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. At least one contextual entity should be specified for a particular role."
+      }
+    ]
+  },
+  {
+    "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb3"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb3",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
+          },
+          {
+            "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate"
+      }
+    ]
+  },
+  {
+    "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/pro/relatesToEntity"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb7",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/pro/withRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://purl.org/spar/pro/Role"
+      }
+    ]
+  },
+  {
+    "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
+      }
+    ]
+  },
+  {
+    "@id": "_:n503bff63fbfc4d68a3c9088592602b2fb8",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Agent"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/pro/isHeldBy"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  }
+]

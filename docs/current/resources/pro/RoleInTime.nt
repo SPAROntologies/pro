@@ -1,0 +1,38 @@
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
+_:n503bff63fbfc4d68a3c9088592602b2fb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n503bff63fbfc4d68a3c9088592602b2fb2 .
+_:n503bff63fbfc4d68a3c9088592602b2fb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+_:n503bff63fbfc4d68a3c9088592602b2fb4 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:n503bff63fbfc4d68a3c9088592602b2fb8 <http://www.w3.org/2002/07/owl#onClass> <http://xmlns.com/foaf/0.1/Agent> .
+_:n503bff63fbfc4d68a3c9088592602b2fb9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:n503bff63fbfc4d68a3c9088592602b2fb1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
+_:n503bff63fbfc4d68a3c9088592602b2fb7 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spar/pro/Role> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n503bff63fbfc4d68a3c9088592602b2fb9 .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n503bff63fbfc4d68a3c9088592602b2fb7 .
+_:n503bff63fbfc4d68a3c9088592602b2fb1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.essepuntato.it/2012/04/tvc/atTime> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/RoleInTime> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
+_:n503bff63fbfc4d68a3c9088592602b2fb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:n503bff63fbfc4d68a3c9088592602b2fb8 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+_:n503bff63fbfc4d68a3c9088592602b2fb3 <http://www.w3.org/2002/07/owl#intersectionOf> _:n503bff63fbfc4d68a3c9088592602b2fb5 .
+_:n503bff63fbfc4d68a3c9088592602b2fb8 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/pro/isHeldBy> .
+_:n503bff63fbfc4d68a3c9088592602b2fb1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:n503bff63fbfc4d68a3c9088592602b2fb8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:n503bff63fbfc4d68a3c9088592602b2fb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:n503bff63fbfc4d68a3c9088592602b2fb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
+_:n503bff63fbfc4d68a3c9088592602b2fb9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+_:n503bff63fbfc4d68a3c9088592602b2fb4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2004/02/skos/core#note> "A role in time describes always:\n- a particular role R\n- a particular agent A holding R\n- a particular time interval T in which A holds R (optional)\n- one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. At least one contextual entity should be specified for a particular role."@en .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#label> "role in time"@en .
+_:n503bff63fbfc4d68a3c9088592602b2fb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n503bff63fbfc4d68a3c9088592602b2fb2 <http://www.w3.org/2002/07/owl#allValuesFrom> _:n503bff63fbfc4d68a3c9088592602b2fb3 .
+_:n503bff63fbfc4d68a3c9088592602b2fb7 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/pro/withRole> .
+_:n503bff63fbfc4d68a3c9088592602b2fb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n503bff63fbfc4d68a3c9088592602b2fb6 .
+_:n503bff63fbfc4d68a3c9088592602b2fb2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.essepuntato.it/2012/04/tvc/atTime> .
+_:n503bff63fbfc4d68a3c9088592602b2fb9 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/pro/relatesToEntity> .
+_:n503bff63fbfc4d68a3c9088592602b2fb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n503bff63fbfc4d68a3c9088592602b2fb4 .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n503bff63fbfc4d68a3c9088592602b2fb1 .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n503bff63fbfc4d68a3c9088592602b2fb8 .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."@en .

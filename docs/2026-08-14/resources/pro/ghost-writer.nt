@@ -1,0 +1,7 @@
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://purl.org/spar/pro/ghost-writer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:ghost-writer .\n    " .
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2000/01/rdf-schema#label> "ghost writer"@en .
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a professional writer who assists an aspiring author lacking authorship skills to write a book or article for publication, for example by helping the author to create grammatically correct and lucid prose, or who writes the book on behalf of the named author, without himself/herself claiming authorship."@en .

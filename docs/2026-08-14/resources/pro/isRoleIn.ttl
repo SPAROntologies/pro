@@ -1,0 +1,27 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+pro:isRoleIn a owl:ObjectProperty ;
+    rdfs:label "is role in"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime .
+
+    pro:archivist  
+        pro:isRoleIn :my-person-role .
+    """ ;
+    rdfs:comment "The relation between the definition of a specific role and the situation of an agent holding that role."@en ;
+    rdfs:domain pro:Role ;
+    rdfs:isDefinedBy pro: ;
+    rdfs:range pro:RoleInTime ;
+    rdfs:subPropertyOf tisit:hasTimeIndexedSetting ;
+    owl:inverseOf pro:withRole ;
+    vs:term_status reg:statusStable .
+

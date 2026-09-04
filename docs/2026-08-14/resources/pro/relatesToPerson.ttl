@@ -1,0 +1,26 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+pro:relatesToPerson a owl:ObjectProperty ;
+    rdfs:label "relates to person"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:relatesToPerson :my-other-person .
+        pro:withRole pro:archivist .
+
+    :my-other-person a foaf:Person .
+    """ ;
+    rdfs:comment "The relation between a time-indexed situation and a person who represents the context for that situation (e.g. relating the role of an supervisor with respect to the graduate student being supervised)."@en ;
+    rdfs:isDefinedBy pro: ;
+    rdfs:range foaf:Person ;
+    rdfs:subPropertyOf pro:relatesToEntity ;
+    vs:term_status reg:statusStable .
+

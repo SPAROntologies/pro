@@ -1,0 +1,9 @@
+<http://purl.org/spar/pro/isHeldBy> <http://purl.org/vocab/vann/example> "\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist ;\n        pro:isHeldBy :my-person .\n\n    :my-person a foaf:Agent .\n    " .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a role in time that an agent holds, or a contribution situation that an agent makes, and that agent."@en .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/pro/RoleInTime> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#label> "is role held by"@en .

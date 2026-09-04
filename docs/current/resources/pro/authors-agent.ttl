@@ -1,0 +1,21 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+pro:authors-agent a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "author's agent"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:authors-agent .
+    """ ;
+    rdfs:comment "A person who finds work for professional authors, manages their contracts, and works to advance their careers, charging their clients as fees for their services a percentage of the money made from the authors' writings."@en ;
+    rdfs:isDefinedBy pro: ;
+    vs:term_status reg:statusStable .
+

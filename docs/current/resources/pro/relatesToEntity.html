@@ -1,0 +1,447 @@
+<!doctype html><html lang=en><meta charset=UTF-8><meta content="width=device-width,initial-scale=1.0" name=viewport><title>LODE 2.0 - Semantic Artefact Viewer</title><link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css rel=stylesheet><link href=../../static/style.css rel=stylesheet><link href=https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css rel=stylesheet><body><div class="container-fluid px-4 py-4"><details class=metadata-accordion><summary class=metadata-accordion-summary><div class=resource-frontmatter><h1 class=resource-title>relates to</h1><div class=resource-meta-line><span class="resource-meta-uri font-monospace text-truncate">http://purl.org/spar/pro/relatesToEntity</span><a title="Go to Resource" class=resource-meta-link href=http://purl.org/spar/pro/relatesToEntity target=_blank> <i class="bi bi-box-arrow-up-right"></i> </a></div><p class=resource-subtitle>as defined in <span class=resource-subtitle-ontology> The Publishing Roles Ontology (PRO) </span> <button title="Show/hide ontology metadata" class=metadata-accordion-toggle onclick=toggleMetadataAccordion(event) type=button><i class="bi bi-chevron-down"></i></button></div></summary> <div class=p-3><section class=metadata-block><dl class="row mb-0 lead fs-6"><dt class="text-capitalize fs-7 fw-bold">bibliographic citation<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and Linked Data: describing roles, statuses, temporal and contextual extents. In Sack, H., Pellegrini, T. (Eds.), Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012): 9-16. New York, New York, USA: ACM. https://doi.org/10.1145/2362499.2362502. Open Access at: https://scholar.archive.org/work/tgbxvpuqbjbtvbj6mwt77gtx7m/access/wayback/http://speroni.web.cs.unibo.it/publications/peroni-2012-scholarly-publishing-linked.pdf</div></div></div><dt class="text-capitalize fs-7 fw-bold">code repository<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://github.com/SPAROntologies/pro target=_blank>https://github.com/SPAROntologies/pro</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">contributor<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)</div></div></div><dt class="text-capitalize fs-7 fw-bold">created<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">2013-12-18</div></div></div><dt class="text-capitalize fs-7 fw-bold">creator<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">Silvio Peroni (https://orcid.org/0000-0003-0530-4305)</div></div><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">David Shotton (https://orcid.org/0000-0001-5506-523X)</div></div></div><dt class="text-capitalize fs-7 fw-bold">date<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">2026-08-14</div></div></div><dt class="text-capitalize fs-7 fw-bold">description<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">
+The **_Publishing Roles Ontology (PRO)_** is an ontology written in OWL 2 DL for the characterization of the roles of agents (people, corporate bodies and computational agents) in the publication process. 
+This ontology permits the characterisation of the roles of agents – people, corporate bodies and computational agents – in the publication process. 
+Furthermore, it allows one to specify the role an agent has in relation to a particular bibliographic entity (as author, editor, reviewer, etc.) or to a specific institution (as publisher, librarian, etc.), and the period during which each role is held.
+
+Since roles have contexts and times that are important to take into account (for example, a person can be author of one paper and reviewer of another, while another person will be editor of a journal only for a defined period, not for ever), the PRO ontology permit these contexts to be specified, using an ontological design pattern called the [Time-indexed Value in Context ontology pattern](http://purl.org/spar/tvc), a model for describing scenarios in which something has a value during a particular time and for a particular context. 
+Due to this, it is easy to extend the set of specified roles, simply by adding new individuals to the class `pro:PublishingRole`.
+This ontology is imported into the [Scholarly Contribution and Roles Ontology](http://purl.org/spar/scoro/) (SCoRO), where it is used similarly to enable the description of a wider range of contributions and roles relating to other scholarly activities and entities, including academic administration, funded projects, research investigations, data and authorship, and to define their temporal extents and contexts, as for publishing roles in PRO.
+
+![The architecture of PRO.](pro.png)
+
+The main entities of PRO are:
+* `pro:RoleInTime`, i.e., the class of the particular situation that describes the role an agent has within a particular time interval;
+* `pro:holdsRoleInTime`, i.e., the object property linking any `foaf:Agent` (e.g., a person, a group, an organization or a software agent), to a `pro:RoleInTime` situation.
+* `pro:withRole`, i.e., the object property linking the situation to the role the agent has – the available roles are defined as individuals of the class `pro:Role` (see its subclass `pro:PublishingRole` for roles specifically defined for the publishing domain);
+* `ti:TimeInterval`, i.e., the class for defining two (starting and ending) points in time that define a particular period related to (`tvc:atTime`) a `pro:RoleInTime` situation;
+* `pro:relatesToDocument`, `pro:relatesToPerson` and `pro:relatesToOrganization`, i.e., the object properties linking any kind of bibliographic work (`foaf:Document`), a person (`foaf:Person`) or publishing organization (`foaf:Organization`) taking part in a `pro:RoleInTime` as contextual extent.
+
+## Examples of use
+
+In the following subsections, we introduce some examples to showcase how to use PRO. 
+
+The prefixes that are used in all the examples provided below are defined as follows:
+
+    @prefix : &lt;http://www.sparontologies.net/example/&gt; .
+    @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+    @prefix pro: &lt;http://purl.org/spar/pro/&gt; .
+    @prefix scoro: &lt;http://purl.org/spar/scoro/&gt; .
+    @prefix ti: &lt;http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#&gt; .
+    @prefix tvc: &lt;http://www.essepuntato.it/2012/04/tvc/&gt; .
+    @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+### Author&#39;s affiliations in papers 
+
+The description of the authors of papers and, in particular, which affiliation they have specified in the context of a particular paper is a crucial aspect to take into account when describing authors&#39; roles. 
+However, several existing ontologies, such as the Semantic Web Conference Ontology, do not allow one to discern the context in which an person-role association holds. 
+For instance, consider an author having different institutional affiliations in the context of different publications (e.g., because he/she moved from one to the other).
+
+In order to address this issue, PRO provides a convenient way to describe all the contextualised and possibly time-indexed person-role associations, in order to provide a complete picture of how roles relate with person and in which contexts.
+
+    :silvio-peroni a foaf:Person ;
+        foaf:name &#34;Silvio Peroni&#34; ;
+        pro:holdsRoleInTime
+            :silvio-peroni-author ,
+            :silvio-peroni-at-kmi ,
+            :silvio-peroni-at-unibo .
+
+    :silvio-peroni-author a pro:RoleInTime ;
+        pro:withRole pro:author ;
+        pro:relatesToDocument
+            &lt;http://dx.doi.org/10.1007/978-3-540-89704-0_17&gt; ,
+            &lt;http://dx.doi.org/10.1145/1600193.1600232&gt; .
+
+    :silvio-peroni-at-unibo a pro:RoleInTime ;
+        pro:withRole scoro:affiliate ;
+        pro:relatesToDocument
+            &lt;http://dx.doi.org/10.1145/1600193.1600232&gt; ;
+        pro:relatesToOrganization
+            &lt;https://ror.org/01111rn36&gt; ;
+        tvc:atTime :unibo-affiliation-time .
+
+    :unibo-affiliation-time a ti:TimeInterval ;
+        ti:hasIntervalStartDate
+            &#34;2009-01-01T00:00:00Z&#34;^^xsd:dateTime .
+
+    :silvio-peroni-at-kmi a pro:RoleInTime ;
+        pro:withRole scoro:affiliate ;
+        pro:relatesToDocument
+            &lt;http://dx.doi.org/10.1007/978-3-540-89704-0_17&gt; ;
+        pro:relatesToOrganization
+            &lt;https://www.wikidata.org/entity/Q86003202&gt; ;
+        tvc:atTime :kmi-affiliation-time .
+
+    :kmi-affiliation-time a ti:TimeInterval ;
+        ti:hasIntervalStartDate
+            &#34;2008-04-01T00:00:00Z&#34;^^xsd:dateTime ;
+        ti:hasIntervalEndDate
+            &#34;2008-09-30T23:59:59Z&#34;^^xsd:dateTime .
+
+## Competency Questions
+
+PRO can be used for answering several questions related to the various roles of an agent in the publication process.
+In the following subsections, some of them are introduced together with their respective SPARQL queries. 
+
+The prefixes that are used in all the SPARQL queries provided below are defined as follows:
+
+    PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+    PREFIX pro: &lt;http://purl.org/spar/pro/&gt;
+    PREFIX tvc: &lt;http://www.essepuntato.it/2012/04/tvc/&gt;
+    PREFIX ti: &lt;http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#&gt;
+
+### CQ1
+
+Which roles in time and role types does a person hold?
+
+    SELECT ?person ?personName ?roleInTime ?role
+    WHERE {
+        ?person a foaf:Person ;
+            pro:holdsRoleInTime ?roleInTime .
+        ?roleInTime a pro:RoleInTime ;
+            pro:withRole ?role .
+        OPTIONAL { ?person foaf:name ?personName . }
+    }
+
+### CQ2
+
+Which documents are associated with a person&#39;s role in time?
+
+    SELECT ?person ?role ?document
+    WHERE {
+        ?person a foaf:Person ;
+            pro:holdsRoleInTime ?roleInTime .
+        ?roleInTime pro:withRole ?role ;
+            pro:relatesToDocument ?document .
+    }
+
+### CQ3
+
+Which organization is a person affiliated with in relation to a specific document?
+
+    SELECT ?person ?organization ?document
+    WHERE {
+        ?person pro:holdsRoleInTime ?roleInTime .
+        ?roleInTime pro:relatesToOrganization ?organization ;
+            pro:relatesToDocument ?document .
+    }
+
+### CQ4 
+
+What is the time interval (start and end dates) of an affiliation or role held by a person?
+
+    SELECT ?person ?role ?organization ?startDate ?endDate
+    WHERE {
+        ?person pro:holdsRoleInTime ?roleInTime .
+        ?roleInTime pro:withRole ?role ;
+            tvc:atTime ?timeInterval .
+        OPTIONAL { ?roleInTime pro:relatesToOrganization ?organization . }
+        OPTIONAL { ?timeInterval ti:hasIntervalStartDate ?startDate . }
+        OPTIONAL { ?timeInterval ti:hasIntervalEndDate ?endDate . }
+    }
+
+### CQ5
+
+What are the full affiliation details (role, target document, organization, and timeframe) for a person?
+
+    SELECT ?person ?role ?document ?organization ?startDate ?endDate
+    WHERE {
+        ?person a foaf:Person ;
+            pro:holdsRoleInTime ?roleInTime .
+        ?roleInTime pro:withRole ?role .
+        OPTIONAL { ?roleInTime pro:relatesToDocument ?document . }
+        OPTIONAL { ?roleInTime pro:relatesToOrganization ?organization . }
+        OPTIONAL {
+            ?roleInTime tvc:atTime ?timeInterval .
+            OPTIONAL { ?timeInterval ti:hasIntervalStartDate ?startDate . }
+            OPTIONAL { ?timeInterval ti:hasIntervalEndDate ?endDate . }
+        }
+    }
+
+</div></div></div><dt class="text-capitalize fs-7 fw-bold">doi<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">https://doi.org/10.25504/FAIRsharing.3e88d6</div></div></div><dt class="text-capitalize fs-7 fw-bold">image<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://github.com/SPAROntologies/pro/blob/master/docs/current/pro.png target=_blank>https://github.com/SPAROntologies/pro/blob/master/docs/current/pro.png</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">imports<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://purl.org/spar/foaf target=_blank>http://purl.org/spar/foaf</a></div></div><div class=ms-5><div><a title="Go to Resource" href=http://purl.org/spar/tvc target=_blank>http://purl.org/spar/tvc</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">included in data catalog<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://fairsharing.org/ target=_blank>https://fairsharing.org/</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">is backward compatible with<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://purl.org/spar/pro/2017-09-04 target=_blank>http://purl.org/spar/pro/2017-09-04</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">issued<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">2017-09-04</div></div></div><dt class="text-capitalize fs-7 fw-bold">keywords<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">scholarly publishing</div></div><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">scientometrics</div></div><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">semantic publishing</div></div><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">bibliometrics</div></div><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">publishing roles</div></div></div><dt class="text-capitalize fs-7 fw-bold">license<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://creativecommons.org/licenses/by/4.0/ target=_blank>http://creativecommons.org/licenses/by/4.0/</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">logo<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://github.com/SPAROntologies/pro/blob/master/spar.png target=_blank>https://github.com/SPAROntologies/pro/blob/master/spar.png</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">modified<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">2026-08-14</div></div></div><dt class="text-capitalize fs-7 fw-bold">preferred namespace prefix<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">pro</div></div></div><dt class="text-capitalize fs-7 fw-bold">preferred namespace uri<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">http://purl.org/spar/pro</div></div></div><dt class="text-capitalize fs-7 fw-bold">prior version<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://purl.org/spar/pro/2017-09-04 target=_blank>http://purl.org/spar/pro/2017-09-04</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">publisher<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://ror.org/00wb4mk85 target=_blank>https://ror.org/00wb4mk85</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">see also<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://www.sparontologies.net/ontologies/pro target=_blank>http://www.sparontologies.net/ontologies/pro</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">source<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://github.com/sparontologies/pro/docs/cq.md target=_blank>https://github.com/sparontologies/pro/docs/cq.md</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">status<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://purl.org/ontology/bibo/status/published target=_blank>http://purl.org/ontology/bibo/status/published</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">title<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">The Publishing Roles Ontology (PRO)</div></div></div><dt class="text-capitalize fs-7 fw-bold">version<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://purl.org/spar/pro/2026-08-14 target=_blank>http://purl.org/spar/pro/2026-08-14</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">version info<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">1.6.1</div></div></div><dt class="text-capitalize fs-7 fw-bold">Other visualisation<dd class=ms-5><a class="btn btn-sm btn-outline-dark me-2" href="https://service.tib.eu/webvowl/#iri=http://purl.org/spar/pro" target=_blank><i class="bi bi-share"></i> WebVOWL</a> <a class="btn btn-sm btn-outline-dark" href=http://purl.org/spar/pro target=_blank><i class="bi bi-file-code"></i> Source</a></dl></section></div></details><section class="metadata-block export-block"><dl class="mb-0 pb-3"><dt class="fs-7 fw-bold mb-1">Export<dd class=ms-5><a class="btn btn-sm btn-outline-dark me-2" href=relatesToEntity.ttl> <i class="bi bi-filetype-raw"></i> Turtle </a> <a class="btn btn-sm btn-outline-dark me-2" href=relatesToEntity.rdf> <i class="bi bi-file-code"></i> RDF/XML </a> <a class="btn btn-sm btn-outline-dark me-2" href=relatesToEntity.jsonld> <i class="bi bi-filetype-json"></i> JSON-LD </a> <a class="btn btn-sm btn-outline-dark me-2" href=relatesToEntity.nt> <i class="bi bi-file-text"></i> N-Triples </a></dl></section><div class="anchor-offset mb-5"><div class="card mb-2 anchor-offset" id=id_b52d82545159275b8ac3d050f878a5b1_Relation><div class="card-header bg-white pt-2 px-1 d-flex justify-content-between align-items-center"><h4 class="fw-bold mb-0"><div class=d-inline-block>relates to</div> <sup class="badge bg-light text-secondary op" title="Object Property">op</sup></h4></div><div class="card-body p-0"><div class="description p-3"><p class=mb-1><span class="text-dark fw-bold">IRI:</span> http://purl.org/spar/pro/relatesToEntity <a title="Go to resource documentation" class=ms-2 href=../pro/relatesToEntity.html><i class="bi bi-box-arrow-up-right"></i></a><div><h6 class="text-dark fw-bold pb-0 mb-0">comment</h6><div class=ms-2><div><div class="markdown-with-badge text-dark render-markdown inline-markdown me-1"
+                                            data-md="The relation between a time-indexed situation and an entity representing the context for that situation.">The relation between a time-indexed situation and an entity representing the context for that situation.
+                                        </div> <sup class="badge text-secondary lan" title=English>en</sup></div></div></div></div><div class="attribute p-3 border-top border-bottom bg-light-subtle"><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">is sub property of</h6><div class=ms-2><div class=d-inline-block><a href=../tvc/withinContext.html title=http://www.essepuntato.it/2012/04/tvc/withinContext>within context</a><sup class="badge text-secondary op" title="Object Property">op</sup></div></div></div><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">domain</h6><div class=ms-2><div class=d-inline-block><a href=../pro/RoleInTime.html title=http://purl.org/spar/pro/RoleInTime>role in time</a><sup class="badge text-secondary c" title=Class>c</sup></div></div></div><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">range</h6><div class=ms-2><div class=d-inline-block><a href=http://www.w3.org/2002/07/owl#Thing title=http://www.w3.org/2002/07/owl#Thing>thing</a><sup class="badge text-secondary c" title=Class>c</sup></div></div></div><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">is defined by</h6><div class=ms-2><div class=d-inline-block><span class=external-ref title=http://purl.org/spar/pro/>http://purl.org/spar/pro/</span></div></div></div><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">is inverse of</h6><div class=ms-2><div class=d-inline-block><a href=../pro/isRelatedToRoleInTime.html title=http://purl.org/spar/pro/isRelatedToRoleInTime>is related to role in time</a><sup class="badge text-secondary op" title="Object Property">op</sup></div></div></div><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">label</h6><div class=ms-2><div class="markdown-with-badge text-dark mb-0 render-markdown inline-markdown "
+                                            data-md="relates to">relates to</div> <sup class="badge text-secondary lan" title=English>en</sup></div></div></div><div class="p-3 statement"><div><h6 class="fw-bold text-dark pb-0 mb-0">example</h6><div class=ms-2><div class="d-flex flex-column gap-1"><div><div><div class="markdown-with-badge  render-markdown inline-markdown"
+                title="None"
+                data-md="
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:relatesToEntity :my-entity ;
+        pro:withRole pro:archivist .
+    ">
+                    
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:relatesToEntity :my-entity ;
+        pro:withRole pro:archivist .
+    
+                </div></div></div></div></div></div><div><h6 class="fw-bold text-dark pb-0 mb-0">term status</h6><div class=ms-2><div class="d-flex flex-column gap-1"><div><a class=external-ref href=http://purl.org/linked-data/registry#statusStable rel=noopener target=_blank title=http://purl.org/linked-data/registry#statusStable>status stable<i class="bi bi-box-arrow-up-right ms-1"></i></a></div></div></div></div></div><div class="card-footer bg-white py-0"><div class="accordion accordion-flush prov-accordion" id=id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_acc><div class=accordion-item><h2 class="accordion-header d-flex justify-content-end" id=id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_head><button class="accordion-button collapsed py-1 px-2 small fw-bold text-uppercase text-primary w-auto" title="RDF provenance" aria-controls=id_b52d82545159275b8ac3d050f878a5b1_Relation_prov aria-expanded=false data-bs-target=#id_b52d82545159275b8ac3d050f878a5b1_Relation_prov data-bs-toggle=collapse type=button><span>RDF provenance</span> <i class="bi bi-code"></i></button></h2><div class="accordion-collapse collapse" aria-labelledby=id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_head data-bs-parent=#id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_acc id=id_b52d82545159275b8ac3d050f878a5b1_Relation_prov><div class="accordion-body p-2"><ul class="nav nav-tabs nav-tabs-sm justify-content-end small mb-0" role=tablist><li class=nav-item role=presentation><button class="nav-link active py-1 px-2" data-bs-target=#id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_1 data-bs-toggle=tab role=tab type=button>Turtle</button><li class=nav-item role=presentation><button class="nav-link py-1 px-2" data-bs-target=#id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_2 data-bs-toggle=tab role=tab type=button>RDF/XML</button><li class=nav-item role=presentation><button class="nav-link py-1 px-2" data-bs-target=#id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_3 data-bs-toggle=tab role=tab type=button>JSON-LD</button><li class=nav-item role=presentation><button class="nav-link py-1 px-2" data-bs-target=#id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_4 data-bs-toggle=tab role=tab type=button>N-Triples</button></ul><div class=tab-content><div class="tab-pane fade show active" id=id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_1 role=tabpanel><pre class="mb-0 small"><code>@prefix owl: &lt;http://www.w3.org/2002/07/owl#> .
+@prefix pro: &lt;http://purl.org/spar/pro/> .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: &lt;http://purl.org/linked-data/registry#> .
+@prefix tvc: &lt;http://www.essepuntato.it/2012/04/tvc/> .
+@prefix vann: &lt;http://purl.org/vocab/vann/> .
+@prefix vs: &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+pro:relatesToEntity a owl:ObjectProperty ;
+    rdfs:label "relates to"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:relatesToEntity :my-entity ;
+        pro:withRole pro:archivist .
+    """ ;
+    rdfs:comment "The relation between a time-indexed situation and an entity representing the context for that situation."@en ;
+    rdfs:domain pro:RoleInTime ;
+    rdfs:isDefinedBy pro: ;
+    rdfs:subPropertyOf tvc:withinContext ;
+    vs:term_status reg:statusStable .
+
+</code></pre></div><div class="tab-pane fade" id=id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_2 role=tabpanel><pre class="mb-0 small"><code>&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  &lt;rdf:Description rdf:about="http://purl.org/spar/pro/relatesToEntity">
+    &lt;rdfs:domain rdf:resource="http://purl.org/spar/pro/RoleInTime"/>
+    &lt;rdfs:subPropertyOf rdf:resource="http://www.essepuntato.it/2012/04/tvc/withinContext"/>
+    &lt;rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    &lt;rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pro/"/>
+    &lt;rdfs:comment xml:lang="en">The relation between a time-indexed situation and an entity representing the context for that situation.&lt;/rdfs:comment>
+    &lt;rdfs:label xml:lang="en">relates to&lt;/rdfs:label>
+    &lt;vann:example>
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:relatesToEntity :my-entity ;
+        pro:withRole pro:archivist .
+    &lt;/vann:example>
+    &lt;vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  &lt;/rdf:Description>
+&lt;/rdf:RDF>
+</code></pre></div><div class="tab-pane fade" id=id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_3 role=tabpanel><pre class="mb-0 small"><code>[
+  {
+    "@id": "http://purl.org/spar/pro/relatesToEntity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:relatesToEntity :my-entity ;\n        pro:withRole pro:archivist .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between a time-indexed situation and an entity representing the context for that situation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/pro/RoleInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "relates to"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  }
+]</code></pre></div><div class="tab-pane fade" id=id_b52d82545159275b8ac3d050f878a5b1_Relation_prov_4 role=tabpanel><pre class="mb-0 small"><code>&lt;http://purl.org/spar/pro/relatesToEntity> &lt;http://www.w3.org/2000/01/rdf-schema#domain> &lt;http://purl.org/spar/pro/RoleInTime> .
+&lt;http://purl.org/spar/pro/relatesToEntity> &lt;http://www.w3.org/2000/01/rdf-schema#subPropertyOf> &lt;http://www.essepuntato.it/2012/04/tvc/withinContext> .
+&lt;http://purl.org/spar/pro/relatesToEntity> &lt;http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:relatesToEntity :my-entity ;\n        pro:withRole pro:archivist .\n    " .
+&lt;http://purl.org/spar/pro/relatesToEntity> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#ObjectProperty> .
+&lt;http://purl.org/spar/pro/relatesToEntity> &lt;http://www.w3.org/2000/01/rdf-schema#isDefinedBy> &lt;http://purl.org/spar/pro/> .
+&lt;http://purl.org/spar/pro/relatesToEntity> &lt;http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a time-indexed situation and an entity representing the context for that situation."@en .
+&lt;http://purl.org/spar/pro/relatesToEntity> &lt;http://www.w3.org/2000/01/rdf-schema#label> "relates to"@en .
+&lt;http://purl.org/spar/pro/relatesToEntity> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> .
+</code></pre></div></div></div></div></div></div></div></div></div></div><div><a class="btn btn-outline-secondary" href=../../index.html>← Back to full documentation</a></div><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js></script><script src=https://cdn.jsdelivr.net/npm/marked/marked.min.js></script><script src=https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js></script><script>document.addEventListener("DOMContentLoaded", function() {
+
+                // Security hooks
+                DOMPurify.addHook('afterSanitizeAttributes', function(node) {
+                    if (node.tagName === 'A') {
+                        node.setAttribute('target', '_blank');
+                        node.setAttribute('rel', 'noopener noreferrer');
+                    }
+                    if (node.tagName === 'IMG') {
+                        node.setAttribute('class', 'img-fluid border rounded mt-2 mb-2');
+                    }
+                });
+
+                marked.use({
+                    gfm: true,
+                    breaks: false // So line breaks not be added
+                });
+
+                const mdElements = document.querySelectorAll('.render-markdown');
+
+                mdElements.forEach(function(el) {
+                    try {
+                        let rawText = el.dataset.md ?? el.textContent;
+
+                        // Rimuove solo righe vuote iniziali/finali, preserva l'indentazione delle righe
+                        rawText = rawText.replace(/^([ \t]*\n)+/, '').replace(/(\n[ \t]*)+$/, '');
+                        // 2. Strip ANY XML namespace prefix (Turns <html:div> into <div>, </xhtml:p> into </p>)
+                        let cleanText = rawText.replace(/<(\/?)[a-zA-Z0-9_-]+:([a-zA-Z0-9]+)/gi, '<$1$2');
+
+                        // 3. Strip xmlns attributes
+                        cleanText = cleanText.replace(/ xmlns(:[a-zA-Z0-9_-]+)?="[^"]*"/gi, '');
+
+                        let rawHTML = "";
+
+                        // 4. Smart Routing
+                        if (el.tagName === 'SPAN' || el.tagName === 'A') {
+                            rawHTML = marked.parseInline(cleanText);
+                        } else {
+                            rawHTML = marked.parse(cleanText);
+                        }
+
+                        // 5. Sanitize
+                        const cleanHTML = DOMPurify.sanitize(rawHTML, {
+                            ADD_TAGS: ['img'],
+                            ADD_ATTR: ['target', 'src', 'alt', 'title', 'class']
+                        });
+
+                        el.innerHTML = cleanHTML;
+                    } catch (e) {
+                        console.error("Error rendering markdown/html:", e);
+                    }
+                });
+            });
+
+            function exportGraph(mime, ext, navQs, resource) {
+                let qs = navQs;
+                if (resource) qs += "&resource=" + encodeURIComponent(resource);
+                fetch(`/extract?${qs}`, { headers: { "Accept": mime } })
+                    .then(r => { if (!r.ok) throw new Error(r.status); return r.blob(); })
+                    .then(blob => {
+                        const a = document.createElement("a");
+                        const slug = resource ? resource.split(/[#/]/).pop() : "ontology";
+                        a.href = URL.createObjectURL(blob);
+                        a.download = `${slug}.${ext}`;
+                        a.click();
+                        URL.revokeObjectURL(a.href);
+                    })
+                    .catch(e => alert("Export failed: " + e.message));
+            }
+
+            function toggleMetadataAccordion(event) {
+                event.preventDefault();   // blocca il comportamento nativo/bubbling incoerente
+                event.stopPropagation();  // evita il doppio-toggle se il summary lo cattura comunque
+                const details = event.currentTarget.closest('details.metadata-accordion');
+                if (details) details.open = !details.open;
+            }
+            
+            /* SEARCHBAR */
+            (function () {
+                const wrap = document.getElementById('toc-float-search');
+                const toggle = document.getElementById('toc-float-search-toggle');
+                const input = document.getElementById('toc-float-search-input');
+                const countEl = document.getElementById('toc-float-search-count');
+                const prevBtn = document.getElementById('toc-float-search-prev');
+                const nextBtn = document.getElementById('toc-float-search-next');
+                if (!wrap || !toggle || !input) return;
+
+                const cards = Array.from(document.querySelectorAll('.container-fluid .card[id]'));
+                let matches = [];
+                let current = -1;
+
+                function updateCount() {
+                    countEl.textContent = matches.length ? `${current + 1}/${matches.length}` : (input.value ? '0/0' : '');
+                }
+
+                function clearHighlight() {
+                    cards.forEach(c => c.classList.remove('toc-search-current'));
+                }
+
+                function goTo(index) {
+                    if (!matches.length) return;
+                    current = (index + matches.length) % matches.length;
+                    clearHighlight();
+                    const card = matches[current];
+                    card.classList.add('toc-search-current');
+                    card.scrollIntoView({ block: 'start' });
+                    updateCount();
+                }
+
+                function runSearch() {
+                    const q = input.value.trim().toLowerCase();
+                    clearHighlight();
+
+                    // Sidebar: dim + disable non-matching
+                    const sidebar = document.getElementById('toc-sidebar');
+                    if (sidebar) {
+                        sidebar.querySelectorAll('.toc-sidebar-section').forEach(section => {
+                            let anyMatch = false;
+                            section.querySelectorAll('.toc-sidebar-list li').forEach(li => {
+                                const match = !q || li.textContent.toLowerCase().includes(q);
+                                li.classList.toggle('toc-search-dim', !match);
+                                if (match) anyMatch = true;
+                            });
+                            section.classList.toggle('toc-search-dim', q.length > 0 && !anyMatch);
+                            if (q && anyMatch) section.open = true;
+                        });
+                    }
+
+                    if (!q) {
+                        matches = [];
+                        current = -1;
+                        updateCount();
+                        return;
+                    }
+                    matches = cards.filter(card => {
+                        const label = card.querySelector('.card-header h4')?.textContent.toLowerCase() || '';
+                        return label.includes(q);
+                    });
+                    current = -1;
+                    updateCount();
+                    if (matches.length) goTo(0);
+                }
+
+                toggle.addEventListener('click', function () {
+                    const open = wrap.classList.toggle('open');
+                    if (open) {
+                        input.focus();
+                    } else {
+                        input.value = '';
+                        runSearch();
+                    }
+                });
+
+                input.addEventListener('input', runSearch);
+
+                input.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (e.shiftKey) goTo(current - 1);
+                        else goTo(current + 1);
+                    }
+                });
+
+                prevBtn.addEventListener('click', () => goTo(current - 1));
+                nextBtn.addEventListener('click', () => goTo(current + 1));
+            })();</script></div>

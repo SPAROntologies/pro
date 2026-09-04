@@ -1,0 +1,21 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+pro:managing-editor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "managing editor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:managing-editor .
+    """ ;
+    rdfs:comment "The role of an editor who has management responsibility for the production of particular publication, usually acting under the authority of the Executive Editor and the Editor-in-Chief."@en ;
+    rdfs:isDefinedBy pro: ;
+    vs:term_status reg:statusStable .
+
