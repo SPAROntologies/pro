@@ -31,7 +31,7 @@ dc:title a owl:AnnotationProperty .
     dc:contributor "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)"^^xsd:string ;
     dc:creator "David Shotton (https://orcid.org/0000-0001-5506-523X)"^^xsd:string,
         "Silvio Peroni (https://orcid.org/0000-0003-0530-4305)"^^xsd:string ;
-    dc:date "2026-08-14"^^xsd:string ;
+    dc:date "2026-10-05"^^xsd:string ;
     dc:description """
 The **_Publishing Roles Ontology (PRO)_** is an ontology written in OWL 2 DL for the characterization of the roles of agents (people, corporate bodies and computational agents) in the publication process. 
 This ontology permits the characterisation of the roles of agents – people, corporate bodies and computational agents – in the publication process. 
@@ -193,29 +193,34 @@ What are the full affiliation details (role, target document, organization, and 
 
 """@en ;
     dc:title "The Publishing Roles Ontology (PRO)"@en ;
-    dcterms:bibliographicCitation "Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and Linked Data: describing roles, statuses, temporal and contextual extents. In Sack, H., Pellegrini, T. (Eds.), Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012): 9-16. New York, New York, USA: ACM. https://doi.org/10.1145/2362499.2362502. Open Access at: https://scholar.archive.org/work/tgbxvpuqbjbtvbj6mwt77gtx7m/access/wayback/http://speroni.web.cs.unibo.it/publications/peroni-2012-scholarly-publishing-linked.pdf" ;
+    dcterms:bibliographicCitation "Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and Linked Data: describing roles, statuses, temporal and contextual extents. In Sack, H., Pellegrini, T. (Eds.), Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012): 9-16. New York, New York, USA: ACM. https://doi.org/10.1145/2362499.2362502." ;
     dcterms:created "2013-12-18" ;
     dcterms:issued "2017-09-04" ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-08-14" ;
+    dcterms:modified "2026-10-05" ;
     dcterms:publisher <https://ror.org/00wb4mk85> ;
-    dcterms:source <https://github.com/sparontologies/pro/docs/cq.md> ;
+    dcterms:source <https://github.com/SPAROntologies/pro/blob/master/docs/cq.md> ;
     bibo:doi "https://doi.org/10.25504/FAIRsharing.3e88d6" ;
     bibo:status <http://purl.org/ontology/bibo/status/published> ;
     vann:preferredNamespacePrefix "pro"@en ;
     vann:preferredNamespaceUri "http://purl.org/spar/pro"@en ;
     rdfs:seeAlso <http://www.sparontologies.net/ontologies/pro> ;
-    owl:backwardCompatibleWith pro:2017-09-04 ;
+    owl:backwardCompatibleWith pro:2026-08-14 ;
     owl:imports <http://purl.org/spar/foaf>,
         <http://purl.org/spar/tvc> ;
-    owl:priorVersion pro:2017-09-04 ;
-    owl:versionIRI pro:2026-08-14 ;
-    owl:versionInfo "1.6.1"^^xsd:string ;
-    foaf:logo <https://github.com/SPAROntologies/pro/blob/master/spar.png> ;
+    owl:priorVersion pro:2026-08-14 ;
+    owl:versionIRI pro:2026-10-05 ;
+    owl:versionInfo "1.6.2"^^xsd:string ;
+    vann:changes <https://github.com/SPAROntologies/pro/blob/master/CHANGELOG.md> ;
+    foaf:logo <https://github.com/SPAROntologies/sparontologies.github.io/blob/master/static/img/spar/spar-logo.png> ;
     schema:codeRepository <https://github.com/SPAROntologies/pro> ;
     schema:image <https://github.com/SPAROntologies/pro/blob/master/docs/current/pro.png> ;
     schema:includedInDataCatalog <https://fairsharing.org/> ;
-    schema:keywords "bibliometrics"@en,
+    dc:language <http://id.loc.gov/vocabulary/iso639-2/eng> ;
+    schema:keywords 
+        "SPAR Ontologies"@en ,
+        "Semantic Publishing and Referencing Ontologies"@en ,
+        "bibliometrics"@en,
         "publishing roles"@en,
         "scholarly publishing"@en,
         "scientometrics"@en,
@@ -924,11 +929,14 @@ pro:withRole a owl:FunctionalProperty,
     :my-person-role a pro:RoleInTime ;
         pro:withRole pro:archivist .
     """ ;
-    rdfs:comment "An object property connecting an agent's role in time to a definition of the type of role held by this agent, specified as an instance of the class pro:Role or of one of its sub-classes."@en ;
+    rdfs:comment "The relation between an agent's role in time and a definition of the type of role held by this agent."@en ;
     rdfs:domain pro:RoleInTime ;
     rdfs:isDefinedBy pro: ;
     rdfs:range pro:Role ;
     rdfs:subPropertyOf tvc:withValue ;
+    skos:note """
+This is specified as an instance of the class `pro:Role` or of one of its sub-classes.
+    """@en ;
     vs:term_status reg:statusStable .
 
 tvc:atTime a owl:ObjectProperty ;
