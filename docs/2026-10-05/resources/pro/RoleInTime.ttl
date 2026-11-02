@@ -1,0 +1,51 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pro:RoleInTime a owl:Class ;
+    rdfs:label "role in time"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+    """ ;
+    rdfs:comment "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."@en ;
+    rdfs:isDefinedBy pro: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty tvc:atTime ;
+            owl:someValuesFrom ti:TimeInterval ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( ti:TimeInterval [ a owl:Restriction ;
+                                owl:allValuesFrom xsd:dateTime ;
+                                owl:onProperty ti:hasIntervalDate ] ) ] ;
+            owl:onProperty tvc:atTime ],
+        [ a owl:Restriction ;
+            owl:onProperty pro:withRole ;
+            owl:someValuesFrom pro:Role ],
+        [ a owl:Restriction ;
+            owl:onClass foaf:Agent ;
+            owl:onProperty pro:isHeldBy ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty pro:relatesToEntity ;
+            owl:someValuesFrom owl:Thing ],
+        tvc:ValueInTime ;
+    vs:term_status reg:statusStable ;
+    skos:note """A role in time describes always:
+- a particular role R
+- a particular agent A holding R
+- a particular time interval T in which A holds R (optional)
+- one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. At least one contextual entity should be specified for a particular role."""@en .
+

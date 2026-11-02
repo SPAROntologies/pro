@@ -1,0 +1,26 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+pro:relatesToDocument a owl:ObjectProperty ;
+    rdfs:label "relates to document"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:relatesToDocument :my-document .
+        pro:withRole pro:archivist .
+
+    :my-document a foaf:Document .
+    """ ;
+    rdfs:comment "The relation between a time-indexed situation describing a publishing role and a document that represents the context for that situation (e.g. relating the role of editor or peer-reviewer to the document being edited or peer-reviewed)."@en ;
+    rdfs:isDefinedBy pro: ;
+    rdfs:range foaf:Document ;
+    rdfs:subPropertyOf pro:relatesToEntity ;
+    vs:term_status reg:statusStable .
+

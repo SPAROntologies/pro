@@ -1,0 +1,24 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+pro:isPersonContextFor a owl:ObjectProperty ;
+    rdfs:label "is person context for"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+
+    :my-other-person a foaf:Person ;
+        pro:isPersonContextFor :my-person-role .
+    """ ;
+    rdfs:comment "The relation between a person and the role for which that person provides the context (e.g. relating a graduate student to the role of supervisor held by a faculty member)."@en ;
+    rdfs:isDefinedBy pro: ;
+    rdfs:subPropertyOf pro:isRelatedToRoleInTime ;
+    vs:term_status reg:statusStable .
+
