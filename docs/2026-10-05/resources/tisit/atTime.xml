@@ -6,8 +6,8 @@
   <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"/>
-    <rdfs:comment>A time interval during which a status is held by a document.</rdfs:comment>
     <rdfs:label xml:lang="en">at time</rdfs:label>
+    <rdfs:comment>A time interval during which a status is held by a document.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#"/>
   </rdf:Description>
 </rdf:RDF>

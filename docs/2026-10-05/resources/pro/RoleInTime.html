@@ -213,11 +213,11 @@ What are the full affiliation details (role, target document, organization, and 
     """ ;
         rdfs:comment "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."@en ;
         rdfs:isDefinedBy pro: ;
-        rdfs:subClassOf _:ne64009a37071456a9cda154ced4672f2b1,
-            _:ne64009a37071456a9cda154ced4672f2b2,
-            _:ne64009a37071456a9cda154ced4672f2b7,
-            _:ne64009a37071456a9cda154ced4672f2b8,
-            _:ne64009a37071456a9cda154ced4672f2b9,
+        rdfs:subClassOf _:n5663947a7e0241149de123ce2edbd522b1,
+            _:n5663947a7e0241149de123ce2edbd522b2,
+            _:n5663947a7e0241149de123ce2edbd522b7,
+            _:n5663947a7e0241149de123ce2edbd522b8,
+            _:n5663947a7e0241149de123ce2edbd522b9,
             tvc:ValueInTime ;
         vs:term_status reg:statusStable ;
         skos:note """A role in time describes always:
@@ -226,37 +226,37 @@ What are the full affiliation details (role, target document, organization, and 
 - a particular time interval T in which A holds R (optional)
 - one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. At least one contextual entity should be specified for a particular role."""@en .
 
-    _:ne64009a37071456a9cda154ced4672f2b1 a owl:Restriction ;
+    _:n5663947a7e0241149de123ce2edbd522b1 a owl:Restriction ;
         owl:onProperty tvc:atTime ;
         owl:someValuesFrom ti:TimeInterval .
 
-    _:ne64009a37071456a9cda154ced4672f2b2 a owl:Restriction ;
-        owl:allValuesFrom _:ne64009a37071456a9cda154ced4672f2b3 ;
+    _:n5663947a7e0241149de123ce2edbd522b2 a owl:Restriction ;
+        owl:allValuesFrom _:n5663947a7e0241149de123ce2edbd522b3 ;
         owl:onProperty tvc:atTime .
 
-    _:ne64009a37071456a9cda154ced4672f2b3 a owl:Class ;
-        owl:intersectionOf _:ne64009a37071456a9cda154ced4672f2b5 .
+    _:n5663947a7e0241149de123ce2edbd522b3 a owl:Class ;
+        owl:intersectionOf _:n5663947a7e0241149de123ce2edbd522b5 .
 
-    _:ne64009a37071456a9cda154ced4672f2b4 a owl:Restriction ;
+    _:n5663947a7e0241149de123ce2edbd522b4 a owl:Restriction ;
         owl:allValuesFrom xsd:dateTime ;
         owl:onProperty ti:hasIntervalDate .
 
-    _:ne64009a37071456a9cda154ced4672f2b5 rdf:first ti:TimeInterval ;
-        rdf:rest _:ne64009a37071456a9cda154ced4672f2b6 .
+    _:n5663947a7e0241149de123ce2edbd522b5 rdf:first ti:TimeInterval ;
+        rdf:rest _:n5663947a7e0241149de123ce2edbd522b6 .
 
-    _:ne64009a37071456a9cda154ced4672f2b6 rdf:first _:ne64009a37071456a9cda154ced4672f2b4 ;
+    _:n5663947a7e0241149de123ce2edbd522b6 rdf:first _:n5663947a7e0241149de123ce2edbd522b4 ;
         rdf:rest () .
 
-    _:ne64009a37071456a9cda154ced4672f2b7 a owl:Restriction ;
+    _:n5663947a7e0241149de123ce2edbd522b7 a owl:Restriction ;
         owl:onProperty pro:withRole ;
         owl:someValuesFrom pro:Role .
 
-    _:ne64009a37071456a9cda154ced4672f2b8 a owl:Restriction ;
+    _:n5663947a7e0241149de123ce2edbd522b8 a owl:Restriction ;
         owl:onClass foaf:Agent ;
         owl:onProperty pro:isHeldBy ;
         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
 
-    _:ne64009a37071456a9cda154ced4672f2b9 a owl:Restriction ;
+    _:n5663947a7e0241149de123ce2edbd522b9 a owl:Restriction ;
         owl:onProperty pro:relatesToEntity ;
         owl:someValuesFrom owl:Thing .
 }
@@ -293,22 +293,22 @@ What are the full affiliation details (role, target document, organization, and 
         ],
         "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
           {
-            "@id": "_:ne64009a37071456a9cda154ced4672f2b7"
-          },
-          {
-            "@id": "_:ne64009a37071456a9cda154ced4672f2b1"
-          },
-          {
-            "@id": "_:ne64009a37071456a9cda154ced4672f2b9"
-          },
-          {
-            "@id": "_:ne64009a37071456a9cda154ced4672f2b2"
-          },
-          {
             "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
           },
           {
-            "@id": "_:ne64009a37071456a9cda154ced4672f2b8"
+            "@id": "_:n5663947a7e0241149de123ce2edbd522b2"
+          },
+          {
+            "@id": "_:n5663947a7e0241149de123ce2edbd522b1"
+          },
+          {
+            "@id": "_:n5663947a7e0241149de123ce2edbd522b9"
+          },
+          {
+            "@id": "_:n5663947a7e0241149de123ce2edbd522b8"
+          },
+          {
+            "@id": "_:n5663947a7e0241149de123ce2edbd522b7"
           }
         ],
         "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -324,61 +324,13 @@ What are the full affiliation details (role, target document, organization, and 
         ]
       },
       {
-        "@id": "_:ne64009a37071456a9cda154ced4672f2b7",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://purl.org/spar/pro/withRole"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://purl.org/spar/pro/Role"
-          }
-        ]
-      },
-      {
-        "@id": "_:ne64009a37071456a9cda154ced4672f2b1",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
-          }
-        ]
-      },
-      {
-        "@id": "_:ne64009a37071456a9cda154ced4672f2b9",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://purl.org/spar/pro/relatesToEntity"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2002/07/owl#Thing"
-          }
-        ]
-      },
-      {
-        "@id": "_:ne64009a37071456a9cda154ced4672f2b2",
+        "@id": "_:n5663947a7e0241149de123ce2edbd522b2",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
         "http://www.w3.org/2002/07/owl#allValuesFrom": [
           {
-            "@id": "_:ne64009a37071456a9cda154ced4672f2b3"
+            "@id": "_:n5663947a7e0241149de123ce2edbd522b3"
           }
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
@@ -388,7 +340,7 @@ What are the full affiliation details (role, target document, organization, and 
         ]
       },
       {
-        "@id": "_:ne64009a37071456a9cda154ced4672f2b3",
+        "@id": "_:n5663947a7e0241149de123ce2edbd522b3",
         "@type": [
           "http://www.w3.org/2002/07/owl#Class"
         ],
@@ -399,14 +351,14 @@ What are the full affiliation details (role, target document, organization, and 
                 "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
               },
               {
-                "@id": "_:ne64009a37071456a9cda154ced4672f2b4"
+                "@id": "_:n5663947a7e0241149de123ce2edbd522b4"
               }
             ]
           }
         ]
       },
       {
-        "@id": "_:ne64009a37071456a9cda154ced4672f2b4",
+        "@id": "_:n5663947a7e0241149de123ce2edbd522b4",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -422,7 +374,39 @@ What are the full affiliation details (role, target document, organization, and 
         ]
       },
       {
-        "@id": "_:ne64009a37071456a9cda154ced4672f2b8",
+        "@id": "_:n5663947a7e0241149de123ce2edbd522b1",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
+          }
+        ]
+      },
+      {
+        "@id": "_:n5663947a7e0241149de123ce2edbd522b9",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://purl.org/spar/pro/relatesToEntity"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2002/07/owl#Thing"
+          }
+        ]
+      },
+      {
+        "@id": "_:n5663947a7e0241149de123ce2edbd522b8",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -442,48 +426,64 @@ What are the full affiliation details (role, target document, organization, and 
             "@value": "1"
           }
         ]
+      },
+      {
+        "@id": "_:n5663947a7e0241149de123ce2edbd522b7",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://purl.org/spar/pro/withRole"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://purl.org/spar/pro/Role"
+          }
+        ]
       }
     ],
     "@id": "http://purl.org/spar/pro"
   }
-]</code></pre></div><div class="tab-pane fade" id=id_28ff10d1cc5910d45298571ae5e613a0_Concept_prov_3 role=tabpanel><pre class="mb-0 small"><code>&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/spar/pro> .
-&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ne64009a37071456a9cda154ced4672f2b7 &lt;http://purl.org/spar/pro> .
-&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#comment> "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."@en &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b1 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://www.essepuntato.it/2012/04/tvc/atTime> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b2 &lt;http://www.w3.org/2002/07/owl#allValuesFrom> _:ne64009a37071456a9cda154ced4672f2b3 &lt;http://purl.org/spar/pro> .
-&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ne64009a37071456a9cda154ced4672f2b1 &lt;http://purl.org/spar/pro> .
-&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ne64009a37071456a9cda154ced4672f2b9 &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b4 &lt;http://www.w3.org/2002/07/owl#allValuesFrom> &lt;http://www.w3.org/2001/XMLSchema#dateTime> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> &lt;http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b8 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b7 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/spar/pro/withRole> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b4 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b3 &lt;http://www.w3.org/2002/07/owl#intersectionOf> _:ne64009a37071456a9cda154ced4672f2b5 &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b2 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://www.essepuntato.it/2012/04/tvc/atTime> &lt;http://purl.org/spar/pro> .
+]</code></pre></div><div class="tab-pane fade" id=id_28ff10d1cc5910d45298571ae5e613a0_Concept_prov_3 role=tabpanel><pre class="mb-0 small"><code>&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> &lt;http://www.essepuntato.it/2012/04/tvc/ValueInTime> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b8 &lt;http://www.w3.org/2002/07/owl#onClass> &lt;http://xmlns.com/foaf/0.1/Agent> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b4 &lt;http://www.w3.org/2002/07/owl#allValuesFrom> &lt;http://www.w3.org/2001/XMLSchema#dateTime> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b8 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
+&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b7 &lt;http://www.w3.org/2002/07/owl#someValuesFrom> &lt;http://purl.org/spar/pro/Role> &lt;http://purl.org/spar/pro> .
+&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n5663947a7e0241149de123ce2edbd522b2 &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n5663947a7e0241149de123ce2edbd522b4 &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b9 &lt;http://www.w3.org/2002/07/owl#someValuesFrom> &lt;http://www.w3.org/2002/07/owl#Thing> &lt;http://purl.org/spar/pro> .
+&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n5663947a7e0241149de123ce2edbd522b1 &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b1 &lt;http://www.w3.org/2002/07/owl#someValuesFrom> &lt;http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> &lt;http://purl.org/spar/pro> .
 &lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2004/02/skos/core#note> "A role in time describes always:\n- a particular role R\n- a particular agent A holding R\n- a particular time interval T in which A holds R (optional)\n- one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. At least one contextual entity should be specified for a particular role."@en &lt;http://purl.org/spar/pro> .
-&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n5663947a7e0241149de123ce2edbd522b6 &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b4 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> &lt;http://purl.org/spar/pro> .
 &lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#label> "role in time"@en &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b8 &lt;http://www.w3.org/2002/07/owl#onClass> &lt;http://xmlns.com/foaf/0.1/Agent> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b8 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/spar/pro/isHeldBy> &lt;http://purl.org/spar/pro> .
-&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ne64009a37071456a9cda154ced4672f2b2 &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:ne64009a37071456a9cda154ced4672f2b6 &lt;http://purl.org/spar/pro> .
-&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> &lt;http://purl.org/spar/pro> .
 &lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#isDefinedBy> &lt;http://purl.org/spar/pro/> &lt;http://purl.org/spar/pro> .
-&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> &lt;http://www.essepuntato.it/2012/04/tvc/ValueInTime> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b8 &lt;http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^&lt;http://www.w3.org/2001/XMLSchema#nonNegativeInteger> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b1 &lt;http://www.w3.org/2002/07/owl#someValuesFrom> &lt;http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b9 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/spar/pro/relatesToEntity> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
-&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ne64009a37071456a9cda154ced4672f2b8 &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b9 &lt;http://www.w3.org/2002/07/owl#someValuesFrom> &lt;http://www.w3.org/2002/07/owl#Thing> &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:ne64009a37071456a9cda154ced4672f2b4 &lt;http://purl.org/spar/pro> .
-_:ne64009a37071456a9cda154ced4672f2b7 &lt;http://www.w3.org/2002/07/owl#someValuesFrom> &lt;http://purl.org/spar/pro/Role> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b1 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://www.essepuntato.it/2012/04/tvc/atTime> &lt;http://purl.org/spar/pro> .
+&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#comment> "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."@en &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/spar/pro> .
+&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> &lt;http://purl.org/spar/pro> .
+&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n5663947a7e0241149de123ce2edbd522b9 &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
+&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b2 &lt;http://www.w3.org/2002/07/owl#allValuesFrom> _:n5663947a7e0241149de123ce2edbd522b3 &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b8 &lt;http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^&lt;http://www.w3.org/2001/XMLSchema#nonNegativeInteger> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b9 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/spar/pro/relatesToEntity> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b2 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://www.essepuntato.it/2012/04/tvc/atTime> &lt;http://purl.org/spar/pro> .
+&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n5663947a7e0241149de123ce2edbd522b8 &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b8 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/spar/pro/isHeldBy> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/pro> .
+&lt;http://purl.org/spar/pro/RoleInTime> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n5663947a7e0241149de123ce2edbd522b7 &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b7 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/spar/pro/withRole> &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b3 &lt;http://www.w3.org/2002/07/owl#intersectionOf> _:n5663947a7e0241149de123ce2edbd522b5 &lt;http://purl.org/spar/pro> .
+_:n5663947a7e0241149de123ce2edbd522b5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> &lt;http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> &lt;http://purl.org/spar/pro> .
 
 </code></pre></div></div></div></div></div></div></div></div></div></div><div><a class="btn btn-outline-secondary" href=../../pro.html>← Back to full documentation</a></div><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js></script><script src=https://cdn.jsdelivr.net/npm/marked/marked.min.js></script><script src=https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js></script><script>document.addEventListener("DOMContentLoaded", function() {
 

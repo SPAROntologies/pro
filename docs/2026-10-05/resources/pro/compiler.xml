@@ -6,10 +6,11 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/spar/pro/compiler">
+    <rdfs:label xml:lang="en">compiler</rdfs:label>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdfs:comment xml:lang="en">The role an agent has of compiling a number of items into a compilation or collection.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://purl.org/spar/pro/PublishingRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pro/"/>
     <vann:example>
     :my-person
@@ -18,6 +19,5 @@
     :my-person-role a pro:RoleInTime ;
         pro:withRole pro:compiler .
     </vann:example>
-    <rdfs:label xml:lang="en">compiler</rdfs:label>
   </rdf:Description>
 </rdf:RDF>
