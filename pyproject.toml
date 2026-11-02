@@ -1,11 +1,7 @@
 [project]
 name = "pro"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.6.2"
+description = "The Publishing Roles Ontology (PRO) is an ontology for the characterisation of the roles of agents – people, corporate bodies and computational agents in the publication process. These agents can be, e.g. authors, editors, reviewers, publishers or librarians."
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "codespell>=2.4.3",
-    "rdflib>=7.6.0",
-    "requests>=2.34.2",
-]
+dependencies = []
