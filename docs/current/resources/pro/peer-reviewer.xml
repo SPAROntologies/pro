@@ -6,6 +6,9 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/spar/pro/peer-reviewer">
+    <rdfs:comment xml:lang="en">The role of an academic peer in evaluating a manuscript submitted by an author for publication as a journal article on behalf of the journal editor, or a conference paper on behalf of the conference programme committee, and in deciding whether it is suitable for acceptance, usually subject to revisions suggested by the peer-reviewer.</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/spar/pro/PublishingRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <vann:example>
     :my-person
         pro:holdsRoleInTime :my-person-role .
@@ -13,12 +16,9 @@
     :my-person-role a pro:RoleInTime ;
         pro:withRole pro:peer-reviewer .
     </vann:example>
-    <rdfs:seeAlso rdf:resource="http://purl.org/spar/pro/reviewer"/>
-    <rdfs:label xml:lang="en">peer reviewer</rdfs:label>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://purl.org/spar/pro/PublishingRole"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pro/"/>
-    <rdfs:comment xml:lang="en">The role of an academic peer in evaluating a manuscript submitted by an author for publication as a journal article on behalf of the journal editor, or a conference paper on behalf of the conference programme committee, and in deciding whether it is suitable for acceptance, usually subject to revisions suggested by the peer-reviewer.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://purl.org/spar/pro/reviewer"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">peer reviewer</rdfs:label>
   </rdf:Description>
 </rdf:RDF>
