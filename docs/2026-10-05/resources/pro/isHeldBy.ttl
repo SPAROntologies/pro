@@ -1,0 +1,25 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+pro:isHeldBy a owl:ObjectProperty ;
+    rdfs:label "is role held by"@en ;
+    vann:example """
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist ;
+        pro:isHeldBy :my-person .
+
+    :my-person a foaf:Agent .
+    """ ;
+    rdfs:comment "The relation between a role in time that an agent holds, or a contribution situation that an agent makes, and that agent."@en ;
+    rdfs:domain pro:RoleInTime ;
+    rdfs:isDefinedBy pro: ;
+    rdfs:range foaf:Agent ;
+    rdfs:subPropertyOf tisit:forEntity ;
+    vs:term_status reg:statusStable .
+

@@ -2,8 +2,8 @@
   {
     "@id": "http://purl.org/spar/pro/withRole",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+      "http://www.w3.org/2002/07/owl#FunctionalProperty",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://purl.org/vocab/vann/example": [
       {
@@ -13,7 +13,7 @@
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An object property connecting an agent's role in time to a definition of the type of role held by this agent, specified as an instance of the class pro:Role or of one of its sub-classes."
+        "@value": "The relation between an agent's role in time and a definition of the type of role held by this agent."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -45,6 +45,12 @@
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "\nThis is specified as an instance of the class `pro:Role` or of one of its sub-classes.\n    "
       }
     ]
   }

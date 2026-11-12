@@ -2,6 +2,7 @@
 @prefix pro: <http://purl.org/spar/pro/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
@@ -16,10 +17,13 @@ pro:withRole a owl:FunctionalProperty,
     :my-person-role a pro:RoleInTime ;
         pro:withRole pro:archivist .
     """ ;
-    rdfs:comment "An object property connecting an agent's role in time to a definition of the type of role held by this agent, specified as an instance of the class pro:Role or of one of its sub-classes."@en ;
+    rdfs:comment "The relation between an agent's role in time and a definition of the type of role held by this agent."@en ;
     rdfs:domain pro:RoleInTime ;
     rdfs:isDefinedBy pro: ;
     rdfs:range pro:Role ;
     rdfs:subPropertyOf tvc:withValue ;
-    vs:term_status reg:statusStable .
+    vs:term_status reg:statusStable ;
+    skos:note """
+This is specified as an instance of the class `pro:Role` or of one of its sub-classes.
+    """@en .
 
