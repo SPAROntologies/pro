@@ -16,6 +16,6 @@ pro:contributor a pro:PublishingRole,
         pro:withRole pro:contributor .
     """ ;
     rdfs:comment "The role an agent has of contribution of some material (for example an article to a magazine)."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

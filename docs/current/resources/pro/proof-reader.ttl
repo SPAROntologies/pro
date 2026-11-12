@@ -16,6 +16,6 @@ pro:proof-reader a pro:PublishingRole,
         pro:withRole pro:proof-reader .
     """ ;
     rdfs:comment "The role of a person who reads the proofs of documents to detect any errors prior to final publication."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

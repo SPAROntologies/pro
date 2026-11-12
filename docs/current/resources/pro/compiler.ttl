@@ -16,6 +16,6 @@ pro:compiler a pro:PublishingRole,
         pro:withRole pro:compiler .
     """ ;
     rdfs:comment "The role an agent has of compiling a number of items into a compilation or collection."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

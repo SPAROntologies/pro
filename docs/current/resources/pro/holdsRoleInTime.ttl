@@ -19,7 +19,7 @@ pro:holdsRoleInTime a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between an agent and a role that the agent holds."@en ;
     rdfs:domain foaf:Agent ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     rdfs:range pro:RoleInTime ;
     rdfs:subPropertyOf tvc:hasValue ;
     owl:inverseOf pro:isHeldBy ;

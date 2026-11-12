@@ -16,6 +16,6 @@ pro:biographer a pro:PublishingRole,
         pro:withRole pro:biographer .
     """ ;
     rdfs:comment "The role of an author who writes biographies."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

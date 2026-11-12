@@ -17,7 +17,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.org/spar/pro/"
+        "@id": "http://purl.org/spar/pro"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -31,19 +31,19 @@
         "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
       },
       {
-        "@id": "_:n5663947a7e0241149de123ce2edbd522b2"
+        "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b7"
       },
       {
-        "@id": "_:n5663947a7e0241149de123ce2edbd522b1"
+        "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b8"
       },
       {
-        "@id": "_:n5663947a7e0241149de123ce2edbd522b9"
+        "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b2"
       },
       {
-        "@id": "_:n5663947a7e0241149de123ce2edbd522b8"
+        "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b1"
       },
       {
-        "@id": "_:n5663947a7e0241149de123ce2edbd522b7"
+        "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b9"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -59,89 +59,23 @@
     ]
   },
   {
-    "@id": "_:n5663947a7e0241149de123ce2edbd522b2",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "_:n5663947a7e0241149de123ce2edbd522b3"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
-      }
-    ]
-  },
-  {
-    "@id": "_:n5663947a7e0241149de123ce2edbd522b3",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#intersectionOf": [
-      {
-        "@list": [
-          {
-            "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
-          },
-          {
-            "@id": "_:n5663947a7e0241149de123ce2edbd522b4"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "_:n5663947a7e0241149de123ce2edbd522b4",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate"
-      }
-    ]
-  },
-  {
-    "@id": "_:n5663947a7e0241149de123ce2edbd522b1",
+    "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b7",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+        "@id": "http://purl.org/spar/pro/withRole"
       }
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
+        "@id": "http://purl.org/spar/pro/Role"
       }
     ]
   },
   {
-    "@id": "_:n5663947a7e0241149de123ce2edbd522b9",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/spar/pro/relatesToEntity"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2002/07/owl#Thing"
-      }
-    ]
-  },
-  {
-    "@id": "_:n5663947a7e0241149de123ce2edbd522b8",
+    "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b8",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -163,18 +97,84 @@
     ]
   },
   {
-    "@id": "_:n5663947a7e0241149de123ce2edbd522b7",
+    "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b3"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b3",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
+          },
+          {
+            "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b1",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://purl.org/spar/pro/withRole"
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
       }
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "http://purl.org/spar/pro/Role"
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc8060be046b34b1581ab352f1a5d4fa1b9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/pro/relatesToEntity"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
       }
     ]
   }

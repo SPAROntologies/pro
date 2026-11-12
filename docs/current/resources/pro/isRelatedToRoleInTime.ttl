@@ -19,7 +19,7 @@ pro:isRelatedToRoleInTime a owl:ObjectProperty ;
         pro:isRelatedToRoleInTime :my-person-role .
     """ ;
     rdfs:comment "The relation between an entity and the role for which that entity provides the context."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     rdfs:range pro:RoleInTime ;
     rdfs:subPropertyOf tisit:hasTimeIndexedSetting ;
     owl:inverseOf pro:relatesToEntity ;

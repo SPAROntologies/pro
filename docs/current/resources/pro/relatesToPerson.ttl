@@ -19,7 +19,7 @@ pro:relatesToPerson a owl:ObjectProperty ;
     :my-other-person a foaf:Person .
     """ ;
     rdfs:comment "The relation between a time-indexed situation and a person who represents the context for that situation (e.g. relating the role of an supervisor with respect to the graduate student being supervised)."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     rdfs:range foaf:Person ;
     rdfs:subPropertyOf pro:relatesToEntity ;
     vs:term_status reg:statusStable .

@@ -16,6 +16,6 @@ pro:senior-editor a pro:PublishingRole,
         pro:withRole pro:senior-editor .
     """ ;
     rdfs:comment "The role of the person who has senior responsibility for the editorial operations and policies for a particular publication, usually acting under the authority of the Editor-in-Chief."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

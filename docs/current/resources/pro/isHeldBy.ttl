@@ -18,7 +18,7 @@ pro:isHeldBy a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between a role in time that an agent holds, or a contribution situation that an agent makes, and that agent."@en ;
     rdfs:domain pro:RoleInTime ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     rdfs:range foaf:Agent ;
     rdfs:subPropertyOf tisit:forEntity ;
     vs:term_status reg:statusStable .

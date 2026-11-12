@@ -20,7 +20,7 @@ pro:isOrganizationContextFor a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between an organization and the role for which that organization provides the context (e.g. relating an institution to the role of member held by a person)."@en ;
     rdfs:domain foaf:Organization ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     rdfs:subPropertyOf pro:isRelatedToRoleInTime ;
     owl:inverseOf pro:relatesToOrganization ;
     vs:term_status reg:statusStable .

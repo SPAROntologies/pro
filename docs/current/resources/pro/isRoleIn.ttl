@@ -19,7 +19,7 @@ pro:isRoleIn a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between the definition of a specific role and the situation of an agent holding that role."@en ;
     rdfs:domain pro:Role ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     rdfs:range pro:RoleInTime ;
     rdfs:subPropertyOf tisit:hasTimeIndexedSetting ;
     owl:inverseOf pro:withRole ;

@@ -16,6 +16,6 @@ pro:reviewer a pro:PublishingRole,
         pro:withRole pro:reviewer .
     """ ;
     rdfs:comment "The role of a person who subjects a publication to a written review and critical analysis of its content, scope and quality."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

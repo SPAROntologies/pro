@@ -16,6 +16,6 @@ pro:deputy-editor a pro:PublishingRole,
         pro:withRole pro:deputy-editor .
     """ ;
     rdfs:comment "The role of a senior editor of a publication who deputizes for the Editor-in-Chief."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

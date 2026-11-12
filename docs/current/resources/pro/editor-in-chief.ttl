@@ -16,6 +16,6 @@ pro:editor-in-chief a pro:PublishingRole,
         pro:withRole pro:editor-in-chief .
     """ ;
     rdfs:comment "The role of the person who has final responsibility for the editorial operations and policies for a particular publication."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

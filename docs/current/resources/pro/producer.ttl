@@ -16,6 +16,6 @@ pro:producer a pro:PublishingRole,
         pro:withRole pro:producer .
     """ ;
     rdfs:comment "The role of someone who acts as a producer."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

@@ -17,7 +17,7 @@ pro:archivist a pro:PublishingRole,
         pro:withRole pro:archivist .
     """ ;
     rdfs:comment "The role of a person who manages, undertakes and supervises the work of an archive."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable ;
     skos:note """
 This term is typically used with respect to a document archive, whereas the term data curator is used with respect to a data archive.    

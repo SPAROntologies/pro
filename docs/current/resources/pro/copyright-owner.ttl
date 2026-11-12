@@ -16,6 +16,6 @@ pro:copyright-owner a pro:PublishingRole,
         pro:withRole pro:copyright-owner .
     """ ;
     rdfs:comment "The role of owning the copyright to a publication, usually held by the author or by the publishing house that publishes the author's work."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

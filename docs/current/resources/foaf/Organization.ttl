@@ -5,6 +5,6 @@
 foaf:Organization a owl:Class ;
     rdfs:label "organization"@en ;
     rdfs:comment "An organization."@en ;
-    rdfs:isDefinedBy foaf: ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
     rdfs:subClassOf foaf:Agent .
 

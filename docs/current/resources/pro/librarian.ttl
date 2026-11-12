@@ -16,6 +16,6 @@ pro:librarian a pro:PublishingRole,
         pro:withRole pro:librarian .
     """ ;
     rdfs:comment "The role of a person who manages, undertakes and supervises the work of a library."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 
