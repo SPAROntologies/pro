@@ -16,6 +16,6 @@ pro:managing-editor a pro:PublishingRole,
         pro:withRole pro:managing-editor .
     """ ;
     rdfs:comment "The role of an editor who has management responsibility for the production of particular publication, usually acting under the authority of the Executive Editor and the Editor-in-Chief."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

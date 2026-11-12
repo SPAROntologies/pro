@@ -18,7 +18,7 @@ pro:isPersonContextFor a owl:ObjectProperty ;
         pro:isPersonContextFor :my-person-role .
     """ ;
     rdfs:comment "The relation between a person and the role for which that person provides the context (e.g. relating a graduate student to the role of supervisor held by a faculty member)."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     rdfs:subPropertyOf pro:isRelatedToRoleInTime ;
     vs:term_status reg:statusStable .
 

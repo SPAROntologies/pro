@@ -16,6 +16,6 @@ pro:commissioning-editor a pro:PublishingRole,
         pro:withRole pro:commissioning-editor .
     """ ;
     rdfs:comment "The role of an editor who actively commissions authors to write books to be published by the publishing house for which the commissioning editor works."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

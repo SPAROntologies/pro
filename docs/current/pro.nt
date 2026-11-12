@@ -1,526 +1,551 @@
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:n5663947a7e0241149de123ce2edbd522b8 <http://www.w3.org/2002/07/owl#onClass> <http://xmlns.com/foaf/0.1/Agent> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
-<http://purl.org/spar/pro/withRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n5663947a7e0241149de123ce2edbd522b2 .
-<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/contributor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role an agent has of contribution of some material (for example an article to a magazine)."@en .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
-<http://purl.org/spar/pro/deputy-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
-<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/senior-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:senior-editor .\n    " .
-<http://purl.org/spar/pro/editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:editor .\n    " .
-<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a time-indexed situation and an entity involved in it."@en .
-<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#comment> "A person."@en .
-<http://purl.org/spar/pro/author> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/producer> <http://www.w3.org/2000/01/rdf-schema#label> "producer"@en .
-<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a time-indexed situation and an organization that represents the context for that situation (e.g. relating the role of member to the institution of which that person is a member)."@en .
-<http://purl.org/spar/pro/compiler> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:compiler .\n    " .
-<http://purl.org/spar/pro> <http://purl.org/dc/terms/publisher> <https://ror.org/00wb4mk85> .
-<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2004/02/skos/core#note> "\nThis is done via the indirection:\n\n    foaf:Agent pro:holdsRoleInTime [ a pro:RoleInTime ; \n                                     pro:withRole pro:Role ] .  \n\nThe ontology permits one to specify the time period over which a role is held, and the other contextual entities to which that agent's role relates.\n    "@en .
-<http://purl.org/spar/pro/reader> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who reads publications."@en .
-<http://purl.org/spar/pro/series-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/withRole> <http://www.w3.org/2004/02/skos/core#note> "\nThis is specified as an instance of the class `pro:Role` or of one of its sub-classes.\n    "@en .
-<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/printer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/translator> <http://www.w3.org/2000/01/rdf-schema#label> "translator"@en .
-<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/Role> <http://www.w3.org/2000/01/rdf-schema#comment> "A role an agent may have. Individual members of this class or its sub-classes are used to specify particular roles."@en .
-<http://purl.org/spar/pro> <http://purl.org/vocab/vann/changes> <https://github.com/SPAROntologies/pro/blob/master/CHANGELOG.md> .
-_:n5663947a7e0241149de123ce2edbd522b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
-<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> <http://www.w3.org/2000/01/rdf-schema#label> "at time"@en .
-_:n5663947a7e0241149de123ce2edbd522b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
-_:n5663947a7e0241149de123ce2edbd522b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n5663947a7e0241149de123ce2edbd522b4 .
-<http://purl.org/spar/pro/journalist> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro> <https://schema.org/keywords> "bibliometrics"@en .
-<http://purl.org/spar/pro/compiler> <http://www.w3.org/2000/01/rdf-schema#label> "compiler"@en .
-<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/biographer> <http://www.w3.org/2000/01/rdf-schema#label> "biographer"@en .
-<http://purl.org/spar/pro/illustrator> <http://www.w3.org/2000/01/rdf-schema#label> "illustrator"@en .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#label> "role in time"@en .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> <http://www.w3.org/2000/01/rdf-schema#label> "has interval date"@en .
-<http://purl.org/spar/pro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://purl.org/spar/pro/Role> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    pro:archivist a pro:Role .\n    " .
-<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-_:n5663947a7e0241149de123ce2edbd522b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://purl.org/spar/pro/reader> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:reader .\n    " .
-<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#comment> "A role an agent may have with respect to the publishing process."@en .
-<http://purl.org/spar/pro/printer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> <http://www.w3.org/2000/01/rdf-schema#label> "for entity"@en .
-<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://purl.org/spar/pro/producer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2000/01/rdf-schema#label> "ghost writer"@en .
-<http://purl.org/spar/pro> <https://schema.org/codeRepository> <https://github.com/SPAROntologies/pro> .
-<http://purl.org/spar/pro/holdsRoleInTime> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
-<http://purl.org/spar/pro/printer> <http://www.w3.org/2000/01/rdf-schema#label> "printer"@en .
-<http://purl.org/spar/pro/illustrator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2004/02/skos/core#note> "Individual members of this class are used to specify particular roles."@en .
-<http://purl.org/spar/pro/reader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#label> "is related to role in time"@en .
-<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/spar/tvc> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an entity and a time-indexed situation it is involved in."@en .
-<http://purl.org/spar/pro/Role> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#backwardCompatibleWith> <http://purl.org/spar/pro/2026-08-14> .
-<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/relatesToEntity> .
-<http://purl.org/spar/pro/biographer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an author who writes biographies."@en .
-<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#label> "publishing role"@en .
-<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/2000/01/rdf-schema#label> "author's agent"@en .
-<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/producer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/biographer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:biographer .\n    " .
-_:n5663947a7e0241149de123ce2edbd522b2 <http://www.w3.org/2002/07/owl#allValuesFrom> _:n5663947a7e0241149de123ce2edbd522b3 .
-_:n5663947a7e0241149de123ce2edbd522b8 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an entity and a value in time situation."@en .
-<http://purl.org/spar/pro/producer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/deputy-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/2000/01/rdf-schema#label> "peer reviewer"@en .
-<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro> <http://www.w3.org/2000/01/rdf-schema#label> "Publishing Roles Ontology (PRO)"@en .
-<http://purl.org/spar/pro/isPersonContextFor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    :my-other-person a foaf:Person ;\n        pro:isPersonContextFor :my-person-role .\n    " .
-<http://purl.org/spar/pro/publisher> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person or an organization that published material, or of a publisher's employee who has responsibility for such publications."@en .
-<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/reviewer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/2000/01/rdf-schema#label> "guest editor"@en .
-<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/relatesToEntity> .
-<http://purl.org/spar/pro/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/proof-reader> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:proof-reader .\n    " .
-<http://purl.org/spar/pro/distributor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:distributor .\n    " .
-<http://purl.org/spar/pro/distributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#label> "holds role in time"@en .
-_:n5663947a7e0241149de123ce2edbd522b9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
-<http://purl.org/spar/pro/author> <http://www.w3.org/2000/01/rdf-schema#label> "author"@en .
-<http://purl.org/spar/pro/archivist> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
-_:n5663947a7e0241149de123ce2edbd522b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://purl.org/spar/pro/critic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#label> "is role in"@en .
-<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/pro/Role> .
-<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/pro/RoleInTime> .
-<http://xmlns.com/foaf/0.1/Document> <http://www.w3.org/2000/01/rdf-schema#comment> "An abstract class defining any kinds of publishing work."@en .
-<http://purl.org/spar/pro/reviewer> <http://www.w3.org/2000/01/rdf-schema#label> "reviewer"@en .
-<http://purl.org/spar/pro> <http://purl.org/vocab/vann/preferredNamespacePrefix> "pro"@en .
-<http://purl.org/spar/pro/translator> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:translator .\n    " .
-<http://purl.org/spar/pro/translator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/2000/01/rdf-schema#label> "copy editor"@en .
-<http://purl.org/spar/pro/compiler> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> <http://www.w3.org/2000/01/rdf-schema#label> "has time indexed setting"@en .
-<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/reviewer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "relates to organization"@en .
-<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#label> "person"@en .
-<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/2000/01/rdf-schema#label> "managing editor"@en .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n5663947a7e0241149de123ce2edbd522b7 .
-_:n5663947a7e0241149de123ce2edbd522b7 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/pro/withRole> .
-<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/relatesToDocument> .
-<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a person and the role for which that person provides the context (e.g. relating a graduate student to the role of supervisor held by a faculty member)."@en .
-<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
-<http://purl.org/spar/pro/contributor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/biographer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-_:n5663947a7e0241149de123ce2edbd522b3 <http://www.w3.org/2002/07/owl#intersectionOf> _:n5663947a7e0241149de123ce2edbd522b5 .
-<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/isRelatedToRoleInTime> .
-<http://purl.org/spar/pro/distributor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<http://purl.org/spar/pro/compiler> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/2000/01/rdf-schema#label> "has interval start date"@en .
-<http://purl.org/spar/pro/series-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/compiler> <http://www.w3.org/2000/01/rdf-schema#comment> "The role an agent has of compiling a number of items into a compilation or collection."@en .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Document> .
-<http://purl.org/spar/pro/production-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an editor who takes responsibility for the passage of a document through the various stages of the publication workflow from the submitted manuscript to the final publication, including responsibility for scheduling and budget."@en .
-<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
-<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.essepuntato.it/2012/04/tvc/withValue> .
-<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The particular temporal instant or time period in which the situation takes place."@en .
-<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/pro/Role> .
-<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    :my-entity\n        pro:isRelatedToRoleInTime :my-person-role .\n    " .
-<http://purl.org/spar/pro/critic> <http://www.w3.org/2000/01/rdf-schema#label> "critic"@en .
-<http://purl.org/spar/pro/series-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:series-editor .\n    " .
-<http://purl.org/spar/pro/RoleInTime> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
-_:n5663947a7e0241149de123ce2edbd522b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://purl.org/spar/pro> <https://schema.org/keywords> "semantic publishing"@en .
-<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#label> "with role"@en .
-<http://purl.org/spar/pro> <http://xmlns.com/foaf/0.1/logo> <https://github.com/SPAROntologies/sparontologies.github.io/blob/master/static/img/spar/spar-logo.png> .
-<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an agent and a role that the agent holds."@en .
-<http://purl.org/spar/pro/illustrator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between the definition of a specific role and the situation of an agent holding that role."@en .
-<http://purl.org/spar/pro/reader> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/series-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of the person who has editorial responsibility for publication series, for example a book series."@en .
-<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/biographer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/2000/01/rdf-schema#label> "proof reader"@en .
-<http://purl.org/spar/pro/critic> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an author who writes evaluations and criticisms of, for example, plays or other works of art."@en .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
-<http://purl.org/spar/pro/reviewer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who subjects a publication to a written review and critical analysis of its content, scope and quality."@en .
-<http://www.w3.org/2000/01/rdf-schema#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://purl.org/spar/pro/printer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-_:n5663947a7e0241149de123ce2edbd522b4 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#dateTime> .
-_:n5663947a7e0241149de123ce2edbd522b7 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spar/pro/Role> .
-<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> .
-<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n5663947a7e0241149de123ce2edbd522b1 .
-<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/2000/01/rdf-schema#label> "with value"@en .
-<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of owning the copyright to a publication, usually held by the author or by the publishing house that publishes the author's work."@en .
-<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an academic peer in evaluating a manuscript submitted by an author for publication as a journal article on behalf of the journal editor, or a conference paper on behalf of the conference programme committee, and in deciding whether it is suitable for acceptance, usually subject to revisions suggested by the peer-reviewer."@en .
-<http://purl.org/spar/pro/editor-in-chief> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:editor-in-chief .\n    " .
-<http://purl.org/spar/pro/archivist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
-<http://purl.org/spar/pro/contributor> <http://www.w3.org/2000/01/rdf-schema#label> "contributor"@en .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/producer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:producer .\n    " .
-<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/spar/pro/2026-10-05> .
-<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
-<http://purl.org/spar/pro/ghost-writer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:ghost-writer .\n    " .
-<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> .
-_:n5663947a7e0241149de123ce2edbd522b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n5663947a7e0241149de123ce2edbd522b8 .
-<http://purl.org/dc/elements/1.1/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2000/01/rdf-schema#label> "is organization context for"@it .
-<http://purl.org/spar/pro/production-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/deputy-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a senior editor of a publication who deputizes for the Editor-in-Chief."@en .
-<http://purl.org/spar/pro/critic> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/journalist> <http://www.w3.org/2000/01/rdf-schema#label> "journalist"@en .
-<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a time-indexed situation describing a publishing role and a document that represents the context for that situation (e.g. relating the role of editor or peer-reviewer to the document being edited or peer-reviewed)."@en .
-<http://purl.org/spar/pro> <https://schema.org/keywords> "publishing roles"@en .
-<http://purl.org/spar/pro> <http://purl.org/dc/terms/bibliographicCitation> "Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and Linked Data: describing roles, statuses, temporal and contextual extents. In Sack, H., Pellegrini, T. (Eds.), Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012): 9-16. New York, New York, USA: ACM. https://doi.org/10.1145/2362499.2362502." .
-<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/producer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/translator> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an agent that translates a document into another language."@en .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
-<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/translator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/production-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:production-editor .\n    " .
-<http://purl.org/spar/pro/relatesToOrganization> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:relatesToOrganization :my-organization .\n        pro:withRole pro:archivist .\n\n    :my-organization a foaf:Organization .\n    " .
-<http://purl.org/spar/pro/commissioning-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:commissioning-editor .\n    " .
-<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
-<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#label> "is document context for"@en .
-<http://purl.org/spar/pro/peer-reviewer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:peer-reviewer .\n    " .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/deputy-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:deputy-editor .\n    " .
-<http://purl.org/spar/pro/archivist> <http://www.w3.org/2000/01/rdf-schema#label> "archivist"@en .
-<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization."@en .
-<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an editor who undertakes alterations to the text of a document submitted for publication to improve the formatting, style and accuracy of text, or to bring the text into the house style of the publisher (e.g. Americanization of British spelling), without intentionally altering the substance or meaning of the text."@en .
-<http://purl.org/spar/pro/archivist> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-_:n5663947a7e0241149de123ce2edbd522b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://purl.org/spar/pro/blogger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/pro/RoleInTime> .
-<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/2000/01/rdf-schema#label> "editor-in-chief"@en .
-<http://purl.org/spar/pro/compiler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/production-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
-_:n5663947a7e0241149de123ce2edbd522b9 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/pro/relatesToEntity> .
-<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Organization> .
-_:n5663947a7e0241149de123ce2edbd522b2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.essepuntato.it/2012/04/tvc/atTime> .
-<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://purl.org/spar/pro/series-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an entity and the role for which that entity provides the context."@en .
-<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."@en .
-<http://purl.org/spar/pro/copy-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:copy-editor .\n    " .
-<http://purl.org/spar/pro/Role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/spar/pro/editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/reviewer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/isRelatedToRoleInTime> .
-<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a professional writer who assists an aspiring author lacking authorship skills to write a book or article for publication, for example by helping the author to create grammatically correct and lucid prose, or who writes the book on behalf of the named author, without himself/herself claiming authorship."@en .
-<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
-<http://purl.org/spar/pro/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro> <http://purl.org/ontology/bibo/doi> "https://doi.org/10.25504/FAIRsharing.3e88d6" .
-<http://purl.org/spar/pro/librarian> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who manages, undertakes and supervises the work of a library."@en .
-<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/distributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/blogger> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/withRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who selects and prepares for publication material created and submitted by authors, having oversight of its content, format and presentation."@en .
-<http://purl.org/spar/pro/printer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
-<http://purl.org/spar/pro/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> .
-<http://purl.org/spar/pro/managing-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:managing-editor .\n    " .
-<http://purl.org/spar/pro/editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2000/01/rdf-schema#label> "relates to"@en .
-<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> .
-<http://purl.org/spar/pro/blogger> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an author who writes blog posts."@en .
-<http://purl.org/spar/pro/PublishingRole> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    pro:archivist a pro:PublishingRole .\n    " .
-<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
-<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> .
-<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/2000/01/rdf-schema#comment> "A person who finds work for professional authors, manages their contracts, and works to advance their careers, charging their clients as fees for their services a percentage of the money made from the authors' writings."@en .
-<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/withRole> .
-<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/biographer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/withRole> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
-<http://purl.org/spar/pro> <http://purl.org/dc/terms/modified> "2026-10-05" .
-<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an organization and the role for which that organization provides the context (e.g. relating an institution to the role of member held by a person)."@en .
-<http://purl.org/spar/pro/critic> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/spar/pro/reviewer> .
-_:n5663947a7e0241149de123ce2edbd522b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n5663947a7e0241149de123ce2edbd522b6 .
-_:n5663947a7e0241149de123ce2edbd522b4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> <http://www.w3.org/2000/01/rdf-schema#comment> "A time interval during which a status is held by a document." .
-<http://purl.org/spar/pro/isHeldBy> <http://purl.org/vocab/vann/example> "\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist ;\n        pro:isHeldBy :my-person .\n\n    :my-person a foaf:Agent .\n    " .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
-<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/spar/pro/isRoleIn> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime .\n\n    pro:archivist  \n        pro:isRoleIn :my-person-role .\n    " .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://purl.org/spar/pro/author> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:author .\n    " .
-<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#label> "value in time"@en .
-<http://purl.org/spar/pro/relatesToPerson> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:relatesToPerson :my-other-person .\n        pro:withRole pro:archivist .\n\n    :my-other-person a foaf:Person .\n    " .
-<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#priorVersion> <http://purl.org/spar/pro/2026-08-14> .
-<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between the value in time situation and the actual value held by the entity partaking in that situation."@en .
-<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/2000/01/rdf-schema#label> "executive editor"@en .
-<http://purl.org/spar/pro> <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/published> .
-<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a document and the role for which that document provides the context (e.g. relating a document to the role of author or peer-reviewer of that document)."@en .
-<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/pro/RoleInTime> .
-<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of the person who has final responsibility for the editorial operations and policies for a particular publication."@en .
-<http://purl.org/spar/pro/journalist> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:journalist .\n    " .
-<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> .
-<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."@en .
-<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> .
-<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who reads the proofs of documents to detect any errors prior to final publication."@en .
-<http://purl.org/spar/pro/archivist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/deputy-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/reviewer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/isRelatedToRoleInTime> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
-<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/publisher> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/spar/pro/contributor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/executive-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:executive-editor .\n    " .
-<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/spar/pro> <http://purl.org/dc/terms/source> <https://github.com/SPAROntologies/pro/blob/master/docs/cq.md> .
-<http://purl.org/spar/pro/distributor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/guest-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:guest-editor .\n    " .
-<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/production-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
-<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of someone who is a guest editor, for example for a special themed issue of a journal."@en .
-<http://purl.org/spar/pro> <https://schema.org/keywords> "scholarly publishing"@en .
-<http://purl.org/spar/pro/editor> <http://www.w3.org/2000/01/rdf-schema#label> "editor"@en .
-<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/isHeldBy> .
-<http://purl.org/spar/pro> <https://schema.org/image> <https://github.com/SPAROntologies/pro/blob/master/docs/current/pro.png> .
-<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/publisher> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:publisher .\n    " .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The end date of a time interval" .
-<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/spar/pro/contributor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:contributor .\n    " .
-<http://purl.org/spar/pro/librarian> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
-<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/2000/01/rdf-schema#label> "at time"@en .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n5663947a7e0241149de123ce2edbd522b9 .
-<http://purl.org/spar/pro/journalist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Person> .
-<http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/2000/01/rdf-schema#label> "commissioning editor"@en .
-<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/biographer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/blogger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/author> <http://www.w3.org/2000/01/rdf-schema#comment> "The role a person has of authorship of some material (for example a document)."@en .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> .
-<http://purl.org/spar/pro/author> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
-<http://purl.org/spar/pro/reader> <http://www.w3.org/2000/01/rdf-schema#label> "reader"@en .
-<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
-<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://xmlns.com/foaf/0.1/Document> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
-<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/pro/Role> .
-<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a time-indexed situation and an entity representing the context for that situation."@en .
-<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/librarian> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/journalist> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/pro/RoleInTime> .
-<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a role in time that an agent holds, or a contribution situation that an agent makes, and that agent."@en .
-<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/relatesToEntity> .
-<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/spar/pro/isDocumentContextFor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    :my-document a foaf:Document ;\n        pro:isDocumentContextFor :my-person-role .\n    " .
-<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Organization> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> .
-<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2000/01/rdf-schema#label> "relates to document"@en .
-<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The start date of a time interval" .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an editor who has executive responsibility for the production of particular publication, usually acting under the authority of the Editor-in-Chief."@en .
-<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/spar/pro/reviewer> .
-<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/date> "2026-10-05"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://purl.org/spar/pro/blogger> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:blogger .\n    " .
-<http://purl.org/spar/pro/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.essepuntato.it/2012/04/tvc/withinContext> .
-<http://purl.org/spar/pro/illustrator> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:illustrator .\n    " .
-<http://purl.org/spar/pro/librarian> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "Any kind of agents, such as a person, a group, an organization or a software agent."@en .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A date value assigned to a time interval."@en .
-<http://purl.org/spar/pro/archivist> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/journalist> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an author who writes newspaper or magazine news reports or articles."@en .
-<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/creator> "David Shotton (https://orcid.org/0000-0001-5506-523X)"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://purl.org/spar/pro/copyright-owner> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:copyright-owner .\n    " .
-_:n5663947a7e0241149de123ce2edbd522b1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
-<http://purl.org/spar/pro/librarian> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:librarian .\n    " .
-<http://purl.org/spar/pro/withRole> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of the person who has senior responsibility for the editorial operations and policies for a particular publication, usually acting under the authority of the Editor-in-Chief."@en .
-<http://purl.org/spar/pro/Role> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/illustrator> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an agent that illustrates a document."@en .
-<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/language> <http://id.loc.gov/vocabulary/iso639-2/eng> .
-<http://purl.org/spar/pro/production-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#label> "is role held by"@en .
-<http://purl.org/spar/pro/librarian> <http://www.w3.org/2000/01/rdf-schema#label> "librarian"@en .
-<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/relatesToEntity> .
-<http://purl.org/spar/pro> <https://schema.org/keywords> "scientometrics"@en .
-<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/2000/01/rdf-schema#label> "copyright owner"@en .
-<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/pro/RoleInTime> .
-<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro> <http://purl.org/dc/terms/issued> "2017-09-04" .
-<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
-<http://purl.org/spar/pro/production-editor> <http://www.w3.org/2000/01/rdf-schema#label> "production editor"@en .
-<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/Role> <http://www.w3.org/2000/01/rdf-schema#label> "role"@en .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an agent's role in time and a definition of the type of role held by this agent."@en .
-<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2004/02/skos/core#note> "A role in time describes always:\n- a particular role R\n- a particular agent A holding R\n- a particular time interval T in which A holds R (optional)\n- one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. At least one contextual entity should be specified for a particular role."@en .
-<http://purl.org/spar/pro/blogger> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/reviewer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:reviewer .\n    " .
-<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#label> "agent"@en .
-<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an editor who has management responsibility for the production of particular publication, usually acting under the authority of the Executive Editor and the Editor-in-Chief."@en .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> <http://www.w3.org/2000/01/rdf-schema#comment> "A situation that is explicitly indexed at some time for at least one entity." .
-<http://purl.org/spar/pro/compiler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/blogger> <http://www.w3.org/2000/01/rdf-schema#label> "blogger"@en .
-<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/creator> "Silvio Peroni (https://orcid.org/0000-0003-0530-4305)"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://purl.org/spar/pro> <https://schema.org/keywords> "SPAR Ontologies"@en .
-<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#versionInfo> "1.6.2"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/2000/01/rdf-schema#label> "senior editor"@en .
-<http://purl.org/spar/pro> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.sparontologies.net/ontologies/pro> .
-<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#label> "time interval"@en .
-<http://purl.org/spar/pro/distributor> <http://www.w3.org/2000/01/rdf-schema#label> "distributor"@en .
+<http://purl.org/spar/pro/compiler> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/series-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro> <http://purl.org/vocab/vann/preferredNamespacePrefix> "pro"@en .
 <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> <http://www.w3.org/2000/01/rdf-schema#label> "time indexed situation"@en .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "has interval end date"@en .
-<http://purl.org/spar/pro> <https://schema.org/keywords> "Semantic Publishing and Referencing Ontologies"@en .
-<http://purl.org/spar/pro/relatesToDocument> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:relatesToDocument :my-document .\n        pro:withRole pro:archivist .\n\n    :my-document a foaf:Document .\n    " .
-<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/contributor> "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://purl.org/spar/pro/printer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:printer .\n    " .
-<http://purl.org/spar/pro/editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/archivist> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who manages, undertakes and supervises the work of an archive."@en .
-<http://purl.org/spar/pro> <https://schema.org/includedInDataCatalog> <https://fairsharing.org/> .
-<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a time-indexed situation and a person who represents the context for that situation (e.g. relating the role of an supervisor with respect to the graduate student being supervised)."@en .
-_:n5663947a7e0241149de123ce2edbd522b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://purl.org/spar/pro/producer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of someone who acts as a producer."@en .
-<http://purl.org/spar/pro/distributor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who distributes or disseminates publications or other resources."@en .
-<http://purl.org/spar/pro/illustrator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://xmlns.com/foaf/0.1/Document> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
-<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://purl.org/spar/pro/reader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/2000/01/rdf-schema#label> "within context"@en .
-<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/description> "\nThe **_Publishing Roles Ontology (PRO)_** is an ontology written in OWL 2 DL for the characterization of the roles of agents (people, corporate bodies and computational agents) in the publication process. \nThis ontology permits the characterisation of the roles of agents – people, corporate bodies and computational agents – in the publication process. \nFurthermore, it allows one to specify the role an agent has in relation to a particular bibliographic entity (as author, editor, reviewer, etc.) or to a specific institution (as publisher, librarian, etc.), and the period during which each role is held.\n\nSince roles have contexts and times that are important to take into account (for example, a person can be author of one paper and reviewer of another, while another person will be editor of a journal only for a defined period, not for ever), the PRO ontology permit these contexts to be specified, using an ontological design pattern called the [Time-indexed Value in Context ontology pattern](http://purl.org/spar/tvc), a model for describing scenarios in which something has a value during a particular time and for a particular context. \nDue to this, it is easy to extend the set of specified roles, simply by adding new individuals to the class `pro:PublishingRole`.\nThis ontology is imported into the [Scholarly Contribution and Roles Ontology](http://purl.org/spar/scoro/) (SCoRO), where it is used similarly to enable the description of a wider range of contributions and roles relating to other scholarly activities and entities, including academic administration, funded projects, research investigations, data and authorship, and to define their temporal extents and contexts, as for publishing roles in PRO.\n\n![The architecture of PRO.](pro.png)\n\nThe main entities of PRO are:\n* `pro:RoleInTime`, i.e., the class of the particular situation that describes the role an agent has within a particular time interval;\n* `pro:holdsRoleInTime`, i.e., the object property linking any `foaf:Agent` (e.g., a person, a group, an organization or a software agent), to a `pro:RoleInTime` situation.\n* `pro:withRole`, i.e., the object property linking the situation to the role the agent has – the available roles are defined as individuals of the class `pro:Role` (see its subclass `pro:PublishingRole` for roles specifically defined for the publishing domain);\n* `ti:TimeInterval`, i.e., the class for defining two (starting and ending) points in time that define a particular period related to (`tvc:atTime`) a `pro:RoleInTime` situation;\n* `pro:relatesToDocument`, `pro:relatesToPerson` and `pro:relatesToOrganization`, i.e., the object properties linking any kind of bibliographic work (`foaf:Document`), a person (`foaf:Person`) or publishing organization (`foaf:Organization`) taking part in a `pro:RoleInTime` as contextual extent.\n\n## Examples of use\n\nIn the following subsections, we introduce some examples to showcase how to use PRO. \n\nThe prefixes that are used in all the examples provided below are defined as follows:\n\n    @prefix : <http://www.sparontologies.net/example/> .\n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\n    @prefix pro: <http://purl.org/spar/pro/> .\n    @prefix scoro: <http://purl.org/spar/scoro/> .\n    @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .\n    @prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .\n    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n### Author's affiliations in papers \n\nThe description of the authors of papers and, in particular, which affiliation they have specified in the context of a particular paper is a crucial aspect to take into account when describing authors' roles. \nHowever, several existing ontologies, such as the Semantic Web Conference Ontology, do not allow one to discern the context in which an person-role association holds. \nFor instance, consider an author having different institutional affiliations in the context of different publications (e.g., because he/she moved from one to the other).\n\nIn order to address this issue, PRO provides a convenient way to describe all the contextualised and possibly time-indexed person-role associations, in order to provide a complete picture of how roles relate with person and in which contexts.\n\n    :silvio-peroni a foaf:Person ;\n        foaf:name \"Silvio Peroni\" ;\n        pro:holdsRoleInTime\n            :silvio-peroni-author ,\n            :silvio-peroni-at-kmi ,\n            :silvio-peroni-at-unibo .\n\n    :silvio-peroni-author a pro:RoleInTime ;\n        pro:withRole pro:author ;\n        pro:relatesToDocument\n            <http://dx.doi.org/10.1007/978-3-540-89704-0_17> ,\n            <http://dx.doi.org/10.1145/1600193.1600232> .\n\n    :silvio-peroni-at-unibo a pro:RoleInTime ;\n        pro:withRole scoro:affiliate ;\n        pro:relatesToDocument\n            <http://dx.doi.org/10.1145/1600193.1600232> ;\n        pro:relatesToOrganization\n            <https://ror.org/01111rn36> ;\n        tvc:atTime :unibo-affiliation-time .\n\n    :unibo-affiliation-time a ti:TimeInterval ;\n        ti:hasIntervalStartDate\n            \"2009-01-01T00:00:00Z\"^^xsd:dateTime .\n\n    :silvio-peroni-at-kmi a pro:RoleInTime ;\n        pro:withRole scoro:affiliate ;\n        pro:relatesToDocument\n            <http://dx.doi.org/10.1007/978-3-540-89704-0_17> ;\n        pro:relatesToOrganization\n            <https://www.wikidata.org/entity/Q86003202> ;\n        tvc:atTime :kmi-affiliation-time .\n\n    :kmi-affiliation-time a ti:TimeInterval ;\n        ti:hasIntervalStartDate\n            \"2008-04-01T00:00:00Z\"^^xsd:dateTime ;\n        ti:hasIntervalEndDate\n            \"2008-09-30T23:59:59Z\"^^xsd:dateTime .\n\n## Competency Questions\n\nPRO can be used for answering several questions related to the various roles of an agent in the publication process.\nIn the following subsections, some of them are introduced together with their respective SPARQL queries. \n\nThe prefixes that are used in all the SPARQL queries provided below are defined as follows:\n\n    PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n    PREFIX pro: <http://purl.org/spar/pro/>\n    PREFIX tvc: <http://www.essepuntato.it/2012/04/tvc/>\n    PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#>\n\n### CQ1\n\nWhich roles in time and role types does a person hold?\n\n    SELECT ?person ?personName ?roleInTime ?role\n    WHERE {\n        ?person a foaf:Person ;\n            pro:holdsRoleInTime ?roleInTime .\n        ?roleInTime a pro:RoleInTime ;\n            pro:withRole ?role .\n        OPTIONAL { ?person foaf:name ?personName . }\n    }\n\n### CQ2\n\nWhich documents are associated with a person's role in time?\n\n    SELECT ?person ?role ?document\n    WHERE {\n        ?person a foaf:Person ;\n            pro:holdsRoleInTime ?roleInTime .\n        ?roleInTime pro:withRole ?role ;\n            pro:relatesToDocument ?document .\n    }\n\n### CQ3\n\nWhich organization is a person affiliated with in relation to a specific document?\n\n    SELECT ?person ?organization ?document\n    WHERE {\n        ?person pro:holdsRoleInTime ?roleInTime .\n        ?roleInTime pro:relatesToOrganization ?organization ;\n            pro:relatesToDocument ?document .\n    }\n\n### CQ4 \n\nWhat is the time interval (start and end dates) of an affiliation or role held by a person?\n\n    SELECT ?person ?role ?organization ?startDate ?endDate\n    WHERE {\n        ?person pro:holdsRoleInTime ?roleInTime .\n        ?roleInTime pro:withRole ?role ;\n            tvc:atTime ?timeInterval .\n        OPTIONAL { ?roleInTime pro:relatesToOrganization ?organization . }\n        OPTIONAL { ?timeInterval ti:hasIntervalStartDate ?startDate . }\n        OPTIONAL { ?timeInterval ti:hasIntervalEndDate ?endDate . }\n    }\n\n### CQ5\n\nWhat are the full affiliation details (role, target document, organization, and timeframe) for a person?\n\n    SELECT ?person ?role ?document ?organization ?startDate ?endDate\n    WHERE {\n        ?person a foaf:Person ;\n            pro:holdsRoleInTime ?roleInTime .\n        ?roleInTime pro:withRole ?role .\n        OPTIONAL { ?roleInTime pro:relatesToDocument ?document . }\n        OPTIONAL { ?roleInTime pro:relatesToOrganization ?organization . }\n        OPTIONAL {\n            ?roleInTime tvc:atTime ?timeInterval .\n            OPTIONAL { ?timeInterval ti:hasIntervalStartDate ?startDate . }\n            OPTIONAL { ?timeInterval ti:hasIntervalEndDate ?endDate . }\n        }\n    }\n\n"@en .
-<http://purl.org/spar/pro/author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.essepuntato.it/2012/04/tvc/hasValue> .
-<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/spar/foaf> .
-<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/relatesToOrganization> .
-<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/archivist> <http://www.w3.org/2004/02/skos/core#note> "\nThis term is typically used with respect to a document archive, whereas the term data curator is used with respect to a data archive.    \n    "@en .
-_:n5663947a7e0241149de123ce2edbd522b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/spar/pro/series-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/2000/01/rdf-schema#comment> "The specific context within which the fact of the entity having the value is relevant."@en .
-<http://purl.org/spar/pro/librarian> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/publisher> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Document> .
-<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#label> "has value"@en .
+<http://purl.org/spar/pro> <http://purl.org/dc/terms/bibliographicCitation> "Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and Linked Data: describing roles, statuses, temporal and contextual extents. In Sack, H., Pellegrini, T. (Eds.), Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012): 9-16. New York, New York, USA: ACM. https://doi.org/10.1145/2362499.2362502." .
+<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.essepuntato.it/2012/04/tvc/withinContext> .
+<http://purl.org/spar/pro/illustrator> <http://www.w3.org/2000/01/rdf-schema#label> "illustrator"@en .
+<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a professional writer who assists an aspiring author lacking authorship skills to write a book or article for publication, for example by helping the author to create grammatically correct and lucid prose, or who writes the book on behalf of the named author, without himself/herself claiming authorship."@en .
+<http://purl.org/spar/pro/reviewer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro> <https://schema.org/keywords> "SPAR Ontologies"@en .
+<http://purl.org/spar/pro/relatesToOrganization> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:relatesToOrganization :my-organization .\n        pro:withRole pro:archivist .\n\n    :my-organization a foaf:Organization .\n    " .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/spar/pro/journalist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/printer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an agent involved in printing documents, either a company providing printing services or an individual engaged in the process of printing documents."@en .
-<http://purl.org/spar/pro/relatesToEntity> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:relatesToEntity :my-entity ;\n        pro:withRole pro:archivist .\n    " .
-<http://purl.org/spar/pro/authors-agent> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:authors-agent .\n    " .
-<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/title> "The Publishing Roles Ontology (PRO)"@en .
-_:n5663947a7e0241149de123ce2edbd522b8 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/pro/isHeldBy> .
-<http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://purl.org/spar/pro/illustrator> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/reader> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2000/01/rdf-schema#label> "relates to person"@en .
-<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/2000/01/rdf-schema#label> "is person context for"@en .
-<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://xmlns.com/foaf/0.1/Document> <http://www.w3.org/2000/01/rdf-schema#label> "document"@en .
-<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
-<http://purl.org/spar/pro/critic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/spar/pro"@en .
-<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an editor who actively commissions authors to write books to be published by the publishing house for which the commissioning editor works."@en .
-<http://purl.org/spar/pro/critic> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:critic .\n    " .
-<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#comment> "Two (starting and ending) points in time that define a particular period of time."@en .
 <http://purl.org/spar/pro/translator> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-_:n5663947a7e0241149de123ce2edbd522b1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.essepuntato.it/2012/04/tvc/atTime> .
-<http://purl.org/spar/pro/translator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/spar/pro/series-editor> <http://www.w3.org/2000/01/rdf-schema#label> "series editor"@en .
-<http://purl.org/spar/pro/publisher> <http://www.w3.org/2000/01/rdf-schema#label> "publisher"@en .
-<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/pro/RoleInTime> .
-<http://purl.org/spar/pro> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> .
-<http://purl.org/spar/pro/isOrganizationContextFor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    :my-organization a foaf:Organization ;\n        pro:isOrganizationContextFor :my-person-role .\n    " .
-<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
-<http://purl.org/spar/pro/deputy-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
-<http://purl.org/spar/pro> <http://purl.org/dc/terms/created> "2013-12-18" .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#label> "organization"@en .
-<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
-<http://purl.org/spar/pro/critic> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> .
+<http://purl.org/spar/pro> <http://purl.org/dc/terms/modified> "2026-11-12" .
+<http://purl.org/spar/pro/guest-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:guest-editor .\n    " .
+<http://purl.org/spar/pro/reader> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/translator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1> .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an agent's role in time and a definition of the type of role held by this agent."@en .
+<http://purl.org/spar/pro/producer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://xmlns.com/foaf/0.1/Document> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1> .
+<http://purl.org/vocab/vann/changes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#versionInfo> "1.6.3"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/description> "\nThe **_Publishing Roles Ontology (PRO)_** is an ontology written in OWL 2 DL for the characterization of the roles of agents (people, corporate bodies and computational agents) in the publication process. \nThis ontology permits the characterisation of the roles of agents – people, corporate bodies and computational agents – in the publication process. \nFurthermore, it allows one to specify the role an agent has in relation to a particular bibliographic entity (as author, editor, reviewer, etc.) or to a specific institution (as publisher, librarian, etc.), and the period during which each role is held.\n\nSince roles have contexts and times that are important to take into account (for example, a person can be author of one paper and reviewer of another, while another person will be editor of a journal only for a defined period, not for ever), the PRO ontology permit these contexts to be specified, using an ontological design pattern called the [Time-indexed Value in Context ontology pattern](http://purl.org/spar/tvc), a model for describing scenarios in which something has a value during a particular time and for a particular context. \nDue to this, it is easy to extend the set of specified roles, simply by adding new individuals to the class `pro:PublishingRole`.\nThis ontology is imported into the [Scholarly Contribution and Roles Ontology](http://purl.org/spar/scoro/) (SCoRO), where it is used similarly to enable the description of a wider range of contributions and roles relating to other scholarly activities and entities, including academic administration, funded projects, research investigations, data and authorship, and to define their temporal extents and contexts, as for publishing roles in PRO.\n\n![The architecture of PRO.](pro.png)\n\nThe main entities of PRO are:\n* `pro:RoleInTime`, i.e., the class of the particular situation that describes the role an agent has within a particular time interval;\n* `pro:holdsRoleInTime`, i.e., the object property linking any `foaf:Agent` (e.g., a person, a group, an organization or a software agent), to a `pro:RoleInTime` situation.\n* `pro:withRole`, i.e., the object property linking the situation to the role the agent has – the available roles are defined as individuals of the class `pro:Role` (see its subclass `pro:PublishingRole` for roles specifically defined for the publishing domain);\n* `ti:TimeInterval`, i.e., the class for defining two (starting and ending) points in time that define a particular period related to (`tvc:atTime`) a `pro:RoleInTime` situation;\n* `pro:relatesToDocument`, `pro:relatesToPerson` and `pro:relatesToOrganization`, i.e., the object properties linking any kind of bibliographic work (`foaf:Document`), a person (`foaf:Person`) or publishing organization (`foaf:Organization`) taking part in a `pro:RoleInTime` as contextual extent.\n\n## Examples of use\n\nIn the following subsections, we introduce some examples to showcase how to use PRO. \n\nThe prefixes that are used in all the examples provided below are defined as follows:\n\n    @prefix : <http://www.sparontologies.net/example/> .\n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\n    @prefix pro: <http://purl.org/spar/pro/> .\n    @prefix scoro: <http://purl.org/spar/scoro/> .\n    @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .\n    @prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .\n    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n### Author's affiliations in papers \n\nThe description of the authors of papers and, in particular, which affiliation they have specified in the context of a particular paper is a crucial aspect to take into account when describing authors' roles. \nHowever, several existing ontologies, such as the Semantic Web Conference Ontology, do not allow one to discern the context in which an person-role association holds. \nFor instance, consider an author having different institutional affiliations in the context of different publications (e.g., because he/she moved from one to the other).\n\nIn order to address this issue, PRO provides a convenient way to describe all the contextualised and possibly time-indexed person-role associations, in order to provide a complete picture of how roles relate with person and in which contexts.\n\n    :silvio-peroni a foaf:Person ;\n        foaf:name \"Silvio Peroni\" ;\n        pro:holdsRoleInTime\n            :silvio-peroni-author ,\n            :silvio-peroni-at-kmi ,\n            :silvio-peroni-at-unibo .\n\n    :silvio-peroni-author a pro:RoleInTime ;\n        pro:withRole pro:author ;\n        pro:relatesToDocument\n            <http://dx.doi.org/10.1007/978-3-540-89704-0_17> ,\n            <http://dx.doi.org/10.1145/1600193.1600232> .\n\n    :silvio-peroni-at-unibo a pro:RoleInTime ;\n        pro:withRole scoro:affiliate ;\n        pro:relatesToDocument\n            <http://dx.doi.org/10.1145/1600193.1600232> ;\n        pro:relatesToOrganization\n            <https://ror.org/01111rn36> ;\n        tvc:atTime :unibo-affiliation-time .\n\n    :unibo-affiliation-time a ti:TimeInterval ;\n        ti:hasIntervalStartDate\n            \"2009-01-01T00:00:00Z\"^^xsd:dateTime .\n\n    :silvio-peroni-at-kmi a pro:RoleInTime ;\n        pro:withRole scoro:affiliate ;\n        pro:relatesToDocument\n            <http://dx.doi.org/10.1007/978-3-540-89704-0_17> ;\n        pro:relatesToOrganization\n            <https://www.wikidata.org/entity/Q86003202> ;\n        tvc:atTime :kmi-affiliation-time .\n\n    :kmi-affiliation-time a ti:TimeInterval ;\n        ti:hasIntervalStartDate\n            \"2008-04-01T00:00:00Z\"^^xsd:dateTime ;\n        ti:hasIntervalEndDate\n            \"2008-09-30T23:59:59Z\"^^xsd:dateTime .\n\n## Competency Questions\n\nPRO can be used for answering several questions related to the various roles of an agent in the publication process.\nIn the following subsections, some of them are introduced together with their respective SPARQL queries. \n\nThe prefixes that are used in all the SPARQL queries provided below are defined as follows:\n\n    PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n    PREFIX pro: <http://purl.org/spar/pro/>\n    PREFIX tvc: <http://www.essepuntato.it/2012/04/tvc/>\n    PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#>\n\n### CQ1\n\nWhich roles in time and role types does a person hold?\n\n    SELECT ?person ?personName ?roleInTime ?role\n    WHERE {\n        ?person a foaf:Person ;\n            pro:holdsRoleInTime ?roleInTime .\n        ?roleInTime a pro:RoleInTime ;\n            pro:withRole ?role .\n        OPTIONAL { ?person foaf:name ?personName . }\n    }\n\n### CQ2\n\nWhich documents are associated with a person's role in time?\n\n    SELECT ?person ?role ?document\n    WHERE {\n        ?person a foaf:Person ;\n            pro:holdsRoleInTime ?roleInTime .\n        ?roleInTime pro:withRole ?role ;\n            pro:relatesToDocument ?document .\n    }\n\n### CQ3\n\nWhich organization is a person affiliated with in relation to a specific document?\n\n    SELECT ?person ?organization ?document\n    WHERE {\n        ?person pro:holdsRoleInTime ?roleInTime .\n        ?roleInTime pro:relatesToOrganization ?organization ;\n            pro:relatesToDocument ?document .\n    }\n\n### CQ4 \n\nWhat is the time interval (start and end dates) of an affiliation or role held by a person?\n\n    SELECT ?person ?role ?organization ?startDate ?endDate\n    WHERE {\n        ?person pro:holdsRoleInTime ?roleInTime .\n        ?roleInTime pro:withRole ?role ;\n            tvc:atTime ?timeInterval .\n        OPTIONAL { ?roleInTime pro:relatesToOrganization ?organization . }\n        OPTIONAL { ?timeInterval ti:hasIntervalStartDate ?startDate . }\n        OPTIONAL { ?timeInterval ti:hasIntervalEndDate ?endDate . }\n    }\n\n### CQ5\n\nWhat are the full affiliation details (role, target document, organization, and timeframe) for a person?\n\n    SELECT ?person ?role ?document ?organization ?startDate ?endDate\n    WHERE {\n        ?person a foaf:Person ;\n            pro:holdsRoleInTime ?roleInTime .\n        ?roleInTime pro:withRole ?role .\n        OPTIONAL { ?roleInTime pro:relatesToDocument ?document . }\n        OPTIONAL { ?roleInTime pro:relatesToOrganization ?organization . }\n        OPTIONAL {\n            ?roleInTime tvc:atTime ?timeInterval .\n            OPTIONAL { ?timeInterval ti:hasIntervalStartDate ?startDate . }\n            OPTIONAL { ?timeInterval ti:hasIntervalEndDate ?endDate . }\n        }\n    }\n\n"@en .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an agent and a role that the agent holds."@en .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#comment> "A person."@en .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/biographer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:biographer .\n    " .
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro> <https://schema.org/includedInDataCatalog> <https://fairsharing.org/> .
+<http://purl.org/dc/terms/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/Role> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    pro:archivist a pro:Role .\n    " .
 <http://purl.org/spar/pro/deputy-editor> <http://www.w3.org/2000/01/rdf-schema#label> "deputy editor"@en .
+<http://xmlns.com/foaf/0.1/Document> <http://www.w3.org/2000/01/rdf-schema#comment> "An abstract class defining any kinds of publishing work."@en .
+<http://purl.org/spar/pro/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro> <http://www.w3.org/2000/01/rdf-schema#label> "Publishing Roles Ontology (PRO)"@en .
+<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/relatesToOrganization> .
+<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b9 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/pro/relatesToEntity> .
+<http://purl.org/spar/pro/critic> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an author who writes evaluations and criticisms of, for example, plays or other works of art."@en .
+<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a time-indexed situation and an entity representing the context for that situation."@en .
+<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/spar/pro/distributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/reader> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/spar/foaf> .
+<http://purl.org/spar/pro/librarian> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:librarian .\n    " .
+<http://purl.org/spar/pro/publisher> <http://www.w3.org/2000/01/rdf-schema#label> "publisher"@en .
+<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/relatesToEntity> .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/relatesToEntity> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:relatesToEntity :my-entity ;\n        pro:withRole pro:archivist .\n    " .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> <http://www.w3.org/2000/01/rdf-schema#label> "at time"@en .
+<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "Any kind of agents, such as a person, a group, an organization or a software agent."@en .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> <http://www.w3.org/2000/01/rdf-schema#label> "has time indexed setting"@en .
+<http://purl.org/spar/pro> <https://schema.org/keywords> "publishing roles"@en .
+<http://purl.org/spar/pro/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/reader> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:reader .\n    " .
+<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/isRelatedToRoleInTime> .
+<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/PublishingRole> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    pro:archivist a pro:PublishingRole .\n    " .
+<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/pro/RoleInTime> .
+<http://purl.org/spar/pro/withRole> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
+<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/translator> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:translator .\n    " .
+<http://purl.org/spar/pro/printer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/isRelatedToRoleInTime> .
+<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/spar/pro/reviewer> .
+<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/relatesToEntity> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b4 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://purl.org/spar/pro/relatesToDocument> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:relatesToDocument :my-document .\n        pro:withRole pro:archivist .\n\n    :my-document a foaf:Document .\n    " .
+<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/blogger> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/biographer> <http://www.w3.org/2000/01/rdf-schema#label> "biographer"@en .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/author> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:author .\n    " .
+<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/production-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an editor who takes responsibility for the passage of a document through the various stages of the publication workflow from the submitted manuscript to the final publication, including responsibility for scheduling and budget."@en .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#label> "holds role in time"@en .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.essepuntato.it/2012/04/tvc/withValue> .
+<http://purl.org/spar/pro/Role> <http://www.w3.org/2000/01/rdf-schema#comment> "A role an agent may have. Individual members of this class or its sub-classes are used to specify particular roles."@en .
+<http://purl.org/spar/pro/blogger> <http://www.w3.org/2000/01/rdf-schema#label> "blogger"@en .
+_:nc8060be046b34b1581ab352f1a5d4fa1b1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.essepuntato.it/2012/04/tvc/atTime> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> <http://www.w3.org/2000/01/rdf-schema#comment> "A time interval during which a status is held by a document." .
+<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/series-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of the person who has editorial responsibility for publication series, for example a book series."@en .
+<http://purl.org/spar/pro/isHeldBy> <http://purl.org/vocab/vann/example> "\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist ;\n        pro:isHeldBy :my-person .\n\n    :my-person a foaf:Agent .\n    " .
+_:nc8060be046b34b1581ab352f1a5d4fa1b8 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://purl.org/spar/pro/distributor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who distributes or disseminates publications or other resources."@en .
+<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/archivist> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who manages, undertakes and supervises the work of an archive."@en .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nc8060be046b34b1581ab352f1a5d4fa1b1 .
+<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/blogger> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/copyright-owner> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:copyright-owner .\n    " .
+<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between the value in time situation and the actual value held by the entity partaking in that situation."@en .
+<http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/pro/Role> .
+<http://purl.org/spar/pro/librarian> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/illustrator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The end date of a time interval" .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/includedInDataCatalog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a document and the role for which that document provides the context (e.g. relating a document to the role of author or peer-reviewer of that document)."@en .
+<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/creator> "David Shotton (https://orcid.org/0000-0001-5506-523X)"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://purl.org/spar/pro/compiler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+<http://purl.org/spar/pro/critic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/deputy-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/reader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro> <http://purl.org/dc/terms/created> "2013-12-18" .
+<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a person and the role for which that person provides the context (e.g. relating a graduate student to the role of supervisor held by a faculty member)."@en .
+<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> .
+<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/series-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/biographer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/2000/01/rdf-schema#label> "with value"@en .
+<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/spar/tvc> .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1> .
+<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Document> .
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/2000/01/rdf-schema#label> "editor-in-chief"@en .
+<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who reads the proofs of documents to detect any errors prior to final publication."@en .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#comment> "A role an agent may have with respect to the publishing process."@en .
+<http://purl.org/spar/pro/executive-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:executive-editor .\n    " .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a role in time that an agent holds, or a contribution situation that an agent makes, and that agent."@en .
+<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2000/01/rdf-schema#label> "relates to document"@en .
+_:nc8060be046b34b1581ab352f1a5d4fa1b7 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/pro/withRole> .
+<http://purl.org/spar/pro/archivist> <http://www.w3.org/2000/01/rdf-schema#label> "archivist"@en .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/relatesToPerson> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:relatesToPerson :my-other-person .\n        pro:withRole pro:archivist .\n\n    :my-other-person a foaf:Person .\n    " .
+<http://purl.org/spar/pro/blogger> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:blogger .\n    " .
+<http://purl.org/spar/pro/archivist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/journalist> <http://www.w3.org/2000/01/rdf-schema#label> "journalist"@en .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Document> .
+<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/2000/01/rdf-schema#label> "managing editor"@en .
+<http://purl.org/spar/pro/reviewer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:reviewer .\n    " .
+<http://purl.org/spar/pro/senior-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:senior-editor .\n    " .
+<http://purl.org/spar/pro/production-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    :my-entity\n        pro:isRelatedToRoleInTime :my-person-role .\n    " .
+<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/dc/elements/1.1/language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
+<http://purl.org/spar/pro/translator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."@en .
+<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/2000/01/rdf-schema#label> "is person context for"@en .
+<http://purl.org/spar/pro/author> <http://www.w3.org/2000/01/rdf-schema#comment> "The role a person has of authorship of some material (for example a document)."@en .
+<http://purl.org/spar/pro/editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> .
+<http://purl.org/spar/pro/journalist> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/authors-agent> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:authors-agent .\n    " .
+<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/2000/01/rdf-schema#label> "commissioning editor"@en .
+<http://purl.org/spar/pro/librarian> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/compiler> <http://www.w3.org/2000/01/rdf-schema#comment> "The role an agent has of compiling a number of items into a compilation or collection."@en .
+<http://purl.org/spar/pro/archivist> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/illustrator> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an agent that illustrates a document."@en .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of someone who is a guest editor, for example for a special themed issue of a journal."@en .
+<http://purl.org/spar/pro/critic> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/production-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/blogger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/isRoleIn> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime .\n\n    pro:archivist  \n        pro:isRoleIn :my-person-role .\n    " .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> <http://www.w3.org/2000/01/rdf-schema#comment> "A situation that is explicitly indexed at some time for at least one entity." .
+<http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/producer> <http://www.w3.org/2000/01/rdf-schema#label> "producer"@en .
+<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/2000/01/rdf-schema#label> "executive editor"@en .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/2000/01/rdf-schema#label> "copyright owner"@en .
+<http://purl.org/spar/pro/editor-in-chief> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:editor-in-chief .\n    " .
+_:nc8060be046b34b1581ab352f1a5d4fa1b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nc8060be046b34b1581ab352f1a5d4fa1b6 .
+<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/reviewer> <http://www.w3.org/2000/01/rdf-schema#label> "reviewer"@en .
+<http://purl.org/spar/pro/author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an editor who has management responsibility for the production of particular publication, usually acting under the authority of the Executive Editor and the Editor-in-Chief."@en .
+<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#label> "is role held by"@en .
+<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between the definition of a specific role and the situation of an agent holding that role."@en .
+<http://purl.org/spar/pro/editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who selects and prepares for publication material created and submitted by authors, having oversight of its content, format and presentation."@en .
+<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/relatesToEntity> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/ghost-writer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:ghost-writer .\n    " .
+<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/pro/RoleInTime> .
+<http://purl.org/spar/pro> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/spar/pro"@en .
+<http://purl.org/spar/pro> <https://schema.org/keywords> "semantic publishing"@en .
+<http://purl.org/spar/pro/journalist> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/production-editor> <http://www.w3.org/2000/01/rdf-schema#label> "production editor"@en .
+<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/ontology/bibo/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/critic> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#backwardCompatibleWith> <http://purl.org/spar/pro/2026-10-05> .
+<http://purl.org/spar/pro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://purl.org/spar/pro/distributor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/archivist> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nc8060be046b34b1581ab352f1a5d4fa1b9 .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an entity and a time-indexed situation it is involved in."@en .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#label> "value in time"@en .
+<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/production-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:production-editor .\n    " .
+<http://purl.org/spar/pro> <https://schema.org/keywords> "scholarly communication"@en .
+<http://purl.org/spar/pro> <https://schema.org/image> <https://github.com/SPAROntologies/pro/blob/master/docs/current/pro.png> .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
+<http://purl.org/spar/pro/blogger> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an author who writes blog posts."@en .
+<http://purl.org/spar/pro> <http://purl.org/dc/terms/publisher> <https://ror.org/00wb4mk85> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A date value assigned to a time interval."@en .
+_:nc8060be046b34b1581ab352f1a5d4fa1b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/pro/librarian> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
+<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a time-indexed situation and an entity involved in it."@en .
+<http://purl.org/dc/elements/1.1/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/keywords> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/series-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:series-editor .\n    " .
+<http://purl.org/spar/pro> <https://schema.org/keywords> "bibliometrics"@en .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nc8060be046b34b1581ab352f1a5d4fa1b8 .
+<http://purl.org/spar/pro> <http://purl.org/dc/terms/issued> "2017-09-04" .
+<http://purl.org/spar/pro/critic> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:critic .\n    " .
+<http://www.w3.org/2000/01/rdf-schema#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nc8060be046b34b1581ab352f1a5d4fa1b2 .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2000/01/rdf-schema#label> "is organization context for"@it .
+<http://purl.org/spar/pro/archivist> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
+<http://purl.org/spar/pro/archivist> <http://www.w3.org/2004/02/skos/core#note> "\nThis term is typically used with respect to a document archive, whereas the term data curator is used with respect to a data archive.    \n    "@en .
+<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/2000/01/rdf-schema#label> "guest editor"@en .
+<https://schema.org/image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/distributor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/pro/RoleInTime> .
+<http://purl.org/spar/pro/production-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/deputy-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:deputy-editor .\n    " .
+<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/pro/RoleInTime> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b8 <http://www.w3.org/2002/07/owl#onClass> <http://xmlns.com/foaf/0.1/Agent> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The start date of a time interval" .
+_:nc8060be046b34b1581ab352f1a5d4fa1b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an organization and the role for which that organization provides the context (e.g. relating an institution to the role of member held by a person)."@en .
+<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
+<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "has interval end date"@en .
+<http://purl.org/spar/pro/publisher> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/author> <http://www.w3.org/2000/01/rdf-schema#label> "author"@en .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#label> "with role"@en .
+<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro> <https://schema.org/codeRepository> <https://github.com/SPAROntologies/pro> .
+<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a time-indexed situation describing a publishing role and a document that represents the context for that situation (e.g. relating the role of editor or peer-reviewer to the document being edited or peer-reviewed)."@en .
+<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> .
+<http://purl.org/spar/pro/relatesToDocument> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/translator> <http://www.w3.org/2000/01/rdf-schema#label> "translator"@en .
+<http://purl.org/spar/pro/editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:editor .\n    " .
+<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/series-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/editor> <http://www.w3.org/2000/01/rdf-schema#label> "editor"@en .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization."@en .
+<http://purl.org/spar/pro/reviewer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/date> "2026-11-12"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The particular temporal instant or time period in which the situation takes place."@en .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> .
+<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#label> "is role in"@en .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> .
+<http://purl.org/spar/pro/journalist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an entity and the role for which that entity provides the context."@en .
+<http://purl.org/spar/pro/compiler> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/deputy-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
+<http://purl.org/spar/pro/Role> <http://www.w3.org/2000/01/rdf-schema#label> "role"@en .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/producer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/pro/compiler> <http://www.w3.org/2000/01/rdf-schema#label> "compiler"@en .
+<http://purl.org/dc/elements/1.1/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
+<http://purl.org/spar/pro/librarian> <http://www.w3.org/2000/01/rdf-schema#label> "librarian"@en .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2004/02/skos/core#note> "Individual members of this class are used to specify particular roles."@en .
+<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2000/01/rdf-schema#label> "relates to"@en .
+<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Organization> .
+<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/producer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:producer .\n    " .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/2004/02/skos/core#note> "\nThis is specified as an instance of the class `pro:Role` or of one of its sub-classes.\n    "@en .
+<http://purl.org/spar/pro/printer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/withRole> .
+<http://purl.org/spar/pro> <http://purl.org/dc/terms/source> <https://github.com/SPAROntologies/pro/blob/master/docs/cq.md> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b7 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spar/pro/Role> .
+<http://purl.org/spar/pro/distributor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:distributor .\n    " .
+<http://purl.org/spar/pro/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/isOrganizationContextFor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    :my-organization a foaf:Organization ;\n        pro:isOrganizationContextFor :my-person-role .\n    " .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#label> "is document context for"@en .
+<http://purl.org/spar/pro/critic> <http://www.w3.org/2000/01/rdf-schema#label> "critic"@en .
+<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nc8060be046b34b1581ab352f1a5d4fa1b7 .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/2000/01/rdf-schema#label> "publishing role"@en .
+<http://purl.org/spar/pro/distributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/isPersonContextFor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n\n    :my-other-person a foaf:Person ;\n        pro:isPersonContextFor :my-person-role .\n    " .
+<http://purl.org/spar/pro/deputy-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/pro/RoleInTime> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/2000/01/rdf-schema#label> "has interval start date"@en .
+<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> .
+<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/RoleInTime> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:archivist .\n    " .
+<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of the person who has final responsibility for the editorial operations and policies for a particular publication."@en .
+<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/contributor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role an agent has of contribution of some material (for example an article to a magazine)."@en .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/isHeldBy> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#label> "time interval"@en .
+<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/printer> <http://www.w3.org/2000/01/rdf-schema#label> "printer"@en .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/author> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/2000/01/rdf-schema#comment> "A person who finds work for professional authors, manages their contracts, and works to advance their careers, charging their clients as fees for their services a percentage of the money made from the authors' writings."@en .
+<http://purl.org/spar/pro/reviewer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.sparontologies.net/ontologies/pro> .
+<http://purl.org/spar/pro/editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a time-indexed situation and an organization that represents the context for that situation (e.g. relating the role of member to the institution of which that person is a member)."@en .
+<http://purl.org/spar/pro/Role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/pro/RoleInTime> .
+<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an editor who undertakes alterations to the text of a document submitted for publication to improve the formatting, style and accuracy of text, or to bring the text into the house style of the publisher (e.g. Americanization of British spelling), without intentionally altering the substance or meaning of the text."@en .
+<http://purl.org/spar/pro/reader> <http://www.w3.org/2000/01/rdf-schema#label> "reader"@en .
+<http://www.w3.org/2002/07/owl#backwardCompatibleWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/illustrator> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:illustrator .\n    " .
+<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/critic> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/spar/pro/reviewer> .
+<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a time-indexed situation and a person who represents the context for that situation (e.g. relating the role of an supervisor with respect to the graduate student being supervised)."@en .
+_:nc8060be046b34b1581ab352f1a5d4fa1b8 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/pro/isHeldBy> .
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an editor who has executive responsibility for the production of particular publication, usually acting under the authority of the Editor-in-Chief."@en .
+<http://purl.org/spar/pro/producer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#label> "is related to role in time"@en .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."@en .
+<http://purl.org/spar/pro/series-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/2000/01/rdf-schema#label> "senior editor"@en .
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/reviewer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/creator> "Silvio Peroni (https://orcid.org/0000-0003-0530-4305)"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/series-editor> <http://www.w3.org/2000/01/rdf-schema#label> "series editor"@en .
+_:nc8060be046b34b1581ab352f1a5d4fa1b3 <http://www.w3.org/2002/07/owl#intersectionOf> _:nc8060be046b34b1581ab352f1a5d4fa1b5 .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#label> "agent"@en .
+<http://purl.org/spar/pro/critic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/reader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/title> "The Publishing Roles Ontology (PRO)"@en .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#label> "has value"@en .
+<http://purl.org/spar/pro/editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/2000/01/rdf-schema#comment> "The specific context within which the fact of the entity having the value is relevant."@en .
+<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of owning the copyright to a publication, usually held by the author or by the publishing house that publishes the author's work."@en .
+<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/producer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:nc8060be046b34b1581ab352f1a5d4fa1b4 .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/pro/Role> .
+<http://purl.org/spar/pro/translator> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an agent that translates a document into another language."@en .
+<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/reader> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who reads publications."@en .
+<http://purl.org/spar/pro/PublishingRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an academic peer in evaluating a manuscript submitted by an author for publication as a journal article on behalf of the journal editor, or a conference paper on behalf of the conference programme committee, and in deciding whether it is suitable for acceptance, usually subject to revisions suggested by the peer-reviewer."@en .
+<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "relates to organization"@en .
+_:nc8060be046b34b1581ab352f1a5d4fa1b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/illustrator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/pro/Role> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#label> "role in time"@en .
+<http://purl.org/spar/pro/distributor> <http://www.w3.org/2000/01/rdf-schema#label> "distributor"@en .
+<http://purl.org/spar/pro> <http://purl.org/ontology/bibo/doi> "https://doi.org/10.25504/FAIRsharing.3e88d6" .
+<http://purl.org/spar/pro/biographer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an author who writes biographies."@en .
+<http://purl.org/spar/pro/printer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an agent involved in printing documents, either a company providing printing services or an individual engaged in the process of printing documents."@en .
+<http://purl.org/spar/pro/archivist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/author> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/compiler> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:compiler .\n    " .
+<http://purl.org/spar/pro/publisher> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/compiler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/deputy-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro> <https://schema.org/keywords> "scientometrics"@en .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/relatesToDocument> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/contributor> <http://www.w3.org/2000/01/rdf-schema#label> "contributor"@en .
+<http://purl.org/spar/pro/production-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.essepuntato.it/2012/04/tvc/atTime> .
+<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/commissioning-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:commissioning-editor .\n    " .
+<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/copy-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:copy-editor .\n    " .
+<http://purl.org/spar/pro/journalist> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:journalist .\n    " .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> <http://www.w3.org/2000/01/rdf-schema#label> "has interval date"@en .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/biographer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#label> "organization"@en .
+<http://www.w3.org/2002/07/owl#priorVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> .
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/contributor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2004/02/skos/core#note> "A role in time describes always:\n- a particular role R\n- a particular agent A holding R\n- a particular time interval T in which A holds R (optional)\n- one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. At least one contextual entity should be specified for a particular role."@en .
+_:nc8060be046b34b1581ab352f1a5d4fa1b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/contributor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/2000/01/rdf-schema#label> "author's agent"@en .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/blogger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://purl.org/spar/pro/Role> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/isRoleIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/spar/pro/2026-11-12> .
+<http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/publisher> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person or an organization that published material, or of a publisher's employee who has responsibility for such publications."@en .
+_:nc8060be046b34b1581ab352f1a5d4fa1b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2004/02/skos/core#note> "\nThis is done via the indirection:\n\n    foaf:Agent pro:holdsRoleInTime [ a pro:RoleInTime ; \n                                     pro:withRole pro:Role ] .  \n\nThe ontology permits one to specify the time period over which a role is held, and the other contextual entities to which that agent's role relates.\n    "@en .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
+<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/printer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/isPersonContextFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spar/pro/isRelatedToRoleInTime> .
+<http://purl.org/spar/pro/illustrator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/translator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro> <http://www.w3.org/2002/07/owl#priorVersion> <http://purl.org/spar/pro/2026-10-05> .
+<http://purl.org/spar/pro/proof-reader> <http://www.w3.org/2000/01/rdf-schema#label> "proof reader"@en .
+<http://purl.org/spar/pro/journalist> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an author who writes newspaper or magazine news reports or articles."@en .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> .
+<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#comment> "Two (starting and ending) points in time that define a particular period of time."@en .
+<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Person> .
+<http://purl.org/spar/pro/editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/managing-editor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:managing-editor .\n    " .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
+<http://purl.org/spar/pro> <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/published> .
+<http://purl.org/spar/pro/reviewer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who subjects a publication to a written review and critical analysis of its content, scope and quality."@en .
+<http://purl.org/spar/pro/Role> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/vocab/vann/example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/deputy-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a senior editor of a publication who deputizes for the Editor-in-Chief."@en .
+<http://xmlns.com/foaf/0.1/Document> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/commissioning-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of an editor who actively commissions authors to write books to be published by the publishing house for which the commissioning editor works."@en .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/contributor> "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://purl.org/spar/pro/producer> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of someone who acts as a producer."@en .
+<http://purl.org/spar/pro> <http://xmlns.com/foaf/0.1/logo> <https://github.com/SPAROntologies/sparontologies.github.io/blob/master/static/img/spar/spar-logo.png> .
+<http://purl.org/dc/terms/bibliographicCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.essepuntato.it/2012/04/tvc/hasValue> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
+<http://purl.org/spar/pro/contributor> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:contributor .\n    " .
+<http://purl.org/spar/pro/senior-editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of the person who has senior responsibility for the editorial operations and policies for a particular publication, usually acting under the authority of the Editor-in-Chief."@en .
+<http://purl.org/spar/pro/librarian> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/PublishingRole> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> <http://www.w3.org/2000/01/rdf-schema#label> "for entity"@en .
+<http://purl.org/spar/pro/publisher> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:publisher .\n    " .
+<http://purl.org/spar/pro> <http://purl.org/dc/elements/1.1/language> <http://id.loc.gov/vocabulary/iso639-2/eng> .
+<http://purl.org/spar/pro/executive-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/biographer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2000/01/rdf-schema#label> "ghost writer"@en .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/proof-reader> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:proof-reader .\n    " .
+<http://purl.org/spar/pro/author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/peer-reviewer> <http://www.w3.org/2000/01/rdf-schema#label> "peer reviewer"@en .
+<http://purl.org/spar/pro/illustrator> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<https://schema.org/codeRepository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1> .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spar/pro/relatesToEntity> .
+<http://www.essepuntato.it/2012/04/tvc/withinContext> <http://www.w3.org/2000/01/rdf-schema#label> "within context"@en .
+<http://www.essepuntato.it/2012/04/tvc/hasValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an entity and a value in time situation."@en .
+<http://purl.org/spar/pro/ghost-writer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro> <https://schema.org/keywords> "OWL ontology"@en .
+<http://www.essepuntato.it/2012/04/tvc/withValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/tvc/> .
+<http://xmlns.com/foaf/0.1/logo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> .
+<http://purl.org/spar/pro/printer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:printer .\n    " .
+<http://purl.org/spar/pro/Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://purl.org/spar/pro/peer-reviewer> <http://purl.org/vocab/vann/example> "\n    :my-person\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole pro:peer-reviewer .\n    " .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/guest-editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/copyright-owner> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b2 <http://www.w3.org/2002/07/owl#allValuesFrom> _:nc8060be046b34b1581ab352f1a5d4fa1b3 .
+<http://www.essepuntato.it/2012/04/tvc/ValueInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/authors-agent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+<http://purl.org/spar/pro/copy-editor> <http://www.w3.org/2000/01/rdf-schema#label> "copy editor"@en .
+_:nc8060be046b34b1581ab352f1a5d4fa1b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/pro/biographer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> .
+<http://purl.org/spar/pro/isOrganizationContextFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Organization> .
+<http://purl.org/spar/pro/relatesToEntity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .
+_:nc8060be046b34b1581ab352f1a5d4fa1b4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> .
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> .
+<http://purl.org/spar/pro> <http://purl.org/vocab/vann/changes> <https://github.com/SPAROntologies/pro/blob/master/CHANGELOG.md> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#label> "person"@en .
+<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/2000/01/rdf-schema#label> "at time"@en .
+<http://purl.org/spar/pro/librarian> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who manages, undertakes and supervises the work of a library."@en .
+<http://purl.org/spar/pro/relatesToPerson> <http://www.w3.org/2000/01/rdf-schema#label> "relates to person"@en .
+<http://purl.org/spar/pro/managing-editor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/pro/printer> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> .
+<http://purl.org/spar/pro/editor-in-chief> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro> .

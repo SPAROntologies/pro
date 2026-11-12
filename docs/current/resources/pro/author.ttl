@@ -16,6 +16,6 @@ pro:author a pro:PublishingRole,
         pro:withRole pro:author .
     """ ;
     rdfs:comment "The role a person has of authorship of some material (for example a document)."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

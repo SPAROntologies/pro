@@ -9,21 +9,19 @@
 >
   <rdf:Description rdf:about="http://purl.org/spar/pro/RoleInTime">
     <rdfs:subClassOf rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
-    <rdfs:subClassOf rdf:nodeID="n5663947a7e0241149de123ce2edbd522b2"/>
-    <rdfs:subClassOf rdf:nodeID="n5663947a7e0241149de123ce2edbd522b1"/>
-    <rdfs:subClassOf rdf:nodeID="n5663947a7e0241149de123ce2edbd522b9"/>
-    <rdfs:subClassOf rdf:nodeID="n5663947a7e0241149de123ce2edbd522b8"/>
-    <rdfs:subClassOf rdf:nodeID="n5663947a7e0241149de123ce2edbd522b7"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b7"/>
+    <rdfs:subClassOf rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b8"/>
+    <rdfs:subClassOf rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b2"/>
+    <rdfs:subClassOf rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b1"/>
+    <rdfs:subClassOf rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b9"/>
     <skos:note xml:lang="en">A role in time describes always:
 - a particular role R
 - a particular agent A holding R
 - a particular time interval T in which A holds R (optional)
 - one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. At least one contextual entity should be specified for a particular role.</skos:note>
-    <rdfs:label xml:lang="en">role in time</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pro/"/>
-    <rdfs:comment xml:lang="en">A particular situation that describe a role an agent may have, that can be restricted to a particular time interval.</rdfs:comment>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">A particular situation that describe a role an agent may have, that can be restricted to a particular time interval.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pro"/>
     <vann:example>
     :my-person
         pro:holdsRoleInTime :my-person-role .
@@ -31,48 +29,50 @@
     :my-person-role a pro:RoleInTime ;
         pro:withRole pro:archivist .
     </vann:example>
+    <rdfs:label xml:lang="en">role in time</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n5663947a7e0241149de123ce2edbd522b8">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b8">
     <owl:onClass rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
     <owl:onProperty rdf:resource="http://purl.org/spar/pro/isHeldBy"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n5663947a7e0241149de123ce2edbd522b4">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n5663947a7e0241149de123ce2edbd522b7">
-    <owl:someValuesFrom rdf:resource="http://purl.org/spar/pro/Role"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/spar/pro/withRole"/>
+  <rdf:Description rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b5">
+    <rdf:first rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
+    <rdf:rest rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b6"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n5663947a7e0241149de123ce2edbd522b6">
-    <rdf:first rdf:nodeID="n5663947a7e0241149de123ce2edbd522b4"/>
+  <rdf:Description rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b9">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/pro/relatesToEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b6">
+    <rdf:first rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b4"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n5663947a7e0241149de123ce2edbd522b9">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdf:Description rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b7">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/spar/pro/relatesToEntity"/>
+    <owl:someValuesFrom rdf:resource="http://purl.org/spar/pro/Role"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/pro/withRole"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n5663947a7e0241149de123ce2edbd522b1">
+  <rdf:Description rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b1">
+    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
-    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n5663947a7e0241149de123ce2edbd522b5">
-    <rdf:rest rdf:nodeID="n5663947a7e0241149de123ce2edbd522b6"/>
-    <rdf:first rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n5663947a7e0241149de123ce2edbd522b3">
+  <rdf:Description rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b3">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="n5663947a7e0241149de123ce2edbd522b5"/>
+    <owl:intersectionOf rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b5"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n5663947a7e0241149de123ce2edbd522b2">
-    <owl:allValuesFrom rdf:nodeID="n5663947a7e0241149de123ce2edbd522b3"/>
-    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+  <rdf:Description rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b2">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="nc8060be046b34b1581ab352f1a5d4fa1b3"/>
+    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
   </rdf:Description>
 </rdf:RDF>

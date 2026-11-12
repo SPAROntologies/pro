@@ -16,6 +16,6 @@ pro:illustrator a pro:PublishingRole,
         pro:withRole pro:illustrator .
     """ ;
     rdfs:comment "The role of an agent that illustrates a document."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

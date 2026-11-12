@@ -1,0 +1,1155 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dc:contributor a owl:AnnotationProperty .
+
+dc:creator a owl:AnnotationProperty .
+
+dc:date a owl:AnnotationProperty .
+
+dc:description a owl:AnnotationProperty .
+
+dc:language a owl:AnnotationProperty .
+
+dc:rights a owl:AnnotationProperty .
+
+dc:title a owl:AnnotationProperty .
+
+dcterms:bibliographicCitation a owl:AnnotationProperty .
+
+dcterms:created a owl:AnnotationProperty .
+
+dcterms:issued a owl:AnnotationProperty .
+
+dcterms:license a owl:AnnotationProperty .
+
+dcterms:modified a owl:AnnotationProperty .
+
+dcterms:publisher a owl:AnnotationProperty .
+
+dcterms:source a owl:AnnotationProperty .
+
+bibo:doi a owl:AnnotationProperty .
+
+bibo:status a owl:AnnotationProperty .
+
+vann:changes a owl:AnnotationProperty .
+
+vann:example a owl:AnnotationProperty .
+
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
+vs:term_status a owl:AnnotationProperty .
+
+skos:note a owl:AnnotationProperty .
+
+foaf:logo a owl:AnnotationProperty .
+
+schema:codeRepository a owl:AnnotationProperty .
+
+schema:image a owl:AnnotationProperty .
+
+schema:includedInDataCatalog a owl:AnnotationProperty .
+
+schema:keywords a owl:AnnotationProperty .
+
+<http://purl.org/spar/pro> a owl:Ontology ;
+    rdfs:label "Publishing Roles Ontology (PRO)"@en ;
+    dc:contributor "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)"^^xsd:string ;
+    dc:creator "David Shotton (https://orcid.org/0000-0001-5506-523X)"^^xsd:string,
+        "Silvio Peroni (https://orcid.org/0000-0003-0530-4305)"^^xsd:string ;
+    dc:date "2026-11-12"^^xsd:string ;
+    dc:description """
+The **_Publishing Roles Ontology (PRO)_** is an ontology written in OWL 2 DL for the characterization of the roles of agents (people, corporate bodies and computational agents) in the publication process. 
+This ontology permits the characterisation of the roles of agents – people, corporate bodies and computational agents – in the publication process. 
+Furthermore, it allows one to specify the role an agent has in relation to a particular bibliographic entity (as author, editor, reviewer, etc.) or to a specific institution (as publisher, librarian, etc.), and the period during which each role is held.
+
+Since roles have contexts and times that are important to take into account (for example, a person can be author of one paper and reviewer of another, while another person will be editor of a journal only for a defined period, not for ever), the PRO ontology permit these contexts to be specified, using an ontological design pattern called the [Time-indexed Value in Context ontology pattern](http://purl.org/spar/tvc), a model for describing scenarios in which something has a value during a particular time and for a particular context. 
+Due to this, it is easy to extend the set of specified roles, simply by adding new individuals to the class `pro:PublishingRole`.
+This ontology is imported into the [Scholarly Contribution and Roles Ontology](http://purl.org/spar/scoro/) (SCoRO), where it is used similarly to enable the description of a wider range of contributions and roles relating to other scholarly activities and entities, including academic administration, funded projects, research investigations, data and authorship, and to define their temporal extents and contexts, as for publishing roles in PRO.
+
+![The architecture of PRO.](pro.png)
+
+The main entities of PRO are:
+* `pro:RoleInTime`, i.e., the class of the particular situation that describes the role an agent has within a particular time interval;
+* `pro:holdsRoleInTime`, i.e., the object property linking any `foaf:Agent` (e.g., a person, a group, an organization or a software agent), to a `pro:RoleInTime` situation.
+* `pro:withRole`, i.e., the object property linking the situation to the role the agent has – the available roles are defined as individuals of the class `pro:Role` (see its subclass `pro:PublishingRole` for roles specifically defined for the publishing domain);
+* `ti:TimeInterval`, i.e., the class for defining two (starting and ending) points in time that define a particular period related to (`tvc:atTime`) a `pro:RoleInTime` situation;
+* `pro:relatesToDocument`, `pro:relatesToPerson` and `pro:relatesToOrganization`, i.e., the object properties linking any kind of bibliographic work (`foaf:Document`), a person (`foaf:Person`) or publishing organization (`foaf:Organization`) taking part in a `pro:RoleInTime` as contextual extent.
+
+## Examples of use
+
+In the following subsections, we introduce some examples to showcase how to use PRO. 
+
+The prefixes that are used in all the examples provided below are defined as follows:
+
+    @prefix : <http://www.sparontologies.net/example/> .
+    @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+    @prefix pro: <http://purl.org/spar/pro/> .
+    @prefix scoro: <http://purl.org/spar/scoro/> .
+    @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+    @prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### Author's affiliations in papers 
+
+The description of the authors of papers and, in particular, which affiliation they have specified in the context of a particular paper is a crucial aspect to take into account when describing authors' roles. 
+However, several existing ontologies, such as the Semantic Web Conference Ontology, do not allow one to discern the context in which an person-role association holds. 
+For instance, consider an author having different institutional affiliations in the context of different publications (e.g., because he/she moved from one to the other).
+
+In order to address this issue, PRO provides a convenient way to describe all the contextualised and possibly time-indexed person-role associations, in order to provide a complete picture of how roles relate with person and in which contexts.
+
+    :silvio-peroni a foaf:Person ;
+        foaf:name "Silvio Peroni" ;
+        pro:holdsRoleInTime
+            :silvio-peroni-author ,
+            :silvio-peroni-at-kmi ,
+            :silvio-peroni-at-unibo .
+
+    :silvio-peroni-author a pro:RoleInTime ;
+        pro:withRole pro:author ;
+        pro:relatesToDocument
+            <http://dx.doi.org/10.1007/978-3-540-89704-0_17> ,
+            <http://dx.doi.org/10.1145/1600193.1600232> .
+
+    :silvio-peroni-at-unibo a pro:RoleInTime ;
+        pro:withRole scoro:affiliate ;
+        pro:relatesToDocument
+            <http://dx.doi.org/10.1145/1600193.1600232> ;
+        pro:relatesToOrganization
+            <https://ror.org/01111rn36> ;
+        tvc:atTime :unibo-affiliation-time .
+
+    :unibo-affiliation-time a ti:TimeInterval ;
+        ti:hasIntervalStartDate
+            "2009-01-01T00:00:00Z"^^xsd:dateTime .
+
+    :silvio-peroni-at-kmi a pro:RoleInTime ;
+        pro:withRole scoro:affiliate ;
+        pro:relatesToDocument
+            <http://dx.doi.org/10.1007/978-3-540-89704-0_17> ;
+        pro:relatesToOrganization
+            <https://www.wikidata.org/entity/Q86003202> ;
+        tvc:atTime :kmi-affiliation-time .
+
+    :kmi-affiliation-time a ti:TimeInterval ;
+        ti:hasIntervalStartDate
+            "2008-04-01T00:00:00Z"^^xsd:dateTime ;
+        ti:hasIntervalEndDate
+            "2008-09-30T23:59:59Z"^^xsd:dateTime .
+
+## Competency Questions
+
+PRO can be used for answering several questions related to the various roles of an agent in the publication process.
+In the following subsections, some of them are introduced together with their respective SPARQL queries. 
+
+The prefixes that are used in all the SPARQL queries provided below are defined as follows:
+
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX pro: <http://purl.org/spar/pro/>
+    PREFIX tvc: <http://www.essepuntato.it/2012/04/tvc/>
+    PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#>
+
+### CQ1
+
+Which roles in time and role types does a person hold?
+
+    SELECT ?person ?personName ?roleInTime ?role
+    WHERE {
+        ?person a foaf:Person ;
+            pro:holdsRoleInTime ?roleInTime .
+        ?roleInTime a pro:RoleInTime ;
+            pro:withRole ?role .
+        OPTIONAL { ?person foaf:name ?personName . }
+    }
+
+### CQ2
+
+Which documents are associated with a person's role in time?
+
+    SELECT ?person ?role ?document
+    WHERE {
+        ?person a foaf:Person ;
+            pro:holdsRoleInTime ?roleInTime .
+        ?roleInTime pro:withRole ?role ;
+            pro:relatesToDocument ?document .
+    }
+
+### CQ3
+
+Which organization is a person affiliated with in relation to a specific document?
+
+    SELECT ?person ?organization ?document
+    WHERE {
+        ?person pro:holdsRoleInTime ?roleInTime .
+        ?roleInTime pro:relatesToOrganization ?organization ;
+            pro:relatesToDocument ?document .
+    }
+
+### CQ4 
+
+What is the time interval (start and end dates) of an affiliation or role held by a person?
+
+    SELECT ?person ?role ?organization ?startDate ?endDate
+    WHERE {
+        ?person pro:holdsRoleInTime ?roleInTime .
+        ?roleInTime pro:withRole ?role ;
+            tvc:atTime ?timeInterval .
+        OPTIONAL { ?roleInTime pro:relatesToOrganization ?organization . }
+        OPTIONAL { ?timeInterval ti:hasIntervalStartDate ?startDate . }
+        OPTIONAL { ?timeInterval ti:hasIntervalEndDate ?endDate . }
+    }
+
+### CQ5
+
+What are the full affiliation details (role, target document, organization, and timeframe) for a person?
+
+    SELECT ?person ?role ?document ?organization ?startDate ?endDate
+    WHERE {
+        ?person a foaf:Person ;
+            pro:holdsRoleInTime ?roleInTime .
+        ?roleInTime pro:withRole ?role .
+        OPTIONAL { ?roleInTime pro:relatesToDocument ?document . }
+        OPTIONAL { ?roleInTime pro:relatesToOrganization ?organization . }
+        OPTIONAL {
+            ?roleInTime tvc:atTime ?timeInterval .
+            OPTIONAL { ?timeInterval ti:hasIntervalStartDate ?startDate . }
+            OPTIONAL { ?timeInterval ti:hasIntervalEndDate ?endDate . }
+        }
+    }
+
+"""@en ;
+    dc:title "The Publishing Roles Ontology (PRO)"@en ;
+    dcterms:bibliographicCitation "Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and Linked Data: describing roles, statuses, temporal and contextual extents. In Sack, H., Pellegrini, T. (Eds.), Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012): 9-16. New York, New York, USA: ACM. https://doi.org/10.1145/2362499.2362502." ;
+    dcterms:created "2013-12-18" ;
+    dcterms:issued "2017-09-04" ;
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-11-12" ;
+    dcterms:publisher <https://ror.org/00wb4mk85> ;
+    dcterms:source <https://github.com/SPAROntologies/pro/blob/master/docs/cq.md> ;
+    bibo:doi "https://doi.org/10.25504/FAIRsharing.3e88d6" ;
+    bibo:status <http://purl.org/ontology/bibo/status/published> ;
+    vann:preferredNamespacePrefix "pro"@en ;
+    vann:preferredNamespaceUri "http://purl.org/spar/pro"@en ;
+    rdfs:seeAlso <http://www.sparontologies.net/ontologies/pro> ;
+    owl:backwardCompatibleWith pro:2026-10-05 ;
+    owl:imports <http://purl.org/spar/foaf>,
+        <http://purl.org/spar/tvc> ;
+    owl:priorVersion pro:2026-10-05 ;
+    owl:versionIRI pro:2026-11-12 ;
+    owl:versionInfo "1.6.3"^^xsd:string ;
+    vann:changes <https://github.com/SPAROntologies/pro/blob/master/CHANGELOG.md> ;
+    foaf:logo <https://github.com/SPAROntologies/sparontologies.github.io/blob/master/static/img/spar/spar-logo.png> ;
+    schema:codeRepository <https://github.com/SPAROntologies/pro> ;
+    schema:image <https://github.com/SPAROntologies/pro/blob/master/docs/current/pro.png> ;
+    schema:includedInDataCatalog <https://fairsharing.org/> ;
+    dc:language <http://id.loc.gov/vocabulary/iso639-2/eng> ;
+    schema:keywords 
+        "SPAR Ontologies"@en ,
+        "OWL ontology"@en ,
+        "bibliometrics"@en ,
+        "publishing roles"@en ,
+        "scholarly communication"@en ,
+        "scientometrics"@en ,
+        "semantic publishing"@en .
+
+pro:archivist a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "archivist"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+    """ ;
+    rdfs:comment "The role of a person who manages, undertakes and supervises the work of an archive."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+This term is typically used with respect to a document archive, whereas the term data curator is used with respect to a data archive.    
+    """@en .
+
+pro:author a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "author"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:author .
+    """ ;
+    rdfs:comment "The role a person has of authorship of some material (for example a document)."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:authors-agent a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "author's agent"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:authors-agent .
+    """ ;
+    rdfs:comment "A person who finds work for professional authors, manages their contracts, and works to advance their careers, charging their clients as fees for their services a percentage of the money made from the authors' writings."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:biographer a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "biographer"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:biographer .
+    """ ;
+    rdfs:comment "The role of an author who writes biographies."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:blogger a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "blogger"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:blogger .
+    """ ;
+    rdfs:comment "The role of an author who writes blog posts."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:commissioning-editor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "commissioning editor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:commissioning-editor .
+    """ ;
+    rdfs:comment "The role of an editor who actively commissions authors to write books to be published by the publishing house for which the commissioning editor works."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:compiler a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "compiler"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:compiler .
+    """ ;
+    rdfs:comment "The role an agent has of compiling a number of items into a compilation or collection."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:contributor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "contributor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:contributor .
+    """ ;
+    rdfs:comment "The role an agent has of contribution of some material (for example an article to a magazine)."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:copy-editor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "copy editor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:copy-editor .
+    """ ;
+    rdfs:comment "The role of an editor who undertakes alterations to the text of a document submitted for publication to improve the formatting, style and accuracy of text, or to bring the text into the house style of the publisher (e.g. Americanization of British spelling), without intentionally altering the substance or meaning of the text."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:copyright-owner a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "copyright owner"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:copyright-owner .
+    """ ;
+    rdfs:comment "The role of owning the copyright to a publication, usually held by the author or by the publishing house that publishes the author's work."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:critic a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "critic"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:critic .
+    """ ;
+    rdfs:comment "The role of an author who writes evaluations and criticisms of, for example, plays or other works of art."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:seeAlso pro:reviewer ;
+    vs:term_status reg:statusStable .
+
+pro:deputy-editor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "deputy editor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:deputy-editor .
+    """ ;
+    rdfs:comment "The role of a senior editor of a publication who deputizes for the Editor-in-Chief."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:distributor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "distributor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:distributor .
+    """ ;
+    rdfs:comment "The role of a person who distributes or disseminates publications or other resources."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:editor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "editor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:editor .
+    """ ;
+    rdfs:comment "The role of a person who selects and prepares for publication material created and submitted by authors, having oversight of its content, format and presentation."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:editor-in-chief a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "editor-in-chief"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:editor-in-chief .
+    """ ;
+    rdfs:comment "The role of the person who has final responsibility for the editorial operations and policies for a particular publication."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:executive-editor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "executive editor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:executive-editor .
+    """ ;
+    rdfs:comment "The role of an editor who has executive responsibility for the production of particular publication, usually acting under the authority of the Editor-in-Chief."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:ghost-writer a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "ghost writer"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:ghost-writer .
+    """ ;
+    rdfs:comment "The role of a professional writer who assists an aspiring author lacking authorship skills to write a book or article for publication, for example by helping the author to create grammatically correct and lucid prose, or who writes the book on behalf of the named author, without himself/herself claiming authorship."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:guest-editor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "guest editor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:guest-editor .
+    """ ;
+    rdfs:comment "The role of someone who is a guest editor, for example for a special themed issue of a journal."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:holdsRoleInTime a owl:ObjectProperty ;
+    rdfs:label "holds role in time"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+    """ ;
+    rdfs:comment "The relation between an agent and a role that the agent holds."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:range pro:RoleInTime ;
+    rdfs:subPropertyOf tvc:hasValue ;
+    owl:inverseOf pro:isHeldBy ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+This is done via the indirection:
+
+    foaf:Agent pro:holdsRoleInTime [ a pro:RoleInTime ; 
+                                     pro:withRole pro:Role ] .  
+
+The ontology permits one to specify the time period over which a role is held, and the other contextual entities to which that agent's role relates.
+    """@en .
+
+pro:illustrator a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "illustrator"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:illustrator .
+    """ ;
+    rdfs:comment "The role of an agent that illustrates a document."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:isDocumentContextFor a owl:ObjectProperty ;
+    rdfs:label "is document context for"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+
+    :my-document a foaf:Document ;
+        pro:isDocumentContextFor :my-person-role .
+    """ ;
+    rdfs:comment "The relation between a document and the role for which that document provides the context (e.g. relating a document to the role of author or peer-reviewer of that document)."@en ;
+    rdfs:domain foaf:Document ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:subPropertyOf pro:isRelatedToRoleInTime ;
+    owl:inverseOf pro:relatesToDocument ;
+    vs:term_status reg:statusStable .
+
+pro:isOrganizationContextFor a owl:ObjectProperty ;
+    rdfs:label "is organization context for"@it ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+
+    :my-organization a foaf:Organization ;
+        pro:isOrganizationContextFor :my-person-role .
+    """ ;
+    rdfs:comment "The relation between an organization and the role for which that organization provides the context (e.g. relating an institution to the role of member held by a person)."@en ;
+    rdfs:domain foaf:Organization ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:subPropertyOf pro:isRelatedToRoleInTime ;
+    owl:inverseOf pro:relatesToOrganization ;
+    vs:term_status reg:statusStable .
+
+pro:isPersonContextFor a owl:ObjectProperty ;
+    rdfs:label "is person context for"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+
+    :my-other-person a foaf:Person ;
+        pro:isPersonContextFor :my-person-role .
+    """ ;
+    rdfs:comment "The relation between a person and the role for which that person provides the context (e.g. relating a graduate student to the role of supervisor held by a faculty member)."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:subPropertyOf pro:isRelatedToRoleInTime ;
+    vs:term_status reg:statusStable .
+
+pro:isRoleIn a owl:ObjectProperty ;
+    rdfs:label "is role in"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime .
+
+    pro:archivist  
+        pro:isRoleIn :my-person-role .
+    """ ;
+    rdfs:comment "The relation between the definition of a specific role and the situation of an agent holding that role."@en ;
+    rdfs:domain pro:Role ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:range pro:RoleInTime ;
+    rdfs:subPropertyOf tisit:hasTimeIndexedSetting ;
+    owl:inverseOf pro:withRole ;
+    vs:term_status reg:statusStable .
+
+pro:journalist a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "journalist"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:journalist .
+    """ ;
+    rdfs:comment "The role of an author who writes newspaper or magazine news reports or articles."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:librarian a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "librarian"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:librarian .
+    """ ;
+    rdfs:comment "The role of a person who manages, undertakes and supervises the work of a library."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:managing-editor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "managing editor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:managing-editor .
+    """ ;
+    rdfs:comment "The role of an editor who has management responsibility for the production of particular publication, usually acting under the authority of the Executive Editor and the Editor-in-Chief."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:peer-reviewer a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "peer reviewer"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:peer-reviewer .
+    """ ;
+    rdfs:comment "The role of an academic peer in evaluating a manuscript submitted by an author for publication as a journal article on behalf of the journal editor, or a conference paper on behalf of the conference programme committee, and in deciding whether it is suitable for acceptance, usually subject to revisions suggested by the peer-reviewer."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:seeAlso pro:reviewer ;
+    vs:term_status reg:statusStable .
+
+pro:printer a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "printer"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:printer .
+    """ ;
+    rdfs:comment "The role of an agent involved in printing documents, either a company providing printing services or an individual engaged in the process of printing documents."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:producer a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "producer"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:producer .
+    """ ;
+    rdfs:comment "The role of someone who acts as a producer."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:production-editor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "production editor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:production-editor .
+    """ ;
+    rdfs:comment "The role of an editor who takes responsibility for the passage of a document through the various stages of the publication workflow from the submitted manuscript to the final publication, including responsibility for scheduling and budget."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:proof-reader a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "proof reader"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:proof-reader .
+    """ ;
+    rdfs:comment "The role of a person who reads the proofs of documents to detect any errors prior to final publication."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:publisher a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "publisher"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:publisher .
+    """ ;
+    rdfs:comment "The role of a person or an organization that published material, or of a publisher's employee who has responsibility for such publications."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:reader a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "reader"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:reader .
+    """ ;
+    rdfs:comment "The role of a person who reads publications."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:relatesToPerson a owl:ObjectProperty ;
+    rdfs:label "relates to person"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:relatesToPerson :my-other-person .
+        pro:withRole pro:archivist .
+
+    :my-other-person a foaf:Person .
+    """ ;
+    rdfs:comment "The relation between a time-indexed situation and a person who represents the context for that situation (e.g. relating the role of an supervisor with respect to the graduate student being supervised)."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:range foaf:Person ;
+    rdfs:subPropertyOf pro:relatesToEntity ;
+    vs:term_status reg:statusStable .
+
+pro:senior-editor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "senior editor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:senior-editor .
+    """ ;
+    rdfs:comment "The role of the person who has senior responsibility for the editorial operations and policies for a particular publication, usually acting under the authority of the Editor-in-Chief."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:series-editor a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "series editor"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:series-editor .
+    """ ;
+    rdfs:comment "The role of the person who has editorial responsibility for publication series, for example a book series."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:translator a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "translator"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:translator .
+    """ ;
+    rdfs:comment "The role of an agent that translates a document into another language."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+tisit:atTime a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "at time"@en ;
+    rdfs:comment "A time interval during which a status is held by a document." ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> .
+
+ti:hasIntervalEndDate a owl:DatatypeProperty ;
+    rdfs:label "has interval end date"@en ;
+    rdfs:comment "The end date of a time interval" ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+
+ti:hasIntervalStartDate a owl:DatatypeProperty ;
+    rdfs:label "has interval start date"@en ;
+    rdfs:comment "The start date of a time interval" ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+
+rdfs:comment a owl:AnnotationProperty .
+
+rdfs:isDefinedBy a owl:AnnotationProperty .
+
+rdfs:label a owl:AnnotationProperty .
+
+rdfs:seeAlso a owl:AnnotationProperty .
+
+owl:backwardCompatibleWith a owl:AnnotationProperty .
+
+owl:priorVersion a owl:AnnotationProperty .
+
+owl:versionInfo a owl:AnnotationProperty .
+
+pro:relatesToDocument a owl:ObjectProperty ;
+    rdfs:label "relates to document"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:relatesToDocument :my-document .
+        pro:withRole pro:archivist .
+
+    :my-document a foaf:Document .
+    """ ;
+    rdfs:comment "The relation between a time-indexed situation describing a publishing role and a document that represents the context for that situation (e.g. relating the role of editor or peer-reviewer to the document being edited or peer-reviewed)."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:range foaf:Document ;
+    rdfs:subPropertyOf pro:relatesToEntity ;
+    vs:term_status reg:statusStable .
+
+pro:relatesToOrganization a owl:ObjectProperty ;
+    rdfs:label "relates to organization"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:relatesToOrganization :my-organization .
+        pro:withRole pro:archivist .
+
+    :my-organization a foaf:Organization .
+    """ ;
+    rdfs:comment "The relation between a time-indexed situation and an organization that represents the context for that situation (e.g. relating the role of member to the institution of which that person is a member)."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:range foaf:Organization ;
+    rdfs:subPropertyOf pro:relatesToEntity ;
+    vs:term_status reg:statusStable .
+
+tvc:hasValue a owl:ObjectProperty ;
+    rdfs:label "has value"@en ;
+    rdfs:comment "The relation between an entity and a value in time situation."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
+    rdfs:range tvc:ValueInTime ;
+    rdfs:subPropertyOf tisit:hasTimeIndexedSetting .
+
+tvc:withValue a owl:ObjectProperty ;
+    rdfs:label "with value"@en ;
+    rdfs:comment "The relation between the value in time situation and the actual value held by the entity partaking in that situation."@en ;
+    rdfs:domain tvc:ValueInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
+    rdfs:subPropertyOf tisit:forEntity .
+
+tvc:withinContext a owl:ObjectProperty ;
+    rdfs:label "within context"@en ;
+    rdfs:comment "The specific context within which the fact of the entity having the value is relevant."@en ;
+    rdfs:domain tvc:ValueInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
+    rdfs:subPropertyOf tisit:forEntity .
+
+ti:hasIntervalDate a owl:DatatypeProperty ;
+    rdfs:label "has interval date"@en ;
+    rdfs:comment "A date value assigned to a time interval."@en ;
+    rdfs:domain ti:TimeInterval ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+
+foaf:Person a owl:Class ;
+    rdfs:label "person"@en ;
+    rdfs:comment "A person."@en ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
+    rdfs:subClassOf foaf:Agent .
+
+pro:isHeldBy a owl:ObjectProperty ;
+    rdfs:label "is role held by"@en ;
+    vann:example """
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist ;
+        pro:isHeldBy :my-person .
+
+    :my-person a foaf:Agent .
+    """ ;
+    rdfs:comment "The relation between a role in time that an agent holds, or a contribution situation that an agent makes, and that agent."@en ;
+    rdfs:domain pro:RoleInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:range foaf:Agent ;
+    rdfs:subPropertyOf tisit:forEntity ;
+    vs:term_status reg:statusStable .
+
+pro:reviewer a pro:PublishingRole,
+        owl:NamedIndividual ;
+    rdfs:label "reviewer"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:reviewer .
+    """ ;
+    rdfs:comment "The role of a person who subjects a publication to a written review and critical analysis of its content, scope and quality."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    vs:term_status reg:statusStable .
+
+pro:withRole a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "with role"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+    """ ;
+    rdfs:comment "The relation between an agent's role in time and a definition of the type of role held by this agent."@en ;
+    rdfs:domain pro:RoleInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:range pro:Role ;
+    rdfs:subPropertyOf tvc:withValue ;
+    skos:note """
+This is specified as an instance of the class `pro:Role` or of one of its sub-classes.
+    """@en ;
+    vs:term_status reg:statusStable .
+
+tvc:atTime a owl:ObjectProperty ;
+    rdfs:label "at time"@en ;
+    rdfs:comment "The particular temporal instant or time period in which the situation takes place."@en ;
+    rdfs:domain tvc:ValueInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> .
+
+foaf:Document a owl:Class ;
+    rdfs:label "document"@en ;
+    rdfs:comment "An abstract class defining any kinds of publishing work."@en ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
+
+foaf:Organization a owl:Class ;
+    rdfs:label "organization"@en ;
+    rdfs:comment "An organization."@en ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
+    rdfs:subClassOf foaf:Agent .
+
+pro:isRelatedToRoleInTime a owl:ObjectProperty ;
+    rdfs:label "is related to role in time"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+
+    :my-entity
+        pro:isRelatedToRoleInTime :my-person-role .
+    """ ;
+    rdfs:comment "The relation between an entity and the role for which that entity provides the context."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:range pro:RoleInTime ;
+    rdfs:subPropertyOf tisit:hasTimeIndexedSetting ;
+    owl:inverseOf pro:relatesToEntity ;
+    vs:term_status reg:statusStable .
+
+tisit:TimeIndexedSituation a owl:Class ;
+    rdfs:label "time indexed situation"@en ;
+    rdfs:comment "A situation that is explicitly indexed at some time for at least one entity." ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> .
+
+tisit:forEntity a owl:ObjectProperty ;
+    rdfs:label "for entity"@en ;
+    rdfs:comment "The relation between a time-indexed situation and an entity involved in it."@en ;
+    rdfs:domain tisit:TimeIndexedSituation ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> .
+
+tisit:hasTimeIndexedSetting a owl:ObjectProperty ;
+    rdfs:label "has time indexed setting"@en ;
+    rdfs:comment "The relation between an entity and a time-indexed situation it is involved in."@en ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> ;
+    rdfs:range tisit:TimeIndexedSituation .
+
+ti:TimeInterval a owl:Class ;
+    rdfs:label "time interval"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+    """ ;
+    rdfs:comment "Two (starting and ending) points in time that define a particular period of time."@en ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> ;
+    vs:term_status reg:statusStable .
+
+pro:Role a owl:Class ;
+    rdfs:label "role"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+
+    pro:archivist a pro:Role .
+    """ ;
+    rdfs:comment "A role an agent may have. Individual members of this class or its sub-classes are used to specify particular roles."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:subClassOf owl:Thing ;
+    vs:term_status reg:statusStable .
+
+pro:relatesToEntity a owl:ObjectProperty ;
+    rdfs:label "relates to"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:relatesToEntity :my-entity ;
+        pro:withRole pro:archivist .
+    """ ;
+    rdfs:comment "The relation between a time-indexed situation and an entity representing the context for that situation."@en ;
+    rdfs:domain pro:RoleInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:subPropertyOf tvc:withinContext ;
+    vs:term_status reg:statusStable .
+
+tvc:ValueInTime a owl:Class ;
+    rdfs:label "value in time"@en ;
+    rdfs:comment "A particular kind of time-indexed situation that represents a hub linking the entity having a particular value, the value itself and the temporal and contextual extents from which the entity-value relationship depends."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> ;
+    rdfs:subClassOf tisit:TimeIndexedSituation .
+
+foaf:Agent a owl:Class ;
+    rdfs:label "agent"@en ;
+    rdfs:comment "Any kind of agents, such as a person, a group, an organization or a software agent."@en ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
+
+pro:RoleInTime a owl:Class ;
+    rdfs:label "role in time"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+    """ ;
+    rdfs:comment "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty tvc:atTime ;
+            owl:someValuesFrom ti:TimeInterval ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( ti:TimeInterval [ a owl:Restriction ;
+                                owl:allValuesFrom xsd:dateTime ;
+                                owl:onProperty ti:hasIntervalDate ] ) ] ;
+            owl:onProperty tvc:atTime ],
+        [ a owl:Restriction ;
+            owl:onProperty pro:withRole ;
+            owl:someValuesFrom pro:Role ],
+        [ a owl:Restriction ;
+            owl:onClass foaf:Agent ;
+            owl:onProperty pro:isHeldBy ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty pro:relatesToEntity ;
+            owl:someValuesFrom owl:Thing ],
+        tvc:ValueInTime ;
+    vs:term_status reg:statusStable ;
+    skos:note """A role in time describes always:
+- a particular role R
+- a particular agent A holding R
+- a particular time interval T in which A holds R (optional)
+- one or more entities (e.g. a particular bibliographic entity or a specific institution) that defines a context for R held by A. At least one contextual entity should be specified for a particular role."""@en .
+
+pro:PublishingRole a owl:Class ;
+    rdfs:label "publishing role"@en ;
+    vann:example """
+    :my-person
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole pro:archivist .
+
+    pro:archivist a pro:PublishingRole .
+    """ ;
+    rdfs:comment "A role an agent may have with respect to the publishing process."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:subClassOf pro:Role ;
+    vs:term_status reg:statusStable ;
+    skos:note "Individual members of this class are used to specify particular roles."@en .
+

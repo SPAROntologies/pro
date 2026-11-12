@@ -16,7 +16,7 @@ pro:critic a pro:PublishingRole,
         pro:withRole pro:critic .
     """ ;
     rdfs:comment "The role of an author who writes evaluations and criticisms of, for example, plays or other works of art."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     rdfs:seeAlso pro:reviewer ;
     vs:term_status reg:statusStable .
 

@@ -18,7 +18,7 @@ pro:relatesToEntity a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between a time-indexed situation and an entity representing the context for that situation."@en ;
     rdfs:domain pro:RoleInTime ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     rdfs:subPropertyOf tvc:withinContext ;
     vs:term_status reg:statusStable .
 

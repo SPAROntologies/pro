@@ -15,6 +15,6 @@ ti:TimeInterval a owl:Class ;
         pro:withRole pro:archivist .
     """ ;
     rdfs:comment "Two (starting and ending) points in time that define a particular period of time."@en ;
-    rdfs:isDefinedBy ti: ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> ;
     vs:term_status reg:statusStable .
 

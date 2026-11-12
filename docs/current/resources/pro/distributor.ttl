@@ -16,6 +16,6 @@ pro:distributor a pro:PublishingRole,
         pro:withRole pro:distributor .
     """ ;
     rdfs:comment "The role of a person who distributes or disseminates publications or other resources."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

@@ -16,6 +16,6 @@ pro:publisher a pro:PublishingRole,
         pro:withRole pro:publisher .
     """ ;
     rdfs:comment "The role of a person or an organization that published material, or of a publisher's employee who has responsibility for such publications."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

@@ -16,6 +16,6 @@ pro:reader a pro:PublishingRole,
         pro:withRole pro:reader .
     """ ;
     rdfs:comment "The role of a person who reads publications."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

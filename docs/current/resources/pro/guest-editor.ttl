@@ -16,6 +16,6 @@ pro:guest-editor a pro:PublishingRole,
         pro:withRole pro:guest-editor .
     """ ;
     rdfs:comment "The role of someone who is a guest editor, for example for a special themed issue of a journal."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

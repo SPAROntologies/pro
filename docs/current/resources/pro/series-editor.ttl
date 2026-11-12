@@ -16,6 +16,6 @@ pro:series-editor a pro:PublishingRole,
         pro:withRole pro:series-editor .
     """ ;
     rdfs:comment "The role of the person who has editorial responsibility for publication series, for example a book series."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

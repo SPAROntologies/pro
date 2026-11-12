@@ -16,6 +16,6 @@ pro:translator a pro:PublishingRole,
         pro:withRole pro:translator .
     """ ;
     rdfs:comment "The role of an agent that translates a document into another language."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 

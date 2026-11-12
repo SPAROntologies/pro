@@ -16,6 +16,6 @@ pro:authors-agent a pro:PublishingRole,
         pro:withRole pro:authors-agent .
     """ ;
     rdfs:comment "A person who finds work for professional authors, manages their contracts, and works to advance their careers, charging their clients as fees for their services a percentage of the money made from the authors' writings."@en ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     vs:term_status reg:statusStable .
 
